@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Manta">
+<title>Manta das Emoções</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body {
+  background: #FAF8F5;
+  color: #2C2825;
+  font-family: Georgia, serif;
+  min-height: 100vh;
+  padding: 20px 16px 80px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EDE8E1;
+  margin-bottom: 24px;
+}
+header .subtitulo { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #9B9088; font-family: sans-serif; margin-bottom: 6px; }
+header h1 { font-size: 26px; font-style: italic; font-weight: 400; }
+header .stats { font-size: 12px; color: #9B9088; font-family: sans-serif; margin-top: 8px; }
+header .stats span { color: #F97316; }
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid #EDE8E1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.card-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9B9088;
+  font-family: sans-serif;
+  margin-bottom: 14px;
+}
+
+/* MANTA */
+.manta-fios { display: flex; flex-direction: column; gap: 2px; }
+.fio { width: 100%; height: 11px; border-radius: 2px; cursor: pointer; }
+.fio.pendente { opacity: 0.3; }
+.fio-info { margin-top: 10px; font-size: 12px; font-family: sans-serif; color: #9B9088; text-align: center; min-height: 18px; }
+
+/* LEGENDA */
+.legenda { display: flex; flex-wrap: wrap; gap: 7px; }
+.leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #9B9088; font-family: sans-serif; background: #FAF8F5; border: 1px solid #EDE8E1; border-radius: 20px; padding: 3px 9px; }
+.leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+/* TOTAIS */
+.total-linha { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.total-nome { width: 85px; font-size: 12px; font-family: sans-serif; color: #2C2825; flex-shrink: 0; }
+.total-barra-wrap { flex: 1; height: 8px; background: #F0EDE8; border-radius: 4px; overflow: hidden; }
+.total-barra { height: 100%; border-radius: 4px; }
+.total-num { width: 28px; font-size: 12px; font-family: sans-serif; color: #9B9088; text-align: right; flex-shrink: 0; }
+.total-pct { width: 32px; font-size: 11px; font-family: sans-serif; color: #9B9088; flex-shrink: 0; }
+
+/* FORMULÁRIO */
+.form-col { display: flex; flex-direction: column; gap: 10px; }
+select, input[type=date] {
+  background: #FAF8F5;
+  border: 1px solid #EDE8E1;
+  color: #2C2825;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: sans-serif;
+  font-size: 15px;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+}
+.row-btn { display: flex; gap: 8px; }
+.row-btn select { flex: 1; }
+.btn-salvar {
+  background: #2C2825;
+  color: #FAF8F5;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.msg { margin-top: 10px; font-size: 13px; font-family: sans-serif; min-height: 18px; }
+.msg.ok { color: #5B9E6A; }
+.msg.err { color: #F97316; }
+
+/* MESES */
+.mes-card {
+  background: #fff;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #EDE8E1;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.mes-header {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.mes-titulo { font-size: 14px; font-style: italic; min-width: 105px; color: #2C2825; }
+.mes-barrinhas { flex: 1; display: flex; height: 8px; border-radius: 4px; overflow: hidden; gap: 1px; }
+.mes-seta { color: #9B9088; font-size: 11px; font-family: sans-serif; flex-shrink: 0; }
+.mes-body { display: none; border-top: 1px solid #EDE8E1; padding: 0 16px 12px; }
+.mes-body.aberto { display: block; }
+.dia-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 0;
+  border-bottom: 1px solid #F5F1EC;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+.dia-data { color: #9B9088; width: 40px; flex-shrink: 0; }
+.dia-bolinha { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.dia-nome { flex: 1; }
+.btn-crocheteei {
+  background: #F0FAF3;
+  border: 1px solid #5B9E6A;
+  color: #5B9E6A;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: sans-serif;
+}
+.dia-check { color: #5B9E6A; font-size: 12px; flex-shrink: 0; }
+.btn-x {
+  background: none;
+  border: 1px solid #EDE8E1;
+  color: #9B9088;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: sans-serif;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44,40,37,0.4);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.visivel { display: flex; }
+.modal-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  max-width: 300px;
+  width: 88%;
+  text-align: center;
+}
+.modal-titulo { font-size: 16px; margin-bottom: 6px; }
+.modal-sub { font-size: 12px; color: #9B9088; font-family: sans-serif; margin-bottom: 22px; }
+.modal-btns { display: flex; gap: 10px; justify-content: center; }
+.btn-cancelar { background: #FAF8F5; color: #2C2825; border: 1px solid #EDE8E1; border-radius: 8px; padding: 9px 20px; font-family: sans-serif; font-size: 13px; cursor: pointer; }
+.btn-apagar-confirm { background: #EF4444; color: #fff; border: none; border-radius: 8px; padding: 9px 20px; font-family: sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+.secao-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #9B9088; font-family: sans-serif; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-titulo" id="modalTitulo">Apagar este dia?</div>
+    <div class="modal-sub">Esta ação não pode ser desfeita.</div>
+    <div class="modal-btns">
+      <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+      <button class="btn-apagar-confirm" onclick="confirmarApagar()">Apagar</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="subtitulo">meu diário em fios</div>
+  <h1>Manta das Emoções</h1>
+  <div class="stats" id="stats">carregando...</div>
+</header>
+
+<div class="card">
+  <div class="card-label">Cada carreira, um dia</div>
+  <div class="manta-fios" id="mantagrid"></div>
+  <div class="fio-info" id="fioInfo"></div>
+</div>
+
+<div class="card">
+  <div class="card-label">Legenda</div>
+  <div class="legenda" id="legenda"></div>
+</div>
+
+<div class="card">
+  <div class="card-label">Distribuição total</div>
+  <div id="totais"></div>
+</div>
+
+<div class="card">
+  <div class="card-label">Registrar dia</div>
+  <div class="form-col">
+    <input type="date" id="novaData">
+    <select id="novaEmocao">
+      <option value="">— escolha a emoção —</option>
+      <option value="alegria">Alegria</option>
+      <option value="ansiedade">Ansiedade</option>
+      <option value="tristeza">Tristeza</option>
+      <option value="raiva">Raiva</option>
+      <option value="medo">Medo</option>
+      <option value="nojo">Nojo</option>
+      <option value="tedio">Tédio</option>
+      <option value="vergonha">Vergonha</option>
+      <option value="paz">Tranq./Paz</option>
+    </select>
+    <div class="row-btn">
+      <select id="novoStatus">
+        <option value="feito">✓ crocheteado</option>
+        <option value="pendente">○ pendente</option>
+      </select>
+      <button class="btn-salvar" onclick="registrar()">Salvar</button>
+    </div>
+  </div>
+  <div class="msg" id="msg"></div>
+</div>
+
+<div class="secao-label">Por mês</div>
+<div id="mesesWrap"></div>
+
+<script>
+var CORES = {
+  alegria:   { hex: '#F5C800', label: 'Alegria' },
+  ansiedade: { hex: '#F97316', label: 'Ansiedade' },
+  tristeza:  { hex: '#93C5FD', label: 'Tristeza' },
+  raiva:     { hex: '#FCA5A5', label: 'Raiva' },
+  medo:      { hex: '#C4B5FD', label: 'Medo' },
+  nojo:      { hex: '#86EFAC', label: 'Nojo' },
+  tedio:     { hex: '#D6C5A8', label: 'Tédio' },
+  vergonha:  { hex: '#FBCFE8', label: 'Vergonha' },
+  paz:       { hex: '#E2E8F0', label: 'Tranq./Paz' }
+};
+
+var MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+var DADOS_BASE = [
+  {data:'2025-02-02',emocao:'raiva',feito:true},
+  {data:'2025-02-03',emocao:'ansiedade',feito:true},
+  {data:'2025-02-04',emocao:'alegria',feito:true},
+  {data:'2025-02-05',emocao:'alegria',feito:true},
+  {data:'2025-02-06',emocao:'tedio',feito:true},
+  {data:'2025-02-07',emocao:'tedio',feito:true},
+  {data:'2025-02-08',emocao:'tristeza',feito:true},
+  {data:'2025-02-09',emocao:'ansiedade',feito:true},
+  {data:'2025-02-10',emocao:'nojo',feito:true},
+  {data:'2025-02-11',emocao:'medo',feito:true},
+  {data:'2025-02-12',emocao:'raiva',feito:true},
+  {data:'2025-02-13',emocao:'raiva',feito:true},
+  {data:'2025-02-14',emocao:'vergonha',feito:true},
+  {data:'2025-02-15',emocao:'tedio',feito:true},
+  {data:'2025-02-16',emocao:'alegria',feito:true},
+  {data:'2025-02-17',emocao:'alegria',feito:true},
+  {data:'2025-02-18',emocao:'paz',feito:true},
+  {data:'2025-02-19',emocao:'medo',feito:true},
+  {data:'2025-02-20',emocao:'tristeza',feito:true},
+  {data:'2025-02-21',emocao:'nojo',feito:true},
+  {data:'2025-02-22',emocao:'raiva',feito:true},
+  {data:'2025-02-23',emocao:'ansiedade',feito:true},
+  {data:'2025-02-24',emocao:'medo',feito:true},
+  {data:'2025-02-25',emocao:'alegria',feito:true},
+  {data:'2025-02-26',emocao:'alegria',feito:true},
+  {data:'2025-02-27',emocao:'paz',feito:true},
+  {data:'2025-02-28',emocao:'paz',feito:true},
+  {data:'2025-03-01',emocao:'alegria',feito:true},
+  {data:'2025-03-02',emocao:'ansiedade',feito:true},
+  {data:'2025-03-03',emocao:'raiva',feito:true},
+  {data:'2025-03-04',emocao:'ansiedade',feito:true},
+  {data:'2025-03-05',emocao:'ansiedade',feito:true},
+  {data:'2025-03-06',emocao:'vergonha',feito:true},
+  {data:'2025-03-07',emocao:'ansiedade',feito:true},
+  {data:'2025-03-08',emocao:'tristeza',feito:true},
+  {data:'2025-03-09',emocao:'nojo',feito:true},
+  {data:'2025-03-10',emocao:'alegria',feito:true},
+  {data:'2025-03-11',emocao:'ansiedade',feito:true},
+  {data:'2025-03-12',emocao:'nojo',feito:true},
+  {data:'2025-03-13',emocao:'alegria',feito:true},
+  {data:'2025-03-14',emocao:'paz',feito:true},
+  {data:'2025-03-15',emocao:'paz',feito:true},
+  {data:'2025-03-16',emocao:'tedio',feito:true},
+  {data:'2025-03-17',emocao:'ansiedade',feito:true},
+  {data:'2025-03-18',emocao:'alegria',feito:true},
+  {data:'2025-03-19',emocao:'alegria',feito:true},
+  {data:'2025-03-20',emocao:'medo',feito:true},
+  {data:'2025-03-21',emocao:'tristeza',feito:true},
+  {data:'2025-03-22',emocao:'tedio',feito:true},
+  {data:'2025-03-23',emocao:'ansiedade',feito:true},
+  {data:'2025-03-24',emocao:'ansiedade',feito:true},
+  {data:'2025-03-25',emocao:'medo',feito:true},
+  {data:'2025-03-26',emocao:'ansiedade',feito:true},
+  {data:'2025-03-27',emocao:'ansiedade',feito:true},
+  {data:'2025-03-28',emocao:'tristeza',feito:true},
+  {data:'2025-03-29',emocao:'alegria',feito:true},
+  {data:'2025-03-30',emocao:'ansiedade',feito:true},
+  {data:'2025-03-31',emocao:'raiva',feito:true},
+  {data:'2025-04-01',emocao:'medo',feito:true},
+  {data:'2025-04-02',emocao:'ansiedade',feito:true},
+  {data:'2025-04-03',emocao:'paz',feito:true},
+  {data:'2025-04-04',emocao:'paz',feito:true},
+  {data:'2025-04-05',emocao:'ansiedade',feito:true},
+  {data:'2025-04-06',emocao:'ansiedade',feito:true},
+  {data:'2025-04-07',emocao:'alegria',feito:true},
+  {data:'2025-04-08',emocao:'alegria',feito:true},
+  {data:'2025-04-09',emocao:'paz',feito:true},
+  {data:'2025-04-10',emocao:'paz',feito:true},
+  {data:'2025-04-11',emocao:'alegria',feito:true},
+  {data:'2025-04-12',emocao:'paz',feito:true},
+  {data:'2025-04-13',emocao:'alegria',feito:true},
+  {data:'2025-04-14',emocao:'nojo',feito:true},
+  {data:'2025-04-15',emocao:'alegria',feito:true},
+  {data:'2025-04-16',emocao:'ansiedade',feito:true},
+  {data:'2025-04-17',emocao:'alegria',feito:true},
+  {data:'2025-04-18',emocao:'paz',feito:true},
+  {data:'2025-04-19',emocao:'alegria',feito:true},
+  {data:'2025-04-20',emocao:'tedio',feito:true},
+  {data:'2025-04-21',emocao:'tedio',feito:true},
+  {data:'2025-04-22',emocao:'ansiedade',feito:true},
+  {data:'2025-04-23',emocao:'raiva',feito:true},
+  {data:'2025-04-24',emocao:'medo',feito:true},
+  {data:'2025-04-25',emocao:'paz',feito:true},
+  {data:'2025-04-26',emocao:'paz',feito:true},
+  {data:'2025-04-27',emocao:'alegria',feito:true},
+  {data:'2025-04-28',emocao:'paz',feito:false},
+  {data:'2025-04-29',emocao:'raiva',feito:false},
+  {data:'2025-04-30',emocao:'tedio',feito:false},
+  {data:'2025-05-01',emocao:'tedio',feito:false},
+  {data:'2025-05-02',emocao:'ansiedade',feito:false},
+  {data:'2025-05-03',emocao:'alegria',feito:false},
+  {data:'2025-05-04',emocao:'raiva',feito:false},
+  {data:'2025-05-05',emocao:'tristeza',feito:false},
+  {data:'2025-05-06',emocao:'tristeza',feito:false},
+  {data:'2025-05-07',emocao:'raiva',feito:false},
+  {data:'2025-05-08',emocao:'medo',feito:false},
+  {data:'2025-05-09',emocao:'ansiedade',feito:false},
+  {data:'2025-05-10',emocao:'alegria',feito:false},
+  {data:'2025-05-11',emocao:'nojo',feito:false},
+  {data:'2025-05-12',emocao:'ansiedade',feito:false},
+  {data:'2025-05-13',emocao:'vergonha',feito:false},
+  {data:'2025-05-14',emocao:'ansiedade',feito:false},
+  {data:'2025-05-15',emocao:'alegria',feito:false},
+  {data:'2025-05-16',emocao:'raiva',feito:false},
+  {data:'2025-05-17',emocao:'vergonha',feito:false},
+  {data:'2025-05-18',emocao:'medo',feito:false},
+  {data:'2025-05-19',emocao:'alegria',feito:false},
+  {data:'2025-05-20',emocao:'medo',feito:false},
+  {data:'2025-05-21',emocao:'paz',feito:false},
+  {data:'2025-05-22',emocao:'alegria',feito:false},
+  {data:'2025-05-23',emocao:'ansiedade',feito:false},
+  {data:'2025-05-24',emocao:'alegria',feito:false},
+  {data:'2025-05-25',emocao:'tedio',feito:false}
+];
+
+var dados = [];
+var dataParaApagar = null;
+var mesesAbertos = { '2025-05': true };
+
+function carregar() {
+  var salvo = localStorage.getItem('manta_fe_2025');
+  if (salvo) {
+    dados = JSON.parse(salvo);
+  } else {
+    dados = JSON.parse(JSON.stringify(DADOS_BASE));
+    salvar();
+  }
+}
+
+function salvar() {
+  localStorage.setItem('manta_fe_2025', JSON.stringify(dados));
+}
+
+function ordenar() {
+  dados.sort(function(a,b){ return a.data < b.data ? -1 : 1; });
+}
+
+function fmtData(str) {
+  var p = str.split('-');
+  return p[2]+'/'+p[1];
+}
+
+function cor(e) { return CORES[e] ? CORES[e].hex : '#ccc'; }
+function label(e) { return CORES[e] ? CORES[e].label : e; }
+
+function mostrarMsg(txt, erro) {
+  var el = document.getElementById('msg');
+  el.textContent = (erro ? '⚠ ' : '✓ ') + txt;
+  el.className = 'msg ' + (erro ? 'err' : 'ok');
+  setTimeout(function(){ el.textContent=''; el.className='msg'; }, 2500);
+}
+
+function renderManta() {
+  var grid = document.getElementById('mantagrid');
+  grid.innerHTML = '';
+  dados.forEach(function(d) {
+    var fio = document.createElement('div');
+    fio.className = 'fio' + (d.feito ? '' : ' pendente');
+    fio.style.background = cor(d.emocao);
+    fio.addEventListener('click', function() {
+      var info = document.getElementById('fioInfo');
+      info.innerHTML = '<span style="color:'+cor(d.emocao)+';font-weight:600">●</span> '+fmtData(d.data)+' — '+label(d.emocao)+(d.feito?'':' <span style="color:#F97316">(pendente)</span>');
+    });
+    grid.appendChild(fio);
+  });
+}
+
+function renderLegenda() {
+  var wrap = document.getElementById('legenda');
+  wrap.innerHTML = '';
+  Object.keys(CORES).forEach(function(k) {
+    var item = document.createElement('div');
+    item.className = 'leg-item';
+    item.innerHTML = '<div class="leg-dot" style="background:'+CORES[k].hex+'"></div>'+CORES[k].label;
+    wrap.appendChild(item);
+  });
+}
+
+function renderTotais() {
+  var wrap = document.getElementById('totais');
+  wrap.innerHTML = '';
+  var total = dados.length;
+  var cont = {};
+  dados.forEach(function(d){ cont[d.emocao]=(cont[d.emocao]||0)+1; });
+  var lista = Object.keys(cont).sort(function(a,b){ return cont[b]-cont[a]; });
+  lista.forEach(function(k) {
+    var n = cont[k];
+    var pct = Math.round(n/total*100);
+    var div = document.createElement('div');
+    div.className = 'total-linha';
+    div.innerHTML =
+      '<div class="total-nome">'+label(k)+'</div>'+
+      '<div class="total-barra-wrap"><div class="total-barra" style="width:'+pct+'%;background:'+cor(k)+'"></div></div>'+
+      '<div class="total-num">'+n+'</div>'+
+      '<div class="total-pct">'+pct+'%</div>';
+    wrap.appendChild(div);
+  });
+}
+
+function renderStats() {
+  var total = dados.length;
+  var feitos = dados.filter(function(d){return d.feito;}).length;
+  var pend = total - feitos;
+  document.getElementById('stats').innerHTML =
+    total+' dias &nbsp;·&nbsp; '+feitos+' crocheteados &nbsp;·&nbsp; <span>'+pend+' pendentes</span>';
+}
+
+function renderMeses() {
+  var wrap = document.getElementById('mesesWrap');
+  wrap.innerHTML = '';
+  var porMes = {};
+  dados.forEach(function(d){
+    var p = d.data.split('-'); var ch = p[0]+'-'+p[1];
+    if(!porMes[ch]) porMes[ch]=[];
+    porMes[ch].push(d);
+  });
+  var chaves = Object.keys(porMes).sort(function(a,b){ return b>a?1:-1; });
+  chaves.forEach(function(ch) {
+    var dias = porMes[ch];
+    var p = ch.split('-');
+    var cont = {};
+    dias.forEach(function(d){ cont[d.emocao]=(cont[d.emocao]||0)+1; });
+
+    var mc = document.createElement('div');
+    mc.className = 'mes-card';
+
+    var barras = Object.keys(cont).map(function(k){
+      return '<div style="background:'+cor(k)+';flex:'+cont[k]+';height:8px"></div>';
+    }).join('');
+
+    var header = document.createElement('div');
+    header.className = 'mes-header';
+    header.innerHTML =
+      '<div class="mes-titulo">'+MESES[parseInt(p[1])-1]+' '+p[0]+'</div>'+
+      '<div class="mes-barrinhas">'+barras+'</div>'+
+      '<div class="mes-seta" id="seta-'+ch+'">'+(mesesAbertos[ch]?'▲':'▼')+'</div>';
+    header.addEventListener('click', function(){
+      mesesAbertos[ch] = !mesesAbertos[ch];
+      body.classList.toggle('aberto', mesesAbertos[ch]);
+      document.getElementById('seta-'+ch).textContent = mesesAbertos[ch]?'▲':'▼';
+    });
+
+    var body = document.createElement('div');
+    body.className = 'mes-body' + (mesesAbertos[ch] ? ' aberto' : '');
+
+    dias.forEach(function(d) {
+      var row = document.createElement('div');
+      row.className = 'dia-row';
+      row.innerHTML =
+        '<div class="dia-data">'+fmtData(d.data)+'</div>'+
+        '<div class="dia-bolinha" style="background:'+cor(d.emocao)+';opacity:'+(d.feito?1:0.35)+'"></div>'+
+        '<div class="dia-nome" style="color:'+(d.feito?'#2C2825':'#9B9088')+'">'+label(d.emocao)+'</div>';
+
+      if (!d.feito) {
+        var btnC = document.createElement('button');
+        btnC.className = 'btn-crocheteei';
+        btnC.textContent = '✓ crocheteei';
+        btnC.addEventListener('click', function(){
+          marcarFeito(d.data);
+        });
+        row.appendChild(btnC);
+      } else {
+        var ck = document.createElement('div');
+        ck.className = 'dia-check';
+        ck.textContent = '✓';
+        row.appendChild(ck);
+      }
+
+      var btnX = document.createElement('button');
+      btnX.className = 'btn-x';
+      btnX.textContent = '✕';
+      btnX.addEventListener('click', function(){
+        abrirModal(d.data);
+      });
+      row.appendChild(btnX);
+      body.appendChild(row);
+    });
+
+    mc.appendChild(header);
+    mc.appendChild(body);
+    wrap.appendChild(mc);
+  });
+}
+
+function render() {
+  ordenar();
+  renderManta();
+  renderLegenda();
+  renderTotais();
+  renderStats();
+  renderMeses();
+}
+
+function marcarFeito(dataStr) {
+  for(var i=0;i<dados.length;i++){
+    if(dados[i].data===dataStr){ dados[i].feito=true; break; }
+  }
+  salvar();
+  render();
+  mostrarMsg('Marcado como crocheteado!');
+}
+
+function registrar() {
+  var data = document.getElementById('novaData').value;
+  var emocao = document.getElementById('novaEmocao').value;
+  var feito = document.getElementById('novoStatus').value === 'feito';
+  if(!data||!emocao){ mostrarMsg('Preencha a data e a emoção.', true); return; }
+  var idx = -1;
+  for(var i=0;i<dados.length;i++){ if(dados[i].data===data){idx=i;break;} }
+  if(idx>=0){ dados[idx]={data:data,emocao:emocao,feito:feito}; }
+  else { dados.push({data:data,emocao:emocao,feito:feito}); }
+  salvar();
+  render();
+  document.getElementById('novaData').value='';
+  document.getElementById('novaEmocao').value='';
+  mostrarMsg('Dia registrado!');
+}
+
+function abrirModal(dataStr) {
+  dataParaApagar = dataStr;
+  document.getElementById('modalTitulo').textContent = 'Apagar '+fmtData(dataStr)+'?';
+  document.getElementById('modalOverlay').classList.add('visivel');
+}
+
+function fecharModal() {
+  dataParaApagar = null;
+  document.getElementById('modalOverlay').classList.remove('visivel');
+}
+
+function confirmarApagar() {
+  if(!dataParaApagar) return;
+  dados = dados.filter(function(d){ return d.data !== dataParaApagar; });
+  salvar();
+  render();
+  fecharModal();
+  mostrarMsg('Dia removido.');
+}
+
+carregar();
+render();
+</script>
+</body>
+</html>
