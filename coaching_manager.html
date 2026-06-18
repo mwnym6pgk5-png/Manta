@@ -12,7 +12,7 @@ body{font-family:Arial,sans-serif;font-size:13px;background:var(--bg);color:var(
 .hdr{background:var(--p);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px}
 .hdr-logo{font-size:17px;font-weight:bold;letter-spacing:.5px}
 .hdr-sub{font-size:11px;opacity:.75;margin-top:2px}
-.hdr-right{margin-left:auto;font-size:11px;opacity:.7}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:8px}
 .tabs{display:flex;gap:2px;background:var(--card);border-bottom:2px solid var(--brd);padding:0 20px;position:sticky;top:0;z-index:50}
 .tab{padding:10px 18px;cursor:pointer;font-weight:600;font-size:12px;color:var(--mut);border-bottom:3px solid transparent;margin-bottom:-2px;transition:.15s;white-space:nowrap;user-select:none}
 .tab.active{color:var(--p);border-bottom-color:var(--p)}
@@ -38,7 +38,6 @@ tr.dr:hover td{background:#F0F4FF}
 .sessions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;margin-top:8px}
 .sc{background:var(--bg);border:1px solid var(--brd);border-radius:6px;padding:8px 10px;font-size:11px}
 .sc.filled{border-color:#a8c4e0;background:#EFF5FB}
-.sc.noshow{opacity:.65}
 .sc-lbl{font-weight:600;color:var(--p);margin-bottom:2px;font-size:10px}
 .sc-val{color:var(--gf);font-weight:600}
 .sc-date{color:var(--mut)}
@@ -68,20 +67,51 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
 .tag{display:inline-block;background:var(--p);color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700;margin-left:4px;vertical-align:middle}
 .nr{text-align:right}
 .empty{color:var(--mut);text-align:center;padding:40px;font-style:italic}
-.alert{background:#C6EFCE;color:#006100;border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:12px;font-weight:600;display:none}
+.alert{border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:12px;font-weight:600;display:none}
+.alert-ok{background:#C6EFCE;color:#006100}
+.alert-err{background:#FFE0E0;color:#8B0000}
+/* Modal */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;align-items:center;justify-content:center}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:var(--r);padding:24px;width:420px;max-width:95vw;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.modal h3{color:var(--p);margin-bottom:12px}
+.modal p{font-size:12px;color:var(--mut);margin-bottom:14px;line-height:1.5}
+/* Sync status */
+.sync-badge{font-size:11px;padding:4px 10px;border-radius:12px;font-weight:600}
+.sync-ok{background:rgba(255,255,255,.2);color:#fff}
+.sync-warn{background:rgba(255,200,0,.3);color:#fff}
 @media(max-width:700px){.cards,.two-col{grid-template-columns:1fr 1fr}.fr,.fr3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
+<!-- Settings Modal -->
+<div class="modal-bg" id="modal-settings">
+  <div class="modal">
+    <h3>⚙️ Configurar sincronização</h3>
+    <p>Para sincronizar entre dispositivos, insira seu token do GitHub. Ele é salvo só neste dispositivo e nunca enviado a terceiros.</p>
+    <div class="fr1" style="margin-bottom:16px">
+      <div><label>Token do GitHub (ghp_...)</label>
+        <input type="text" id="token-input" placeholder="ghp_..." autocomplete="off">
+      </div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-p" onclick="saveToken()">Salvar token</button>
+      <button class="btn btn-o" onclick="closeModal()">Cancelar</button>
+      <button class="btn" style="margin-left:auto;background:#ffeaea;color:#8b0000;border:none" onclick="clearToken()">Remover token</button>
+    </div>
+  </div>
+</div>
+
 <div class="hdr">
   <div>
     <div class="hdr-logo">ADIGO Coaching</div>
     <div class="hdr-sub">Gestão de Coachees — 2025/2026</div>
   </div>
-  <div class="hdr-right" style="display:flex;align-items:center;gap:10px">
-    <span id="save-indicator" style="font-size:11px;opacity:.7">Dados: 17/06/2026</span>
+  <div class="hdr-right">
+    <span id="sync-status" class="sync-badge sync-ok">⏳ Carregando...</span>
+    <button class="btn" onclick="openModal()" style="background:rgba(255,255,255,.15);color:#fff;font-size:11px;padding:5px 10px;border:1px solid rgba(255,255,255,.3)">⚙️ Token</button>
     <button class="btn" onclick="exportHTML()" style="background:rgba(255,255,255,.15);color:#fff;font-size:11px;padding:5px 10px;border:1px solid rgba(255,255,255,.3)">💾 Exportar</button>
-    <button class="btn" onclick="resetData()" style="background:rgba(255,0,0,.2);color:#fff;font-size:11px;padding:5px 10px;border:1px solid rgba(255,100,100,.4)" title="Apagar dados salvos e voltar ao original">🔄 Resetar</button>
   </div>
 </div>
 
@@ -95,7 +125,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
 <div class="content">
   <div id="alert-box" class="alert"></div>
 
-  <!-- DASHBOARD -->
   <div id="pane-dashboard">
     <div class="cards" id="stat-cards"></div>
     <div class="two-col">
@@ -104,7 +133,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
     </div>
   </div>
 
-  <!-- COACHEES -->
   <div id="pane-coachees" style="display:none">
     <div class="filters">
       <input id="srch" type="text" placeholder="Buscar por nome..." style="width:200px" oninput="renderTable()">
@@ -127,7 +155,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
     </div>
   </div>
 
-  <!-- REGISTRAR -->
   <div id="pane-registrar" style="display:none">
     <div class="two-col">
       <div>
@@ -159,6 +186,19 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
         </div>
 
         <div class="form-panel">
+          <h3>✏️ Corrigir Dados de Coachee</h3>
+          <div class="fr">
+            <div><label>Coachee</label><select id="ed-nome" onchange="onEditChange()"><option value="">— selecionar —</option></select></div>
+            <div><label>Sessões Previstas</label><input type="number" id="ed-prev" placeholder="ex: 10"></div>
+          </div>
+          <div class="fr">
+            <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
+            <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option></select></div>
+          </div>
+          <button class="btn btn-p" onclick="editCoachee()">Salvar Correção</button>
+        </div>
+
+        <div class="form-panel">
           <h3>➕ Novo Coachee</h3>
           <div class="fr">
             <div><label>Nome</label><input type="text" id="nc-n" placeholder="Nome completo"></div>
@@ -174,37 +214,22 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
           </div>
           <button class="btn btn-p" onclick="addCoachee()">Adicionar Coachee</button>
         </div>
-
-        <div class="form-panel">
-          <h3>✏️ Corrigir Dados de Coachee</h3>
-          <div class="fr">
-            <div><label>Coachee</label><select id="ed-nome" onchange="onEditChange()"><option value="">— selecionar —</option></select></div>
-            <div><label>Sessões Previstas</label><input type="number" id="ed-prev" placeholder="ex: 10"></div>
-          </div>
-          <div class="fr">
-            <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
-            <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option></select></div>
-          </div>
-          <button class="btn btn-p" onclick="editCoachee()">Salvar Correção</button>
-        </div>
       </div>
 
       <div class="form-panel" style="height:fit-content">
         <h3>📋 Coachees Ativos — Próxima Sessão</h3>
-        <div id="open-list" style="max-height:620px;overflow-y:auto"></div>
+        <div id="open-list" style="max-height:700px;overflow-y:auto"></div>
       </div>
     </div>
   </div>
 
-  <!-- PENDÊNCIAS -->
   <div id="pane-pendencias" style="display:none">
     <div class="pending-box">
-      <h4 style="color:var(--p);margin-bottom:8px;font-size:14px">Atualizações pendentes para a planilha</h4>
-      <p style="font-size:11px;color:var(--mut);margin-bottom:12px">Clique em "Copiar mensagem" e envie para o Claude para atualizar a planilha Excel.</p>
-      <div id="pend-list"><div class="empty">Nenhuma atualização pendente ainda.</div></div>
+      <h4 style="color:var(--p);margin-bottom:8px;font-size:14px">Atualizações pendentes para a planilha Excel</h4>
+      <p style="font-size:11px;color:var(--mut);margin-bottom:12px">Copie a mensagem e envie para o Claude para atualizar o arquivo Excel.</p>
+      <div id="pend-list"><div class="empty">Nenhuma atualização pendente.</div></div>
       <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
         <button class="btn btn-g" onclick="copyMsg()">📋 Copiar mensagem para Claude</button>
-        <button class="btn btn-p" onclick="exportHTML()" style="background:#1a5276">💾 Baixar HTML atualizado</button>
         <button class="btn btn-o" onclick="clearPend()">Limpar pendências</button>
       </div>
       <div id="copy-area" style="display:none">
@@ -216,47 +241,123 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
 
 <script>
 const INITIAL_DATA = [{"nome": "Yuri Camargo (Ciclo 2 - novo ciclo)", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Em andamento", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 650, "data": "06/03/2026"}, {"label": "Sessão 02", "valor": 650, "data": "26/03/2026"}, {"label": "Sessão 03", "valor": 650, "data": "22/04/2026"}, {"label": "Sessão 04", "valor": 650, "data": "11/05/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Rafael Andrade Alves", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Em andamento", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": null, "data": null}, {"label": "Sessão 02", "valor": 650, "data": "16/01/2026"}, {"label": "Sessão 03", "valor": 650, "data": "05/03/2026"}, {"label": "Sessão 04", "valor": 650, "data": "22/04/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "José Newton Melo Junior", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Em andamento", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 650, "data": "16/01/2026"}, {"label": "Sessão 02", "valor": 650, "data": "20/03/2026"}, {"label": "Sessão 03", "valor": 650, "data": "02/04/2026"}, {"label": "Sessão 04", "valor": 650, "data": "22/04/2026 (no-show, cobrado)"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Rodrigo Vianna (Ciclo 2 - novo ciclo)", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Em andamento", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 650, "data": "25/05/2026"}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Nacib Hadad Bisneto", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Em andamento", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": null, "data": null}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": 650, "data": "23/02/2026"}, {"label": "Sessão 04", "valor": 650, "data": "09/03/2026"}, {"label": "Sessão 05", "valor": 650, "data": "27/04/2026 (extra)"}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Renan Campos De Carvalho", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Em andamento", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": 975, "data": "03/03/2026"}, {"label": "Sessão 01", "valor": 650, "data": "17/06/2026 (agendada)"}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Camila Silveira Martins Nogueira", "empresa": "Suzano", "contrato": "SUZANO - Coaching Executivo (Camila Silveira Martins Nogueira) - 1h30min, R$975/sessão", "status": "Em andamento", "previstas": 13, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": null, "data": null}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": 975, "data": "16/01/2026"}, {"label": "Sessão 08", "valor": 975, "data": "20/02/2026"}, {"label": "Sessão 09", "valor": 975, "data": "06/03/2026"}, {"label": "Sessão 10", "valor": 975, "data": "08/06/2026"}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Marcelo (Heating Cooling 2026)", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Mentoria de Liderança (contrato 2026) - R$1.950/sessão, 1h30min", "status": "Em andamento", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1950, "data": "18/05/2026"}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Jorge (Heating Cooling 2026)", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Mentoria de Liderança (contrato 2026) - R$1.950/sessão, 1h30min", "status": "Em andamento", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1950, "data": "01/04/2026"}, {"label": "Sessão 02", "valor": 1300, "data": "24/04/2026"}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Henrique Silveira Miranda Prado", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Mentoria de Liderança (contrato 2026) - R$1.950/sessão, 1h30min", "status": "Em andamento", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": 1250, "data": "30/03/2026 (Briefing Samira)"}, {"label": "Sessão 01", "valor": 1950, "data": "22/04/2026"}, {"label": "Sessão 02", "valor": 1950, "data": "30/04/2026"}, {"label": "Sessão 03", "valor": 1950, "data": "25/05/2026"}, {"label": "Sessão 04", "valor": 1950, "data": "11/06/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Felipe (Heating Cooling)", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Mentoria de Liderança (contrato 2026) - R$1.950/sessão, 1h30min", "status": "Em andamento", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1950, "data": "20/04/2026"}, {"label": "Sessão 02", "valor": 1950, "data": "30/04/2026"}, {"label": "Sessão 03", "valor": 1950, "data": "22/05/2026"}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "José Paladino Junior", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Mentoria de Liderança (contrato 2026) - R$1.950/sessão, 1h30min", "status": "Em andamento", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1950, "data": "18/05/2026"}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Daniel Nunan", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Mentoria de Liderança (contrato 2026) - R$1.950/sessão, 1h30min", "status": "Em andamento", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": 1250, "data": "06/05/2026 (Briefing Samira)"}, {"label": "Sessão 01", "valor": 1950, "data": "11/05/2026"}, {"label": "Sessão 02", "valor": 1950, "data": "25/05/2026"}, {"label": "Sessão 03", "valor": 1950, "data": "11/06/2026"}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Beatriz Brisotti", "empresa": "Particular (PF)", "contrato": "ADIGO Coaching (Beatriz Brisotti) - 10 sessões, R$18.000 total = R$1.800/sessão", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": 1800, "data": "04/07/2025"}, {"label": "Sessão 01", "valor": 1800, "data": "22/08/2025"}, {"label": "Sessão 02", "valor": 1800, "data": "30/01/2026"}, {"label": "Sessão 03", "valor": 1800, "data": "19/02/2026"}, {"label": "Sessão 04", "valor": 1800, "data": "26/05/2026"}, {"label": "Sessão 05", "valor": 1800, "data": "27/05/2026"}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Felipe Oliveira", "empresa": "Particular (PF)", "contrato": "ADIGO Coaching (Felipe Oliveira) - 10 sessões, R$20.400 total = R$2.040/sessão", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": 2040, "data": "11/06/2026"}, {"label": "Sessão 01", "valor": 2040, "data": "12/06/2026"}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Rennan Vilar", "empresa": "Todos Empreendimentos", "contrato": "Mentoria Executiva Individual (Rennan Vilar) - Todos Empreendimentos - pacote 10 sessões = R$13.800,00 (R$1.380/sessão)", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": 0, "data": "03/04/2025 (cortesia)"}, {"label": "Sessão 01", "valor": 1380, "data": "02/05/2025"}, {"label": "Sessão 02", "valor": 1380, "data": "05/11/2025"}, {"label": "Sessão 03", "valor": 1380, "data": "12/02/2026"}, {"label": "Sessão 04", "valor": 1380, "data": "28/05/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Bruno Cunha (Diretor Geral)", "empresa": "Grupo Alves da Cunha", "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessões/pessoa, R$1.000/sessão)", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1000, "data": "23/04/2026"}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Genésio Espírito Santo", "empresa": "Grupo Alves da Cunha", "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessões/pessoa, R$1.000/sessão)", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1000, "data": "27/02/2026"}, {"label": "Sessão 02", "valor": 1000, "data": "27/03/2026"}, {"label": "Sessão 03", "valor": 1000, "data": "30/04/2026"}, {"label": "Sessão 04", "valor": 1000, "data": "09/06/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Cassiano Motter", "empresa": "Grupo Alves da Cunha", "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessões/pessoa, R$1.000/sessão)", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1000, "data": "27/02/2026"}, {"label": "Sessão 02", "valor": 1000, "data": "26/03/2026"}, {"label": "Sessão 03", "valor": 1000, "data": "08/05/2026"}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Ione Santos", "empresa": "Grupo Alves da Cunha", "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessões/pessoa, R$1.000/sessão)", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1000, "data": "08/01/2026"}, {"label": "Sessão 02", "valor": 1000, "data": "05/02/2026"}, {"label": "Sessão 03", "valor": 1000, "data": "05/03/2026"}, {"label": "Sessão 04", "valor": 1000, "data": "02/04/2026"}, {"label": "Sessão 05", "valor": 1000, "data": "30/04/2026"}, {"label": "Sessão 06", "valor": 1000, "data": "11/06/2026"}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Carolina Coelho (Carol)", "empresa": "Grupo Alves da Cunha", "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessões/pessoa, R$1.000/sessão)", "status": "Em andamento", "previstas": 10, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1000, "data": "12/05/2026"}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "André Arruda", "empresa": "Chiesi", "contrato": "CHIESI - Coaching Executivo Individual (André Arruda) - jornada de 13 sessões (1h cada): contratação + 5 individuais + acompanhamento + 5 individuais + encerramento = R$8.450,00 (R$650/sessão)", "status": "Em andamento", "previstas": 13, "slots": [{"label": "Briefing/Devolutiva", "valor": 650, "data": "17/06/2026 (agendada) - sessão de contratação"}, {"label": "Sessão 01", "valor": null, "data": null}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Marcus Brandão (Oncoclínicas)", "empresa": "Oncoclínicas", "contrato": "Oncoclínicas - Coaching Executivo Individual (Marcus Brandão) - pacote 6 sessões + Coleta de Insights 360 + devolutiva, nível Gerente Executivo/Gerente - R$12.100,00 total", "status": "Standby", "previstas": 7, "slots": [{"label": "Briefing/Devolutiva", "valor": 12100, "data": "27/10/2025 (pacote completo: 360 + devolutiva + 6 sessões, nível Gerente)"}, {"label": "Sessão 01", "valor": null, "data": "04/02/2026 (Mentoria)"}, {"label": "Sessão 02", "valor": 0, "data": "06/03/2026 (no-show)"}, {"label": "Sessão 03", "valor": null, "data": null}, {"label": "Sessão 04", "valor": null, "data": null}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "André Tonetto Picarelli", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Concluído", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": 975, "data": "realizado em 2025"}, {"label": "Sessão 01", "valor": 650, "data": "realizado em 2025"}, {"label": "Sessão 02", "valor": 650, "data": "16/01/2026"}, {"label": "Sessão 03", "valor": 650, "data": "27/02/2026"}, {"label": "Sessão 04", "valor": 650, "data": "27/03/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Yuri Camargo (Ciclo 1)", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Concluído", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": null, "data": null}, {"label": "Sessão 02", "valor": 650, "data": "16/01/2026"}, {"label": "Sessão 03", "valor": 650, "data": "30/01/2026"}, {"label": "Sessão 04", "valor": 650, "data": "27/02/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Rodrigo Ferreira Braga", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Concluído", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": null, "data": null}, {"label": "Sessão 02", "valor": null, "data": null}, {"label": "Sessão 03", "valor": 650, "data": "12/01/2026"}, {"label": "Sessão 04", "valor": 0, "data": "13/02/2026 (no-show)"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Rodrigo Vianna (Ciclo 1)", "empresa": "PRIO", "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)", "status": "Concluído", "previstas": 5, "slots": [{"label": "Briefing/Devolutiva", "valor": 975, "data": "29/01/2026"}, {"label": "Sessão 01", "valor": 650, "data": "09/03/2026"}, {"label": "Sessão 02", "valor": 650, "data": "23/03/2026"}, {"label": "Sessão 03", "valor": 650, "data": "20/04/2026"}, {"label": "Sessão 04", "valor": 650, "data": "11/05/2026"}, {"label": "Sessão 05", "valor": null, "data": null}, {"label": "Sessão 06", "valor": null, "data": null}, {"label": "Sessão 07", "valor": null, "data": null}, {"label": "Sessão 08", "valor": null, "data": null}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Victor", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessão", "status": "Concluído", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1875, "data": "22/07/2025"}, {"label": "Sessão 02", "valor": 1875, "data": "31/07/2025"}, {"label": "Sessão 03", "valor": 1875, "data": "27/08/2025"}, {"label": "Sessão 04", "valor": 1875, "data": "18/09/2025"}, {"label": "Sessão 05", "valor": 1875, "data": "30/09/2025"}, {"label": "Sessão 06", "valor": 1875, "data": "21/10/2025"}, {"label": "Sessão 07", "valor": 1875, "data": "17/11/2025"}, {"label": "Sessão 08", "valor": 1875, "data": "26/11/2025"}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Marcelo (Heating Cooling 2025)", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessão", "status": "Concluído", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1875, "data": "14/07/2025"}, {"label": "Sessão 02", "valor": 1875, "data": "31/07/2025"}, {"label": "Sessão 03", "valor": 1875, "data": "15/08/2025"}, {"label": "Sessão 04", "valor": 1875, "data": "26/08/2025"}, {"label": "Sessão 05", "valor": 1875, "data": "19/09/2025"}, {"label": "Sessão 06", "valor": 1875, "data": "10/10/2025"}, {"label": "Sessão 07", "valor": 1875, "data": "03/11/2025"}, {"label": "Sessão 08", "valor": 1875, "data": "24/11/2025"}, {"label": "Sessão 09", "valor": null, "data": null}, {"label": "Sessão 10", "valor": null, "data": null}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": null, "data": null}]}, {"nome": "Roselaine", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessão", "status": "Concluído", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1875, "data": "07/07/2025"}, {"label": "Sessão 02", "valor": 1875, "data": "23/07/2025"}, {"label": "Sessão 03", "valor": 1875, "data": "04/08/2025"}, {"label": "Sessão 04", "valor": 1875, "data": "28/08/2025"}, {"label": "Sessão 05", "valor": 1875, "data": "17/09/2025"}, {"label": "Sessão 06", "valor": 1875, "data": "17-20/10/2025"}, {"label": "Sessão 07", "valor": 1875, "data": "03/11/2025"}, {"label": "Sessão 08", "valor": 1875, "data": "24/11/2025"}, {"label": "Sessão 09", "valor": 1875, "data": "12/12/2025"}, {"label": "Sessão 10", "valor": 1875, "data": "28/01/2026"}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": 5000, "data": "24/03/2026"}]}, {"nome": "Nilton", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessão", "status": "Concluído", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1875, "data": "11/07/2025"}, {"label": "Sessão 02", "valor": 1875, "data": "01/08/2025"}, {"label": "Sessão 03", "valor": 1875, "data": "21/08/2025"}, {"label": "Sessão 04", "valor": 1875, "data": "18/09/2025"}, {"label": "Sessão 05", "valor": 1875, "data": "30/09/2025"}, {"label": "Sessão 06", "valor": 1875, "data": "15-20/10/2025"}, {"label": "Sessão 07", "valor": 1875, "data": "07/11/2025"}, {"label": "Sessão 08", "valor": 1875, "data": "25/11/2025"}, {"label": "Sessão 09", "valor": 1875, "data": "12/01/2026"}, {"label": "Sessão 10", "valor": 1875, "data": "12/02/2026"}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": 1250, "data": "24/03/2026"}]}, {"nome": "Marinho", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessão", "status": "Concluído", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1875, "data": "14/07/2025"}, {"label": "Sessão 02", "valor": 1875, "data": "31/07/2025"}, {"label": "Sessão 03", "valor": 1875, "data": "15/08/2025"}, {"label": "Sessão 04", "valor": 1875, "data": "26/08/2025"}, {"label": "Sessão 05", "valor": 1875, "data": "19/09/2025"}, {"label": "Sessão 06", "valor": 1875, "data": "17-25/10/2025"}, {"label": "Sessão 07", "valor": 1875, "data": "07/11/2025"}, {"label": "Sessão 08", "valor": 1875, "data": "01/12/2025"}, {"label": "Sessão 09", "valor": 1875, "data": "08/01/2026"}, {"label": "Sessão 10", "valor": 1875, "data": "03/02/2026"}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": 1250, "data": "24/03/2026"}]}, {"nome": "Jorge (Heating Cooling 2025)", "empresa": "Heating Cooling", "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessão", "status": "Concluído", "previstas": 8, "slots": [{"label": "Briefing/Devolutiva", "valor": null, "data": null}, {"label": "Sessão 01", "valor": 1875, "data": "14/07/2025"}, {"label": "Sessão 02", "valor": 1875, "data": "31/07/2025"}, {"label": "Sessão 03", "valor": 1875, "data": "20/08/2025"}, {"label": "Sessão 04", "valor": 1875, "data": "17-20/10/2025"}, {"label": "Sessão 05", "valor": 1875, "data": "05/11/2025"}, {"label": "Sessão 06", "valor": 1875, "data": "25/11/2025"}, {"label": "Sessão 07", "valor": 1875, "data": "22/12/2025"}, {"label": "Sessão 08", "valor": 1875, "data": "03/02/2026"}, {"label": "Sessão 09", "valor": 1875, "data": "23/02/2026"}, {"label": "Sessão 10", "valor": 1875, "data": "16/03/2026"}, {"label": "Sessão 11", "valor": null, "data": null}, {"label": "Sessão 12", "valor": null, "data": null}, {"label": "Acompanhamento (Middle)", "valor": null, "data": null}, {"label": "Encerramento", "valor": 1250, "data": "06/05/2026"}]}];
+const REPO = 'mwnym6pgk5-png/Manta';
+const FILE = 'coaching_data.json';
+const RAW_URL = `https://raw.githubusercontent.com/${REPO}/main/${FILE}`;
+const API_URL = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
 
-// Restore from localStorage if available, otherwise use embedded data
-function loadData() {
+let data = [];
+const pending = [];
+let charts = {};
+let ghFileSha = null;
+
+// ── Token management ──
+function getToken(){ return localStorage.getItem('adigo_gh_token') || ''; }
+function openModal(){ document.getElementById('token-input').value = getToken(); document.getElementById('modal-settings').classList.add('open'); }
+function closeModal(){ document.getElementById('modal-settings').classList.remove('open'); }
+function saveToken(){
+  const t = document.getElementById('token-input').value.trim();
+  if(t) localStorage.setItem('adigo_gh_token', t);
+  closeModal();
+  showAlert('✅ Token salvo! Sincronizando...', 'ok');
+  saveData();
+}
+function clearToken(){
+  if(!confirm('Remover token? As alterações deixarão de sincronizar com GitHub.')) return;
+  localStorage.removeItem('adigo_gh_token');
+  closeModal();
+  showAlert('Token removido. Dados salvos apenas neste dispositivo.', 'err');
+}
+
+// ── Load data ──
+async function loadData(){
+  setSyncStatus('⏳ Carregando...', false);
   try {
-    const saved = localStorage.getItem('adigo_coaching_data');
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      // Basic validation: must be an array with nome field
-      if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].nome) return parsed;
+    const resp = await fetch(RAW_URL + '?t=' + Date.now());
+    if(resp.ok){
+      const ghData = await resp.json();
+      if(Array.isArray(ghData) && ghData.length > 0 && ghData[0].nome){
+        // Also get SHA for future updates
+        const meta = await fetch(API_URL, {headers: getToken() ? {'Authorization': `token ${getToken()}`} : {}}).then(r=>r.json()).catch(()=>({}));
+        ghFileSha = meta.sha || null;
+        setSyncStatus('☁️ Sincronizado', true);
+        return ghData;
+      }
     }
   } catch(e) {}
+  // Fallback to localStorage
+  try {
+    const saved = localStorage.getItem('adigo_coaching_data');
+    if(saved){
+      const parsed = JSON.parse(saved);
+      if(Array.isArray(parsed) && parsed.length > 0 && parsed[0].nome){
+        setSyncStatus('💾 Local (sem sync)', false);
+        return parsed;
+      }
+    }
+  } catch(e) {}
+  setSyncStatus('📦 Dados iniciais', false);
   return JSON.parse(JSON.stringify(INITIAL_DATA));
 }
 
-let data = loadData();
-const pending = [];
-let charts = {};
-
-// Save to localStorage after every change
-function saveData() {
+// ── Save data ──
+async function saveData(){
+  // Always save locally
+  try { localStorage.setItem('adigo_coaching_data', JSON.stringify(data)); } catch(e) {}
+  const token = getToken();
+  if(!token){
+    setSyncStatus('💾 Salvo localmente', false);
+    return;
+  }
+  setSyncStatus('⏫ Sincronizando...', false);
   try {
-    localStorage.setItem('adigo_coaching_data', JSON.stringify(data));
-    const el = document.getElementById('save-indicator');
-    if(el){ el.textContent = '✅ Salvo automaticamente'; setTimeout(()=>{ el.textContent='Dados: 17/06/2026'; },2500); }
-  } catch(e) {}
+    // Refresh SHA if needed
+    if(!ghFileSha){
+      const meta = await fetch(API_URL, {headers:{'Authorization':`token ${token}`}}).then(r=>r.json());
+      ghFileSha = meta.sha;
+    }
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+    const resp = await fetch(API_URL, {
+      method:'PUT',
+      headers:{'Authorization':`token ${token}`,'Content-Type':'application/json','Accept':'application/vnd.github+json'},
+      body: JSON.stringify({message:'Atualizar dados coaching',content,sha:ghFileSha})
+    });
+    if(resp.ok){
+      const result = await resp.json();
+      ghFileSha = result.content.sha;
+      setSyncStatus('☁️ Sincronizado', true);
+    } else {
+      setSyncStatus('⚠️ Erro ao sincronizar', false);
+    }
+  } catch(e) {
+    setSyncStatus('⚠️ Sem conexão', false);
+  }
 }
 
-function resetData(){
-  if(!confirm('Tem certeza? Isso apaga todas as atualizações salvas e volta para os dados originais.')) return;
-  try { localStorage.removeItem('adigo_coaching_data'); } catch(e) {}
-  data = JSON.parse(JSON.stringify(INITIAL_DATA));
-  renderDashboard();
-  showAlert('✅ Dados resetados para os originais.');
+function setSyncStatus(msg, ok){
+  const el = document.getElementById('sync-status');
+  el.textContent = msg;
+  el.className = 'sync-badge ' + (ok ? 'sync-ok' : 'sync-warn');
 }
 
-// Tabs
-document.querySelectorAll('.tab').forEach(t => {
-  t.addEventListener('click', () => {
-    const id = t.dataset.tab;
-    document.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x===t));
-    document.querySelectorAll('[id^="pane-"]').forEach(p => p.style.display='none');
+// ── Helpers ──
+const fmtBRL = v => v==null?'—':'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2});
+const BCLS = {'Em andamento':'b-em','Concluído':'b-co','Standby':'b-st','A iniciar':'b-ai'};
+function badge(st){ return `<span class="badge ${BCLS[st]||'b-st'}">${st}</span>`; }
+function realized(c){ return c.slots.filter(s=>s.valor!=null||s.data!=null).length; }
+function totalVal(c){ return c.slots.reduce((a,s)=>a+(s.valor||0),0); }
+function showAlert(msg, type='ok'){
+  const el=document.getElementById('alert-box');
+  el.textContent=msg; el.className='alert alert-'+(type==='err'?'err':'ok'); el.style.display='block';
+  setTimeout(()=>el.style.display='none',3500);
+}
+
+// ── Tabs ──
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    const id=t.dataset.tab;
+    document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===t));
+    document.querySelectorAll('[id^="pane-"]').forEach(p=>p.style.display='none');
     document.getElementById('pane-'+id).style.display='';
     if(id==='dashboard') renderDashboard();
     if(id==='coachees') renderTable();
@@ -265,19 +366,7 @@ document.querySelectorAll('.tab').forEach(t => {
   });
 });
 
-// Helpers
-const fmtBRL = v => v==null?'—':'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2});
-const BCLS = {'Em andamento':'b-em','Concluído':'b-co','Standby':'b-st','A iniciar':'b-ai'};
-function badge(st){ return `<span class="badge ${BCLS[st]||'b-st'}">${st}</span>`; }
-function realized(c){ return c.slots.filter(s=>s.valor!=null||s.data!=null).length; }
-function totalVal(c){ return c.slots.reduce((a,s)=>a+(s.valor||0),0); }
-function showAlert(msg){
-  const el=document.getElementById('alert-box');
-  el.textContent=msg; el.style.display='block';
-  setTimeout(()=>el.style.display='none',3000);
-}
-
-// Dashboard
+// ── Dashboard ──
 function renderDashboard(){
   const em=data.filter(c=>c.status==='Em andamento').length;
   const co=data.filter(c=>c.status==='Concluído').length;
@@ -288,7 +377,6 @@ function renderDashboard(){
     <div class="card" style="border-color:#006100"><div class="card-val" style="color:#006100">${co}</div><div class="card-lbl">Concluídos</div></div>
     <div class="card" style="border-color:#595959"><div class="card-val" style="color:#595959">${st}</div><div class="card-lbl">Standby / A iniciar</div></div>
     <div class="card"><div class="card-val">R$ ${Math.round(tot/1000)}k</div><div class="card-lbl">Total realizado (${data.length} coachees)</div></div>`;
-
   const emp={};
   data.forEach(c=>{
     if(!emp[c.empresa]) emp[c.empresa]={r:0,p:0};
@@ -297,30 +385,23 @@ function renderDashboard(){
   const empresas=Object.keys(emp).filter(Boolean);
   if(charts.emp) charts.emp.destroy();
   charts.emp=new Chart(document.getElementById('ch-empresa'),{
-    type:'bar',
-    data:{labels:empresas,datasets:[
+    type:'bar',data:{labels:empresas,datasets:[
       {label:'Realizadas',data:empresas.map(e=>emp[e].r),backgroundColor:'#2F5496'},
       {label:'Previstas',data:empresas.map(e=>emp[e].p),backgroundColor:'#BDD7EE'}
     ]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{labels:{font:{size:10}}}},
-      scales:{x:{ticks:{font:{size:9}}},y:{ticks:{font:{size:10}}}}}
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:10}}}},scales:{x:{ticks:{font:{size:9}}},y:{ticks:{font:{size:10}}}}}
   });
-
   const sts={'Em andamento':0,'Concluído':0,'Standby':0,'A iniciar':0};
   data.forEach(c=>{ if(c.status in sts) sts[c.status]++; });
   if(charts.st) charts.st.destroy();
   charts.st=new Chart(document.getElementById('ch-status'),{
-    type:'doughnut',
-    data:{labels:Object.keys(sts),datasets:[{data:Object.values(sts),
-      backgroundColor:['#BDD7EE','#C6EFCE','#D9D9D9','#FFE699'],
-      borderColor:['#1F4E78','#006100','#595959','#9C5700'],borderWidth:2}]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:'bottom',labels:{font:{size:10}}}}}
+    type:'doughnut',data:{labels:Object.keys(sts),datasets:[{data:Object.values(sts),
+      backgroundColor:['#BDD7EE','#C6EFCE','#D9D9D9','#FFE699'],borderColor:['#1F4E78','#006100','#595959','#9C5700'],borderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10}}}}}
   });
 }
 
-// Table
+// ── Table ──
 function renderTable(){
   const q=document.getElementById('srch').value.toLowerCase();
   const fs=document.getElementById('f-st').value;
@@ -328,12 +409,10 @@ function renderTable(){
   const sel=document.getElementById('f-emp');
   if(sel.options.length<=1){
     [...new Set(data.map(c=>c.empresa).filter(Boolean))].sort().forEach(e=>{
-      const o=document.createElement('option'); o.value=o.textContent=e; sel.appendChild(o);
+      const o=document.createElement('option');o.value=o.textContent=e;sel.appendChild(o);
     });
   }
-  const rows=data.filter(c=>
-    (!q||c.nome.toLowerCase().includes(q)||c.empresa.toLowerCase().includes(q))&&
-    (!fs||c.status===fs)&&(!fe||c.empresa===fe));
+  const rows=data.filter(c=>(!q||c.nome.toLowerCase().includes(q)||c.empresa.toLowerCase().includes(q))&&(!fs||c.status===fs)&&(!fe||c.empresa===fe));
   document.getElementById('cnt-lbl').textContent=`${rows.length} de ${data.length}`;
   document.getElementById('tbl-body').innerHTML=rows.map(c=>{
     const idx=data.indexOf(c);
@@ -341,27 +420,21 @@ function renderTable(){
     const pct=p?Math.min(Math.round(r/p*100),100):0;
     const tv=totalVal(c);
     return `<tr class="dr" onclick="toggleDetail(${idx})">
-      <td style="font-weight:600">${c.nome}</td>
-      <td style="font-size:11px">${c.empresa||'—'}</td>
-      <td>${badge(c.status)}</td>
-      <td class="nr">${p||'—'}</td><td class="nr">${r}</td>
+      <td style="font-weight:600">${c.nome}</td><td style="font-size:11px">${c.empresa||'—'}</td>
+      <td>${badge(c.status)}</td><td class="nr">${p||'—'}</td><td class="nr">${r}</td>
       <td><div style="display:flex;align-items:center;gap:6px">
         <div class="pbar" style="flex:1"><div class="pbar-f" style="width:${pct}%"></div></div>
         <span style="font-size:11px;color:var(--mut);min-width:30px">${pct}%</span></div></td>
       <td class="nr" style="font-weight:600">${tv>0?fmtBRL(tv):'—'}</td>
     </tr>
-    <tr><td colspan="7" style="padding:0">
-      <div class="detail-inner" id="det-${idx}">${buildDetail(c)}</div>
-    </td></tr>`;
+    <tr><td colspan="7" style="padding:0"><div class="detail-inner" id="det-${idx}">${buildDetail(c)}</div></td></tr>`;
   }).join('')||`<tr><td colspan="7" class="empty">Nenhum coachee encontrado.</td></tr>`;
 }
 
 function buildDetail(c){
   const sesHtml=c.slots.map(s=>{
     if(!s.valor&&!s.data) return '';
-    const ns=s.data&&s.data.toLowerCase().includes('no-show');
-    return `<div class="sc ${ns?'noshow':'filled'}">
-      <div class="sc-lbl">${s.label}</div>
+    return `<div class="sc filled"><div class="sc-lbl">${s.label}</div>
       ${s.valor!=null?`<div class="sc-val">${fmtBRL(s.valor)}</div>`:''}
       ${s.data?`<div class="sc-date">${s.data}</div>`:''}
     </div>`;
@@ -375,11 +448,11 @@ function toggleDetail(idx){
   el.style.display=el.style.display==='block'?'none':'block';
 }
 
-// Register
+// ── Register ──
 function renderRegister(){
   const opts=data.map((c,i)=>`<option value="${i}">${c.nome} (${c.empresa})</option>`).join('');
   ['rn','stn','ed-nome'].forEach(id=>{
-    const s=document.getElementById(id), prev=s.value;
+    const s=document.getElementById(id),prev=s.value;
     s.innerHTML=`<option value="">— selecionar —</option>${opts}`;
     if(prev) s.value=prev;
   });
@@ -413,106 +486,6 @@ function onCoacheeChange(){
   if(fe>=0) sel.value=fe;
 }
 
-function addSessao(){
-  const idx=document.getElementById('rn').value;
-  const si=document.getElementById('rs').value;
-  const dt=document.getElementById('rd').value.trim();
-  const vl=document.getElementById('rv').value;
-  const ob=document.getElementById('ro').value.trim();
-  if(!idx||si===''||!dt){alert('Preencha: coachee, sessão e data.');return;}
-  const c=data[idx], slot=c.slots[si];
-  const dateStr=dt+(ob?` (${ob})`:'');
-  const valor=vl!==''?Number(vl):null;
-  slot.data=dateStr; slot.valor=valor;
-  pending.push({tipo:'sessao',nome:c.nome,sessao:slot.label,data:dateStr,valor});
-  saveData();
-  updatePendCount();
-  document.getElementById('rd').value='';
-  document.getElementById('rv').value='';
-  document.getElementById('ro').value='';
-  onCoacheeChange();
-  renderRegister();
-  showAlert(`✅ Registrado: ${c.nome} — ${slot.label} em ${dateStr}`);
-}
-
-function addStatusChange(){
-  const idx=document.getElementById('stn').value;
-  const ns=document.getElementById('sts').value;
-  if(!idx){alert('Selecione o coachee.');return;}
-  const c=data[idx], old=c.status;
-  c.status=ns;
-  pending.push({tipo:'status',nome:c.nome,de:old,para:ns});
-  saveData();
-  updatePendCount();
-  renderRegister();
-  showAlert(`✅ Status: ${c.nome} → ${ns}`);
-}
-
-function addCoachee(){
-  const nome=document.getElementById('nc-n').value.trim();
-  const emp=document.getElementById('nc-e').value.trim();
-  const cont=document.getElementById('nc-c').value.trim();
-  const prev=document.getElementById('nc-p').value;
-  const st=document.getElementById('nc-s').value;
-  const obs=document.getElementById('nc-o').value.trim();
-  if(!nome||!emp||!cont){alert('Preencha nome, empresa e contrato.');return;}
-  data.push({nome,empresa:emp,contrato:cont,status:st,previstas:prev?Number(prev):null,
-    slots:[{label:'Briefing/Devolutiva',valor:null,data:null},
-      ...Array.from({length:12},(_,i)=>(({label:`Sessão ${String(i+1).padStart(2,'0')}`,valor:null,data:null}))),
-      {label:'Acompanhamento (Middle)',valor:null,data:null},
-      {label:'Encerramento',valor:null,data:null}]});
-  pending.push({tipo:'novo',nome,empresa:emp,contrato:cont,previstas:prev||'?',status:st,obs});
-  saveData();
-  updatePendCount();
-  ['nc-n','nc-e','nc-c','nc-p','nc-o'].forEach(id=>document.getElementById(id).value='');
-  renderRegister();
-  showAlert(`✅ Coachee adicionado: ${nome}`);
-}
-
-function updatePendCount(){
-  const n=pending.length;
-  const el=document.getElementById('pend-count');
-  el.textContent=n; el.style.display=n?'inline-block':'none';
-}
-
-function renderPending(){
-  if(!pending.length){document.getElementById('pend-list').innerHTML='<div class="empty">Nenhuma atualização pendente.</div>';return;}
-  document.getElementById('pend-list').innerHTML=pending.map(p=>{
-    if(p.tipo==='sessao') return `<div class="pi"><div class="pi-a">📅 Nova sessão — ${p.nome}</div><div class="pi-d">${p.sessao} · ${p.data}${p.valor!=null?' · '+fmtBRL(p.valor):''}</div></div>`;
-    if(p.tipo==='status') return `<div class="pi"><div class="pi-a">🔄 Alterar status — ${p.nome}</div><div class="pi-d">${p.de} → ${p.para}</div></div>`;
-    if(p.tipo==='novo') return `<div class="pi"><div class="pi-a">➕ Novo coachee — ${p.nome}</div><div class="pi-d">${p.empresa} · Previstas: ${p.previstas} · Status: ${p.status}</div></div>`;
-    if(p.tipo==='correcao') return `<div class="pi"><div class="pi-a">✏️ Correção — ${p.nome}</div><div class="pi-d">${p.changes.join(' · ')}</div></div>`;
-  }).join('');
-}
-
-function buildMsg(){
-  if(!pending.length) return 'Nenhuma atualização pendente.';
-  const lines=['Atualizações para a planilha de coaching:\n'];
-  pending.forEach((p,i)=>{
-    if(p.tipo==='sessao') lines.push(`${i+1}. ${p.nome} — ${p.sessao}: data=${p.data}${p.valor!=null?', valor=R$'+p.valor:''}`);
-    else if(p.tipo==='status') lines.push(`${i+1}. Alterar status de "${p.nome}": ${p.de} → ${p.para}`);
-    else if(p.tipo==='novo') lines.push(`${i+1}. Novo coachee: ${p.nome}, empresa=${p.empresa}, previstas=${p.previstas}, status=${p.status}\n   Contrato: ${p.contrato}${p.obs?'\n   Obs: '+p.obs:''}`);
-    else if(p.tipo==='correcao') lines.push(`${i+1}. Correção — ${p.nome}: ${p.changes.join('; ')}`);
-  });
-  return lines.join('\n');
-}
-
-function copyMsg(){
-  const msg=buildMsg();
-  navigator.clipboard.writeText(msg).catch(()=>{});
-  document.getElementById('copy-area').style.display='block';
-  document.getElementById('msg-txt').textContent=msg;
-  showAlert('✅ Mensagem copiada! Cole no chat do Claude.');
-}
-
-function clearPend(){
-  if(!pending.length||!confirm('Limpar todas as pendências?')) return;
-  pending.length=0;
-  updatePendCount();
-  document.getElementById('copy-area').style.display='none';
-  renderPending();
-}
-
 function onEditChange(){
   const idx=document.getElementById('ed-nome').value;
   if(!idx) return;
@@ -521,6 +494,36 @@ function onEditChange(){
   document.getElementById('ed-emp').value=c.empresa||'';
   const st=document.getElementById('ed-st');
   [...st.options].forEach(o=>o.selected=o.value===c.status);
+}
+
+function addSessao(){
+  const idx=document.getElementById('rn').value;
+  const si=document.getElementById('rs').value;
+  const dt=document.getElementById('rd').value.trim();
+  const vl=document.getElementById('rv').value;
+  const ob=document.getElementById('ro').value.trim();
+  if(!idx||si===''||!dt){alert('Preencha: coachee, sessão e data.');return;}
+  const c=data[idx],slot=c.slots[si];
+  const dateStr=dt+(ob?` (${ob})`:'');
+  slot.data=dateStr; slot.valor=vl!==''?Number(vl):null;
+  pending.push({tipo:'sessao',nome:c.nome,sessao:slot.label,data:dateStr,valor:slot.valor});
+  updatePendCount();
+  document.getElementById('rd').value='';document.getElementById('rv').value='';document.getElementById('ro').value='';
+  onCoacheeChange(); renderRegister();
+  showAlert(`✅ Registrado: ${c.nome} — ${slot.label}`);
+  saveData();
+}
+
+function addStatusChange(){
+  const idx=document.getElementById('stn').value;
+  const ns=document.getElementById('sts').value;
+  if(!idx){alert('Selecione o coachee.');return;}
+  const c=data[idx],old=c.status;
+  c.status=ns;
+  pending.push({tipo:'status',nome:c.nome,de:old,para:ns});
+  updatePendCount(); renderRegister();
+  showAlert(`✅ Status: ${c.nome} → ${ns}`);
+  saveData();
 }
 
 function editCoachee(){
@@ -536,38 +539,103 @@ function editCoachee(){
   if(st!==c.status){changes.push(`status: ${c.status} → ${st}`);c.status=st;}
   if(!changes.length){alert('Nenhuma alteração detectada.');return;}
   pending.push({tipo:'correcao',nome:c.nome,changes});
+  updatePendCount(); renderRegister();
+  showAlert('✅ Correção salva: '+c.nome);
   saveData();
+}
+
+function addCoachee(){
+  const nome=document.getElementById('nc-n').value.trim();
+  const emp=document.getElementById('nc-e').value.trim();
+  const cont=document.getElementById('nc-c').value.trim();
+  const prev=document.getElementById('nc-p').value;
+  const st=document.getElementById('nc-s').value;
+  const obs=document.getElementById('nc-o').value.trim();
+  if(!nome||!emp||!cont){alert('Preencha nome, empresa e contrato.');return;}
+  data.push({nome,empresa:emp,contrato:cont,status:st,previstas:prev?Number(prev):null,
+    slots:[{label:'Briefing/Devolutiva',valor:null,data:null},
+      ...Array.from({length:12},(_,i)=>({label:`Sessão ${String(i+1).padStart(2,'0')}`,valor:null,data:null})),
+      {label:'Acompanhamento (Middle)',valor:null,data:null},{label:'Encerramento',valor:null,data:null}]});
+  pending.push({tipo:'novo',nome,empresa:emp,contrato:cont,previstas:prev||'?',status:st,obs});
   updatePendCount();
+  ['nc-n','nc-e','nc-c','nc-p','nc-o'].forEach(id=>document.getElementById(id).value='');
   renderRegister();
-  showAlert('✅ Correção registrada: '+c.nome);
+  showAlert(`✅ Coachee adicionado: ${nome}`);
+  saveData();
+}
+
+function updatePendCount(){
+  const n=pending.length;
+  const el=document.getElementById('pend-count');
+  el.textContent=n;el.style.display=n?'inline-block':'none';
+}
+
+function renderPending(){
+  if(!pending.length){document.getElementById('pend-list').innerHTML='<div class="empty">Nenhuma atualização pendente.</div>';return;}
+  document.getElementById('pend-list').innerHTML=pending.map(p=>{
+    if(p.tipo==='sessao') return `<div class="pi"><div class="pi-a">📅 Nova sessão — ${p.nome}</div><div class="pi-d">${p.sessao} · ${p.data}${p.valor!=null?' · '+fmtBRL(p.valor):''}</div></div>`;
+    if(p.tipo==='status') return `<div class="pi"><div class="pi-a">🔄 Status — ${p.nome}</div><div class="pi-d">${p.de} → ${p.para}</div></div>`;
+    if(p.tipo==='novo') return `<div class="pi"><div class="pi-a">➕ Novo coachee — ${p.nome}</div><div class="pi-d">${p.empresa} · Previstas: ${p.previstas}</div></div>`;
+    if(p.tipo==='correcao') return `<div class="pi"><div class="pi-a">✏️ Correção — ${p.nome}</div><div class="pi-d">${p.changes.join(' · ')}</div></div>`;
+  }).join('');
+}
+
+function buildMsg(){
+  if(!pending.length) return 'Nenhuma atualização pendente.';
+  const lines=['Atualizações para a planilha de coaching:\n'];
+  pending.forEach((p,i)=>{
+    if(p.tipo==='sessao') lines.push(`${i+1}. ${p.nome} — ${p.sessao}: data=${p.data}${p.valor!=null?', valor=R$'+p.valor:''}`);
+    else if(p.tipo==='status') lines.push(`${i+1}. Status de "${p.nome}": ${p.de} → ${p.para}`);
+    else if(p.tipo==='novo') lines.push(`${i+1}. Novo coachee: ${p.nome}, empresa=${p.empresa}, previstas=${p.previstas}\n   Contrato: ${p.contrato}`);
+    else if(p.tipo==='correcao') lines.push(`${i+1}. Correção — ${p.nome}: ${p.changes.join('; ')}`);
+  });
+  return lines.join('\n');
+}
+
+function copyMsg(){
+  const msg=buildMsg();
+  navigator.clipboard.writeText(msg).catch(()=>{});
+  document.getElementById('copy-area').style.display='block';
+  document.getElementById('msg-txt').textContent=msg;
+  showAlert('✅ Mensagem copiada!');
+}
+
+function clearPend(){
+  if(!pending.length||!confirm('Limpar todas as pendências?')) return;
+  pending.length=0; updatePendCount();
+  document.getElementById('copy-area').style.display='none';
+  renderPending();
 }
 
 function exportHTML(){
   try{
-    const src = document.documentElement.outerHTML;
-    const newData = JSON.stringify(data, null, 0);
-    // Replace INITIAL_DATA with current in-memory state
-    const updated = src.replace(
-      /const INITIAL_DATA = \[\s\S]*?\];/,
-      'const INITIAL_DATA = ' + newData + ';'
-    );
-    const blob = new Blob(['<!DOCTYPE html>\n' + updated], {type:'text/html;charset=utf-8'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    const d = new Date().toLocaleDateString('pt-BR').replace(/\//g,'-');
-    a.download = 'coaching_manager_' + d + '.html';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
-    showAlert('✅ Arquivo baixado! Abra-o em qualquer navegador para ver seus dados atualizados.');
-  } catch(e){
-    alert('Erro ao exportar: ' + e.message);
+    const src=document.documentElement.outerHTML;
+    const updated=src.replace(/const INITIAL_DATA = \[\s\S]*?\];/,'const INITIAL_DATA = '+JSON.stringify(data)+';');
+    const blob=new Blob(['<!DOCTYPE html>\n'+updated],{type:'text/html;charset=utf-8'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='coaching_manager_'+new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')+'.html';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  }catch(e){alert('Erro: '+e.message);}
+}
+
+// ── Init ──
+async function init(){
+  data = await loadData();
+  // If token exists, push current INITIAL_DATA to GitHub on first load if GitHub has placeholder
+  if(getToken() && (!data[0] || !data[0].nome)) {
+    data = JSON.parse(JSON.stringify(INITIAL_DATA));
+    await saveData();
+  }
+  renderDashboard();
+  // Show token prompt if not configured
+  if(!getToken()){
+    setTimeout(()=>showAlert('⚙️ Configure seu token GitHub para sincronizar entre dispositivos — clique em "Token" no canto superior direito.','err'),1000);
   }
 }
 
-// Init
-renderDashboard();
+init();
 </script>
 </body>
 </html>
