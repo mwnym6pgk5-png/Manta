@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADIGO — Gestão de Coachees</title>
@@ -109,7 +108,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
     <div class="hdr-sub">Gestão de Coachees — 2025/2026</div>
   </div>
   <div class="hdr-right">
-    <span id="sync-status" class="sync-badge sync-ok">⏳ Carregando...</span>
+    <span id="sync-status" class="sync-badge sync-ok">☁️ Sincronizado</span>
     <button class="btn" onclick="openModal()" style="background:rgba(255,255,255,.15);color:#fff;font-size:11px;padding:5px 10px;border:1px solid rgba(255,255,255,.3)">⚙️ Token</button>
     <button class="btn" onclick="exportHTML()" style="background:rgba(255,255,255,.15);color:#fff;font-size:11px;padding:5px 10px;border:1px solid rgba(255,255,255,.3)">💾 Exportar</button>
   </div>
@@ -126,10 +125,14 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
   <div id="alert-box" class="alert"></div>
 
   <div id="pane-dashboard">
-    <div class="cards" id="stat-cards"></div>
+    <div class="cards" id="stat-cards">
+    <div class="card" style="border-color:#1F4E78"><div class="card-val" style="color:#1F4E78">19</div><div class="card-lbl">Em Andamento</div></div>
+    <div class="card" style="border-color:#006100"><div class="card-val" style="color:#006100">13</div><div class="card-lbl">Concluídos</div></div>
+    <div class="card" style="border-color:#595959"><div class="card-val" style="color:#595959">1</div><div class="card-lbl">Standby / A iniciar</div></div>
+    <div class="card"><div class="card-val">R$ 229k</div><div class="card-lbl">Total realizado (33 coachees)</div></div></div>
     <div class="two-col">
-      <div class="chart-wrap"><h3>Progresso por Empresa</h3><div class="chart-container"><canvas id="ch-empresa"></canvas></div></div>
-      <div class="chart-wrap"><h3>Distribuição por Status</h3><div class="chart-container"><canvas id="ch-status"></canvas></div></div>
+      <div class="chart-wrap"><h3>Progresso por Empresa</h3><div class="chart-container"><canvas id="ch-empresa" width="1262" height="400" style="display: block; box-sizing: border-box; height: 200px; width: 631px;"></canvas></div></div>
+      <div class="chart-wrap"><h3>Distribuição por Status</h3><div class="chart-container"><canvas id="ch-status" width="1262" height="400" style="display: block; box-sizing: border-box; height: 200px; width: 631px;"></canvas></div></div>
     </div>
   </div>
 
@@ -195,7 +198,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
             <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
             <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option></select></div>
           </div>
-          <button class="btn btn-p" onclick="editCoachee()">Salvar Correção</button>
+          <button class="btn btn-p" onclick="editCoachee()">Salvar Correção</button> <button class="btn" style="background:#ffeaea;color:#8b0000;border:1px solid #8b0000;margin-left:8px" onclick="deleteCoachee()">🗑️ Excluir Coachee</button>
         </div>
 
         <div class="form-panel">
@@ -544,6 +547,24 @@ function editCoachee(){
   saveData();
 }
 
+
+function deleteCoachee(){
+  var idx=document.getElementById('ed-nome').value;
+  if(idx===''){alert('Selecione o coachee.');return;}
+  var c=data[idx];
+  if(!c) return;
+  if(!confirm('Excluir definitivamente "'+c.nome+'"? Esta ação não pode ser desfeita.')) return;
+  data.splice(idx,1);
+  pending.push({tipo:'correcao',nome:c.nome,changes:['EXCLUÍDO DA LISTA DE COACHEES']});
+  updatePendCount();
+  document.getElementById('ed-nome').value='';
+  document.getElementById('ed-prev').value='';
+  document.getElementById('ed-emp').value='';
+  renderRegister(); renderTable(); renderDashboard();
+  showAlert('🗑️ Coachee excluído: '+c.nome,'err');
+  saveData();
+}
+
 function addCoachee(){
   const nome=document.getElementById('nc-n').value.trim();
   const emp=document.getElementById('nc-e').value.trim();
@@ -637,5 +658,5 @@ async function init(){
 
 init();
 </script>
-</body>
-</html>
+
+</body></html>
