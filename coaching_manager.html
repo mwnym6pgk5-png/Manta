@@ -28,7 +28,7 @@ body{font-family:Arial,sans-serif;font-size:13px;background:var(--bg);color:var(
 .filters input:focus,.filters select:focus{border-color:var(--p)}
 .tbl-wrap{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
 table{width:100%;border-collapse:collapse}
-th{background:var(--p);color:#fff;padding:9px 10px;text-align:left;font-size:11px;font-weight:700;white-space:nowrap}
+th{background:var(--p);color:#fff;padding:9px 10px;text-align:left;font-size:11px;font-weight:700;white-space:nowrap}.sortable{cursor:pointer;user-select:none}.sortable:hover{background:#1e3f73}.sort-ind{margin-left:4px;font-size:9px;display:inline-block;min-width:8px}
 td{padding:9px 10px;border-bottom:1px solid var(--brd);vertical-align:middle;font-size:12px}
 tr:last-child td{border-bottom:none}
 tr.dr{cursor:pointer;transition:.1s}
@@ -149,9 +149,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
     <div class="tbl-wrap">
       <table>
         <thead><tr>
-          <th>Nome</th><th>Empresa</th><th>Status</th>
-          <th class="nr">Prev.</th><th class="nr">Real.</th>
-          <th style="min-width:120px">Progresso</th><th class="nr">Total R$</th>
+          <th class="sortable" onclick="sortBy('nome')">Nome<span class="sort-ind" id="si-nome"></span></th><th class="sortable" onclick="sortBy('empresa')">Empresa<span class="sort-ind" id="si-empresa"></span></th><th class="sortable" onclick="sortBy('status')">Status<span class="sort-ind" id="si-status"></span></th>
+          <th class="nr sortable" onclick="sortBy('previstas')">Prev.<span class="sort-ind" id="si-previstas"></span></th><th class="nr sortable" onclick="sortBy('realizadas')">Real.<span class="sort-ind" id="si-realizadas"></span></th>
+          <th style="min-width:120px" class="sortable" onclick="sortBy('progresso')">Progresso<span class="sort-ind" id="si-progresso"></span></th><th class="nr sortable" onclick="sortBy('total')">Total R$<span class="sort-ind" id="si-total"></span></th>
         </tr></thead>
         <tbody id="tbl-body"></tbody>
       </table>
@@ -194,6 +194,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
             <div><label>Coachee</label><select id="ed-nome" onchange="onEditChange()"><option value="">— selecionar —</option></select></div>
             <div><label>Sessões Previstas</label><input type="number" id="ed-prev" placeholder="ex: 10"></div>
           </div>
+          <div class="fr1"><div><label>Novo Nome (deixe em branco para não alterar)</label><input type="text" id="ed-newname" placeholder="Nome completo"></div></div>
           <div class="fr">
             <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
             <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option></select></div>
@@ -405,6 +406,22 @@ function renderDashboard(){
 }
 
 // ── Table ──
+let sortState={col:null,dir:1};
+function sortBy(col){
+  if(sortState.col===col) sortState.dir*=-1;
+  else { sortState.col=col; sortState.dir=1; }
+  renderTable();
+}
+function getSortVal(c,col){
+  if(col==='nome') return (c.nome||'').toLowerCase();
+  if(col==='empresa') return (c.empresa||'').toLowerCase();
+  if(col==='status') return (c.status||'').toLowerCase();
+  if(col==='previstas') return c.previstas||0;
+  if(col==='realizadas') return realized(c);
+  if(col==='progresso') return c.previstas ? realized(c)/c.previstas : 0;
+  if(col==='total') return totalVal(c);
+  return 0;
+}
 function renderTable(){
   const q=document.getElementById('srch').value.toLowerCase();
   const fs=document.getElementById('f-st').value;
@@ -416,6 +433,17 @@ function renderTable(){
     });
   }
   const rows=data.filter(c=>(!q||c.nome.toLowerCase().includes(q)||c.empresa.toLowerCase().includes(q))&&(!fs||c.status===fs)&&(!fe||c.empresa===fe));
+  if(sortState.col){
+    rows.sort(function(a,b){
+      var va=getSortVal(a,sortState.col), vb=getSortVal(b,sortState.col);
+      if(typeof va==='string') return va.localeCompare(vb)*sortState.dir;
+      return (va-vb)*sortState.dir;
+    });
+  }
+  ['nome','empresa','status','previstas','realizadas','progresso','total'].forEach(function(col){
+    var el=document.getElementById('si-'+col);
+    if(el) el.textContent = sortState.col===col ? (sortState.dir===1?' ▲':' ▼') : '';
+  });
   document.getElementById('cnt-lbl').textContent=`${rows.length} de ${data.length}`;
   document.getElementById('tbl-body').innerHTML=rows.map(c=>{
     const idx=data.indexOf(c);
@@ -495,6 +523,7 @@ function onEditChange(){
   const c=data[idx];
   document.getElementById('ed-prev').value=c.previstas||'';
   document.getElementById('ed-emp').value=c.empresa||'';
+  document.getElementById('ed-newname').value=c.nome||'';
   const st=document.getElementById('ed-st');
   [...st.options].forEach(o=>o.selected=o.value===c.status);
 }
@@ -536,7 +565,9 @@ function editCoachee(){
   const prev=document.getElementById('ed-prev').value;
   const emp=document.getElementById('ed-emp').value.trim();
   const st=document.getElementById('ed-st').value;
+  const newName=document.getElementById('ed-newname').value.trim();
   const changes=[];
+  if(newName&&newName!==c.nome){changes.push('nome: "'+c.nome+'" -> "'+newName+'"');c.nome=newName;}
   if(prev!==''&&Number(prev)!==c.previstas){changes.push(`sessões previstas: ${c.previstas||'?'} → ${prev}`);c.previstas=Number(prev);}
   if(emp&&emp!==c.empresa){changes.push(`empresa: "${c.empresa}" → "${emp}"`);c.empresa=emp;}
   if(st!==c.status){changes.push(`status: ${c.status} → ${st}`);c.status=st;}
