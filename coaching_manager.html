@@ -5,6 +5,7 @@
 <title>ADIGO — Gestão de Coachees</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 :root{color-scheme:light;--p:#2F5496;--pl:#D9E1F2;--gb:#C6EFCE;--gf:#006100;--bb:#BDD7EE;--bf:#1F4E78;--db:#D9D9D9;--df:#595959;--yb:#FFE699;--yf:#9C5700;--bg:#F4F6FB;--card:#fff;--brd:#DDE3EE;--txt:#1A1A2E;--mut:#666;--r:8px;--sh:0 2px 8px rgba(0,0,0,.08)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -213,6 +214,10 @@ select[multiple]{min-height:74px}
             <div><label>Data de início do ciclo</label><input type="text" id="ed-inicio" placeholder="DD/MM/AAAA"></div>
           </div>
           <div class="fr">
+            <div><label>Próxima sessão agendada</label><input type="text" id="ed-next" placeholder="DD/MM/AAAA"></div>
+            <div><label>Data de início do ciclo</label><input type="text" id="ed-inicio" placeholder="DD/MM/AAAA"></div>
+          </div>
+          <div class="fr">
             <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
             <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option></select></div>
           </div>
@@ -271,6 +276,7 @@ let data = [];
 const pending = [];
 let charts = {};
 let ghFileSha = null;
+let snapshots = [];
 let snapshots = [];
 
 // ── Token management ──
@@ -398,6 +404,50 @@ function showAlert(msg, type='ok'){
   const el=document.getElementById('alert-box');
   el.textContent=msg; el.className='alert alert-'+(type==='err'?'err':'ok'); el.style.display='block';
   setTimeout(()=>el.style.display='none',3500);
+}
+function parseBRDate(str){
+  if(!str) return null;
+  const m=String(str).match(/(\d{2})\/(\d{2})\/(\d{4})/);
+  if(!m) return null;
+  const d=new Date(+m[3], +m[2]-1, +m[1]);
+  return isNaN(d.getTime())?null:d;
+}
+function lastSessionDate(c){
+  const ds=c.slots.map(s=>parseBRDate(s.data)).filter(Boolean);
+  if(!ds.length) return null;
+  return new Date(Math.max(...ds.map(d=>d.getTime())));
+}
+function riskLevel(c){
+  if(c.status!=='Em andamento') return null;
+  const ld=lastSessionDate(c);
+  if(!ld) return null;
+  const days=Math.floor((new Date()-ld)/86400000);
+  if(days>60) return 'alto';
+  if(days>30) return 'medio';
+  return null;
+}
+function cycleHealth(c){
+  if(!c.dataInicio||c.status!=='Em andamento') return null;
+  const start=parseBRDate(c.dataInicio);
+  if(!start) return null;
+  const daysElapsed=(new Date()-start)/86400000;
+  const expectedPct=Math.min(100, daysElapsed/365*100);
+  const actualPct=c.previstas?Math.min(100, realized(c)/c.previstas*100):0;
+  const delta=actualPct-expectedPct;
+  if(delta>=-10) return {cls:'hb-ok',lbl:'🟢 No ritmo'};
+  if(delta>=-30) return {cls:'hb-warn',lbl:'🟡 Atenção'};
+  return {cls:'hb-bad',lbl:'🔴 Atrasado'};
+}
+function logHist(c, texto){
+  if(!c.historico) c.historico=[];
+  c.historico.unshift({ts:new Date().toLocaleString('pt-BR'), texto});
+  if(c.historico.length>50) c.historico.length=50;
+}
+function isOverdueNext(c){
+  if(!c.proximaSessao) return false;
+  const d=parseBRDate(c.proximaSessao);
+  if(!d) return false;
+  return d < new Date(new Date().setHours(0,0,0,0));
 }
 function parseBRDate(str){
   if(!str) return null;
