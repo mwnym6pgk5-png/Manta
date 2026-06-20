@@ -157,7 +157,8 @@ select[multiple]{min-height:74px}
         <option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option>
       </select>
       <select id="f-emp" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:150px"></select>
-      <button class="btn btn-o" style="font-size:11px;padding:5px 10px" onclick="document.getElementById('f-st').selectedIndex=-1;document.getElementById('f-emp').selectedIndex=-1;renderTable()">Limpar filtros</button>
+<select id="f-ano" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários (ano de conclusão)" style="min-width:110px"></select>
+      <button class="btn btn-o" style="font-size:11px;padding:5px 10px" onclick="document.getElementById('f-st').selectedIndex=-1;document.getElementById('f-emp').selectedIndex=-1;document.getElementById('f-ano').selectedIndex=-1;renderTable()">Limpar filtros</button>
       <span id="cnt-lbl" style="font-size:11px;color:var(--mut)"></span>
     </div>
     <div class="tbl-wrap">
@@ -434,6 +435,11 @@ function lastSessionDate(c){
   if(!ds.length) return null;
   return new Date(Math.max(...ds.map(d=>d.getTime())));
 }
+function anoConclusao(c){
+if(c.status!=='Concluído') return null;
+const ld=lastSessionDate(c);
+return ld?ld.getFullYear():null;
+}
 function riskLevel(c){
   if(c.status!=='Em andamento') return null;
   const ld=lastSessionDate(c);
@@ -634,7 +640,14 @@ function renderTable(){
     });
   }
   const feArr=[...sel.selectedOptions].map(o=>o.value);
-  const rows=data.filter(c=>(!q||c.nome.toLowerCase().includes(q)||c.empresa.toLowerCase().includes(q))&&(!fsArr.length||fsArr.includes(c.status))&&(!feArr.length||feArr.includes(c.empresa)));
+const selAno=document.getElementById('f-ano');
+if(selAno.options.length===0){
+[...new Set(data.map(c=>anoConclusao(c)).filter(Boolean))].sort((a,b)=>b-a).forEach(y=>{
+const o=document.createElement('option');o.value=o.textContent=y;selAno.appendChild(o);
+});
+}
+const anoArr=[...selAno.selectedOptions].map(o=>o.value);
+  const rows=data.filter(c=>(!q||c.nome.toLowerCase().includes(q)||c.empresa.toLowerCase().includes(q))&&(!fsArr.length||fsArr.includes(c.status))&&(!feArr.length||feArr.includes(c.empresa))&&(!anoArr.length||anoArr.includes(String(anoConclusao(c)))));
   if(sortState.col){
     rows.sort(function(a,b){
       var va=getSortVal(a,sortState.col), vb=getSortVal(b,sortState.col);
