@@ -187,7 +187,7 @@ select[multiple]{min-height:74px}
             <div><label>Valor (R$)</label><input type="number" id="rv" placeholder="ex: 650"></div>
             <div><label>Observação (opcional)</label><input type="text" id="ro" placeholder="no-show, agendada..."></div>
           </div>
-          <button class="btn btn-p" onclick="addSessao()">Adicionar Sessão</button>
+          <button class="btn btn-p" onclick="addSessao()">Adicionar Sessão</button> <button class="btn" style="background:#ffeaea;color:#8b0000;border:1px solid #8b0000;margin-left:8px" onclick="deleteSessao()">🗑️ Excluir sessão</button>
         </div>
 
         <div class="form-panel">
@@ -758,6 +758,23 @@ function addSessao(){
   onCoacheeChange(); renderRegister();
   showAlert(`✅ Registrado: ${c.nome} — ${slot.label}`);
   saveData();
+}
+
+function deleteSessao(){
+const idx=document.getElementById('rn').value;
+const si=document.getElementById('rs').value;
+if(!idx||si===''){alert('Selecione o coachee e a sessão.');return;}
+const c=data[idx],slot=c.slots[si];
+if(slot.data==null&&slot.valor==null){alert('Essa sessão já está vazia.');return;}
+if(!confirm('Excluir o lançamento de "'+slot.label+'" ('+(slot.data||'-')+')? Esta ação não pode ser desfeita.')) return;
+const oldData=slot.data, oldValor=slot.valor;
+logHist(c, 'Sessão excluída: '+slot.label+' — era '+(oldData||'-')+(oldValor!=null?' ('+fmtBRL(oldValor)+')':''));
+pending.push({tipo:'correcao',nome:c.nome,changes:['Sessão excluída: '+slot.label+' (era '+(oldData||'-')+(oldValor!=null?', '+fmtBRL(oldValor):'')+')']});
+slot.data=null; slot.valor=null;
+updatePendCount();
+onCoacheeChange(); renderRegister();
+showAlert('🗑️ Sessão excluída: '+slot.label);
+saveData();
 }
 
 function addStatusChange(){
