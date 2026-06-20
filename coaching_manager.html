@@ -164,7 +164,7 @@ select[multiple]{min-height:74px}
         <thead><tr>
           <th class="sortable" onclick="sortBy('nome')">Nome<span class="sort-ind" id="si-nome"></span></th><th class="sortable" onclick="sortBy('empresa')">Empresa<span class="sort-ind" id="si-empresa"></span></th><th class="sortable" onclick="sortBy('status')">Status<span class="sort-ind" id="si-status"></span></th>
           <th class="nr sortable" onclick="sortBy('previstas')">Prev.<span class="sort-ind" id="si-previstas"></span></th><th class="nr sortable" onclick="sortBy('realizadas')">Real.<span class="sort-ind" id="si-realizadas"></span></th>
-          <th style="min-width:120px" class="sortable" onclick="sortBy('progresso')">Progresso<span class="sort-ind" id="si-progresso"></span></th><th class="nr sortable" onclick="sortBy('total')">Total R$<span class="sort-ind" id="si-total"></span></th>
+          <th style="min-width:120px" class="sortable" onclick="sortBy('progresso')">Progresso<span class="sort-ind" id="si-progresso"></span></th><th class="nr sortable" onclick="sortBy('valorPrevisto')">Previsto R$<span class="sort-ind" id="si-valorPrevisto"></span></th><th class="nr sortable" onclick="sortBy('total')">Total R$<span class="sort-ind" id="si-total"></span></th>
         </tr></thead>
         <tbody id="tbl-body"></tbody>
       </table>
@@ -216,6 +216,10 @@ select[multiple]{min-height:74px}
             <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
             <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option></select></div>
           </div>
+<div class="fr">
+<div><label>Valor previsto (R$)</label><input type="number" id="ed-valorprev" placeholder="ex: 6500"></div>
+<div><label>Duração padrão da sessão (min)</label><input type="number" id="ed-duracao" placeholder="ex: 60"></div>
+</div>
           <button class="btn btn-p" onclick="editCoachee()">Salvar Correção</button> <button class="btn" style="background:#ffeaea;color:#8b0000;border:1px solid #8b0000;margin-left:8px" onclick="deleteCoachee()">🗑️ Excluir Coachee</button>
         </div>
 
@@ -233,6 +237,10 @@ select[multiple]{min-height:74px}
             <div><label>Status Inicial</label><select id="nc-s"><option>A iniciar</option><option>Em andamento</option></select></div>
             <div><label>Observação</label><input type="text" id="nc-o"></div>
           </div>
+<div class="fr">
+<div><label>Valor previsto (R$)</label><input type="number" id="nc-vp" placeholder="ex: 6500"></div>
+<div><label>Duração padrão da sessão (min)</label><input type="number" id="nc-dur" placeholder="ex: 60"></div>
+</div>
           <button class="btn btn-p" onclick="addCoachee()">Adicionar Coachee</button>
         </div>
       </div>
@@ -509,11 +517,18 @@ function renderDashboard(){
   const co=data.filter(c=>c.status==='Concluído').length;
   const st=data.filter(c=>c.status==='Standby'||c.status==='A iniciar').length;
   const tot=data.reduce((a,c)=>a+totalVal(c),0);
+const totPrev=data.reduce((a,c)=>a+(c.valorPrevisto||0),0);
+const realCount=data.reduce((a,c)=>a+realized(c),0);
+const horasReal=data.reduce((a,c)=>a+realized(c)*(c.duracaoPadraoMin||60),0)/60;
+const valorMedio=realCount?tot/realCount:0;
   document.getElementById('stat-cards').innerHTML=`
     <div class="card" style="border-color:#1F4E78"><div class="card-val" style="color:#1F4E78">${em}</div><div class="card-lbl">Em Andamento</div></div>
     <div class="card" style="border-color:#006100"><div class="card-val" style="color:#006100">${co}</div><div class="card-lbl">Concluídos</div></div>
     <div class="card" style="border-color:#595959"><div class="card-val" style="color:#595959">${st}</div><div class="card-lbl">Standby / A iniciar</div></div>
-    <div class="card"><div class="card-val">R$ ${Math.round(tot/1000)}k</div><div class="card-lbl">Total realizado (${data.length} coachees)</div></div>`;
+    <div class="card"><div class="card-val">R$ ${Math.round(tot/1000)}k</div><div class="card-lbl">Total realizado (${data.length} coachees)</div></div>
+<div class="card"><div class="card-val">R$ ${Math.round(totPrev/1000)}k</div><div class="card-lbl">Valor Previsto Total</div></div>
+<div class="card"><div class="card-val">R$ ${Math.round(valorMedio)}</div><div class="card-lbl">Valor Médio por Sessão</div></div>
+<div class="card"><div class="card-val">${Math.round(horasReal)}h</div><div class="card-lbl">Horas de Coaching Realizadas</div></div>`;
   const emp={};
   data.forEach(c=>{
     if(!emp[c.empresa]) emp[c.empresa]={r:0,p:0};
@@ -588,6 +603,7 @@ function getSortVal(c,col){
   if(col==='realizadas') return realized(c);
   if(col==='progresso') return c.previstas ? realized(c)/c.previstas : 0;
   if(col==='total') return totalVal(c);
+if(col==='valorPrevisto') return c.valorPrevisto||0;
   return 0;
 }
 function renderTable(){
@@ -608,7 +624,7 @@ function renderTable(){
       return (va-vb)*sortState.dir;
     });
   }
-  ['nome','empresa','status','previstas','realizadas','progresso','total'].forEach(function(col){
+  ['nome','empresa','status','previstas','realizadas','progresso','total','valorPrevisto'].forEach(function(col){
     var el=document.getElementById('si-'+col);
     if(el) el.textContent = sortState.col===col ? (sortState.dir===1?' ▲':' ▼') : '';
   });
@@ -626,10 +642,11 @@ function renderTable(){
       <td><div style="display:flex;align-items:center;gap:6px">
         <div class="pbar" style="flex:1"><div class="pbar-f" style="width:${pct}%"></div></div>
         <span style="font-size:11px;color:var(--mut);min-width:30px">${pct}%</span></div></td>
-      <td class="nr" style="font-weight:600">${tv>0?fmtBRL(tv):'—'}</td>
+      <td class="nr">${c.valorPrevisto?fmtBRL(c.valorPrevisto):'—'}</td>
+<td class="nr" style="font-weight:600">${tv>0?fmtBRL(tv):'—'}</td>
     </tr>
-    <tr><td colspan="7" style="padding:0"><div class="detail-inner" id="det-${idx}">${buildDetail(c, idx)}</div></td></tr>`;
-  }).join('')||`<tr><td colspan="7" class="empty">Nenhum coachee encontrado.</td></tr>`;
+    <tr><td colspan="8" style="padding:0"><div class="detail-inner" id="det-${idx}">${buildDetail(c, idx)}</div></td></tr>`;
+  }).join('')||`<tr><td colspan="8" class="empty">Nenhum coachee encontrado.</td></tr>`;
 }
 
 function buildDetail(c, idx){
@@ -642,7 +659,7 @@ function buildDetail(c, idx){
   }).join('');
   const health=cycleHealth(c);
   const histHtml=(c.historico&&c.historico.length)?c.historico.slice(0,10).map(h=>'<div class="hist-item">'+h.ts+' — '+h.texto+'</div>').join(''):'<div class="hist-item">Nenhum histórico registrado.</div>';
-  return `<div style="font-size:10px;color:var(--mut);margin-bottom:8px">${c.contrato}
+  return `<div style="font-size:10px;color:var(--mut);margin-bottom:8px">${c.contrato}${c.duracaoPadraoMin?' · Duração: '+c.duracaoPadraoMin+'min/sessão':''}${c.valorPrevisto?' · Previsto: '+fmtBRL(c.valorPrevisto):''}
       ${c.proximaSessao?' · Próxima sessão: <b>'+c.proximaSessao+'</b>'+(isOverdueNext(c)?' <span class="risk-hi">(atrasada)</span>':''):''}
       ${health?'<span class="health-badge '+health.cls+'">'+health.lbl+'</span>':''}
     </div>
@@ -737,6 +754,8 @@ function onEditChange(){
   document.getElementById('ed-newname').value=c.nome||'';
   document.getElementById('ed-next').value=c.proximaSessao||'';
   document.getElementById('ed-inicio').value=c.dataInicio||'';
+document.getElementById('ed-valorprev').value=c.valorPrevisto||'';
+document.getElementById('ed-duracao').value=c.duracaoPadraoMin||'';
   const st=document.getElementById('ed-st');
   [...st.options].forEach(o=>o.selected=o.value===c.status);
 }
@@ -807,6 +826,10 @@ function editCoachee(){
   if(st!==c.status){changes.push(`status: ${c.status} → ${st}`);c.status=st;}
   if(next!==(c.proximaSessao||'')){changes.push('próxima sessão: '+(c.proximaSessao||'—')+' → '+(next||'—'));c.proximaSessao=next||null;}
   if(inicio!==(c.dataInicio||'')){changes.push('data de início: '+(c.dataInicio||'—')+' → '+(inicio||'—'));c.dataInicio=inicio||null;}
+const vpv=document.getElementById('ed-valorprev').value;
+const drv=document.getElementById('ed-duracao').value;
+if(vpv!==''&&Number(vpv)!==(c.valorPrevisto||0)){changes.push('valor previsto: '+fmtBRL(c.valorPrevisto||0)+' → '+fmtBRL(Number(vpv)));c.valorPrevisto=Number(vpv);}
+if(drv!==''&&Number(drv)!==(c.duracaoPadraoMin||0)){changes.push('duração padrão: '+(c.duracaoPadraoMin||'?')+'min → '+drv+'min');c.duracaoPadraoMin=Number(drv);}
   if(!changes.length){alert('Nenhuma alteração detectada.');return;}
   logHist(c, changes.join('; '));
   pending.push({tipo:'correcao',nome:c.nome,changes});
@@ -840,8 +863,10 @@ function addCoachee(){
   const prev=document.getElementById('nc-p').value;
   const st=document.getElementById('nc-s').value;
   const obs=document.getElementById('nc-o').value.trim();
+const vp=document.getElementById('nc-vp').value;
+const dur=document.getElementById('nc-dur').value;
   if(!nome||!emp||!cont){alert('Preencha nome, empresa e contrato.');return;}
-  const novo={nome,empresa:emp,contrato:cont,status:st,previstas:prev?Number(prev):null,historico:[],proximaSessao:null,dataInicio:null,
+  const novo={nome,empresa:emp,contrato:cont,status:st,previstas:prev?Number(prev):null,historico:[],proximaSessao:null,dataInicio:null,valorPrevisto:vp?Number(vp):0,duracaoPadraoMin:dur?Number(dur):60,
     slots:[{label:'Briefing/Devolutiva',valor:null,data:null},
       ...Array.from({length:12},(_,i)=>({label:`Sessão ${String(i+1).padStart(2,'0')}`,valor:null,data:null})),
       {label:'Acompanhamento (Middle)',valor:null,data:null},{label:'Encerramento',valor:null,data:null}]};
@@ -849,7 +874,7 @@ function addCoachee(){
   data.push(novo);
   pending.push({tipo:'novo',nome,empresa:emp,contrato:cont,previstas:prev||'?',status:st,obs});
   updatePendCount();
-  ['nc-n','nc-e','nc-c','nc-p','nc-o'].forEach(id=>document.getElementById(id).value='');
+  ['nc-n','nc-e','nc-c','nc-p','nc-o','nc-vp','nc-dur'].forEach(id=>document.getElementById(id).value='');
   renderRegister();
   showAlert(`✅ Coachee adicionado: ${nome}`);
   saveData();
