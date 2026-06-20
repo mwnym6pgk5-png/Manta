@@ -294,6 +294,7 @@ const pending = [];
 let charts = {};
 let ghFileSha = null;
 let snapshots = [];
+if(typeof ChartDataLabels!=='undefined') Chart.register(ChartDataLabels);
 
 // ── Token management ──
 function getToken(){ return localStorage.getItem('adigo_gh_token') || ''; }
