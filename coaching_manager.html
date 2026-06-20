@@ -143,6 +143,7 @@ select[multiple]{min-height:74px}
     <div class="card" style="border-color:#595959"><div class="card-val" style="color:#595959">1</div><div class="card-lbl">Standby / A iniciar</div></div>
     <div class="card"><div class="card-val">R$ 229k</div><div class="card-lbl">Total realizado (33 coachees)</div></div></div>
     <div id="trend-box" class="trend"></div>
+<div id="horas-ano-box" class="trend"></div>
     <div class="two-col">
       <div class="chart-wrap"><h3>Progresso por Empresa</h3><div class="chart-container"><canvas id="ch-empresa" width="1262" height="400" style="display: block; box-sizing: border-box; height: 200px; width: 631px;"></canvas></div></div>
       <div class="chart-wrap"><h3>Distribuição por Status</h3><div class="chart-container"><canvas id="ch-status" width="1262" height="400" style="display: block; box-sizing: border-box; height: 200px; width: 631px;"></canvas></div></div>
@@ -402,6 +403,20 @@ const BCLS = {'Em andamento':'b-em','Concluído':'b-co','Standby':'b-st','A inic
 function badge(st){ return `<span class="badge ${BCLS[st]||'b-st'}">${st}</span>`; }
 function realized(c){ return c.slots.filter(s=>s.valor!=null||s.data!=null).length; }
 function totalVal(c){ return c.slots.reduce((a,s)=>a+(s.valor||0),0); }
+function horasPorAno(){
+const out={};
+data.forEach(co=>{
+const dur=co.duracaoPadraoMin||60;
+co.slots.forEach(s=>{
+if(s.valor==null&&s.data==null) return;
+const d=parseBRDate(s.data);
+if(!d) return;
+const y=d.getFullYear();
+out[y]=(out[y]||0)+dur/60;
+});
+});
+return out;
+}
 function showAlert(msg, type='ok'){
   const el=document.getElementById('alert-box');
   el.textContent=msg; el.className='alert alert-'+(type==='err'?'err':'ok'); el.style.display='block';
@@ -529,6 +544,9 @@ const valorMedio=realCount?tot/realCount:0;
 <div class="card"><div class="card-val">R$ ${Math.round(totPrev/1000)}k</div><div class="card-lbl">Valor Previsto Total</div></div>
 <div class="card"><div class="card-val">R$ ${Math.round(valorMedio)}</div><div class="card-lbl">Valor Médio por Sessão</div></div>
 <div class="card"><div class="card-val">${Math.round(horasReal)}h</div><div class="card-lbl">Horas de Coaching Realizadas</div></div>`;
+const porAno=horasPorAno();
+const anoTxt=Object.keys(porAno).sort().map(y=>y+': '+Math.round(porAno[y])+'h').join(' · ');
+document.getElementById('horas-ano-box').innerHTML = anoTxt ? 'Horas de coaching por ano: <b>'+anoTxt+'</b>' : '';
   const emp={};
   data.forEach(c=>{
     if(!emp[c.empresa]) emp[c.empresa]={r:0,p:0};
