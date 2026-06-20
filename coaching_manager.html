@@ -552,7 +552,8 @@ const valorMedio=realCount?tot/realCount:0;
 <div class="card"><div class="card-val">${Math.round(horasReal)}h</div><div class="card-lbl">Horas de Coaching Realizadas</div></div>`;
 const porAno=horasPorAno();
 const anoTxt=Object.keys(porAno).sort().map(y=>y+': '+Math.round(porAno[y])+'h').join(' · ');
-document.getElementById('horas-ano-box').innerHTML = anoTxt ? 'Horas de coaching por ano: <b>'+anoTxt+'</b>' : '';
+document.getElementById('horas-ano-box').innerHTML = '';
+document.getElementById('stat-cards').innerHTML += Object.keys(porAno).sort().map(y=>'<div class="card" style="border-color:#7030A0"><div class="card-val" style="color:#7030A0">'+Math.round(porAno[y])+'h</div><div class="card-lbl">Horas em '+y+'</div></div>').join('');
   const emp={};
   data.forEach(c=>{
     if(!emp[c.empresa]) emp[c.empresa]={r:0,p:0};
