@@ -149,6 +149,16 @@ select[multiple]{min-height:74px}
       <div class="chart-wrap"><h3>Distribuição por Status</h3><div class="chart-container"><canvas id="ch-status" width="1262" height="400" style="display: block; box-sizing: border-box; height: 200px; width: 631px;"></canvas></div></div>
     </div>
 <div class="chart-wrap"><h3>Horas de Coaching por Ano</h3><div class="chart-container"><canvas id="ch-horas-ano"></canvas></div></div>
+<div class="two-col">
+<div class="chart-wrap">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+<h3 style="margin-bottom:0">Faturamento por Empresa</h3>
+<select id="f-graf-ano" onchange="renderFaturamentoEmpresaChart()" style="font-size:11px;padding:4px 8px;border:1px solid var(--brd);border-radius:6px"><option value="">Total consolidado</option></select>
+</div>
+<div class="chart-container"><canvas id="ch-fat-empresa"></canvas></div>
+</div>
+<div class="chart-wrap"><h3>Faturamento por Ano</h3><div class="chart-container"><canvas id="ch-fat-ano"></canvas></div><div id="fat-total-box" style="font-size:11px;color:var(--mut);margin-top:8px"></div></div>
+</div>
   </div>
 
   <div id="pane-coachees" style="display:none">
@@ -419,6 +429,53 @@ out[y]=(out[y]||0)+dur/60;
 });
 return out;
 }
+function faturamentoPorEmpresa(filterYear){
+const out={};
+data.forEach(co=>{
+co.slots.forEach(s=>{
+if(s.valor==null) return;
+if(filterYear){
+const d=parseBRDate(s.data);
+if(!d||d.getFullYear()!==Number(filterYear)) return;
+}
+out[co.empresa]=(out[co.empresa]||0)+s.valor;
+});
+});
+return out;
+}
+function faturamentoPorAno(){
+const out={};
+data.forEach(co=>{
+co.slots.forEach(s=>{
+if(s.valor==null) return;
+const d=parseBRDate(s.data);
+if(!d) return;
+const y=d.getFullYear();
+out[y]=(out[y]||0)+s.valor;
+});
+});
+return out;
+}
+function getAllYears(){
+const ys=new Set();
+data.forEach(co=>{
+co.slots.forEach(s=>{
+const d=parseBRDate(s.data);
+if(d) ys.add(d.getFullYear());
+});
+});
+return [...ys].sort((a,b)=>b-a);
+}
+function renderFaturamentoEmpresaChart(){
+const y=document.getElementById('f-graf-ano').value;
+const fp=faturamentoPorEmpresa(y||null);
+const labels=Object.keys(fp).sort((a,b)=>fp[b]-fp[a]);
+if(charts.fatEmp) charts.fatEmp.destroy();
+charts.fatEmp=new Chart(document.getElementById('ch-fat-empresa'),{
+type:'bar',data:{labels:labels,datasets:[{label:'Faturamento',data:labels.map(l=>fp[l]),backgroundColor:'#2F5496'}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{font:{size:9},callback:v=>'R$ '+Math.round(v/1000)+'k'}},x:{ticks:{font:{size:9}}}}}
+});
+}
 function showAlert(msg, type='ok'){
   const el=document.getElementById('alert-box');
   el.textContent=msg; el.className='alert alert-'+(type==='err'?'err':'ok'); el.style.display='block';
@@ -582,6 +639,22 @@ charts.horasAno=new Chart(document.getElementById('ch-horas-ano'),{
 type:'bar',data:{labels:Object.keys(porAno).sort(),datasets:[{label:'Horas',data:Object.keys(porAno).sort().map(y=>Math.round(porAno[y])),backgroundColor:'#7030A0'}]},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{font:{size:10}}},x:{ticks:{font:{size:10}}}}}
 });
+const selGrafAno=document.getElementById('f-graf-ano');
+if(selGrafAno.options.length===1){
+getAllYears().forEach(y=>{
+const o=document.createElement('option');o.value=o.textContent=y;selGrafAno.appendChild(o);
+});
+}
+renderFaturamentoEmpresaChart();
+const fatAno=faturamentoPorAno();
+const fatAnoLabels=Object.keys(fatAno).sort();
+if(charts.fatAno) charts.fatAno.destroy();
+charts.fatAno=new Chart(document.getElementById('ch-fat-ano'),{
+type:'bar',data:{labels:fatAnoLabels,datasets:[{label:'Faturamento',data:fatAnoLabels.map(y=>fatAno[y]),backgroundColor:'#006100'}]},
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{font:{size:9},callback:v=>'R$ '+Math.round(v/1000)+'k'}},x:{ticks:{font:{size:10}}}}}
+});
+document.getElementById('fat-total-box').innerHTML='Total consolidado (todos os anos): <b>'+fmtBRL(tot)+'</b>';
+
 renderTrend();
 }
 function renderAttnBox(){
