@@ -475,7 +475,7 @@ const labels=Object.keys(fp).sort((a,b)=>fp[b]-fp[a]);
 if(charts.fatEmp) charts.fatEmp.destroy();
 charts.fatEmp=new Chart(document.getElementById('ch-fat-empresa'),{
 type:'bar',data:{labels:labels,datasets:[{label:'Faturamento',data:labels.map(l=>fp[l]),backgroundColor:'#2F5496'}]},
-options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{anchor:'end',align:'top',font:{size:9},color:'#333',formatter:v=>'R$ '+Math.round(v/1000)+'k'}},scales:{y:{ticks:{font:{size:9},callback:v=>'R$ '+Math.round(v/1000)+'k'}},x:{ticks:{font:{size:9}}}}}
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{anchor:'end',align:'top',clamp:true,font:{size:9},color:'#333',formatter:v=>'R$ '+Math.round(v/1000)+'k'}},scales:{y:{ticks:{font:{size:9},callback:v=>'R$ '+Math.round(v/1000)+'k'}},x:{ticks:{font:{size:9}}}}}
 });
 }
 function showAlert(msg, type='ok'){
@@ -639,7 +639,7 @@ document.getElementById('stat-cards').innerHTML += Object.keys(porAno).sort().ma
   if(charts.horasAno) charts.horasAno.destroy();
 charts.horasAno=new Chart(document.getElementById('ch-horas-ano'),{
 type:'bar',data:{labels:Object.keys(porAno).sort(),datasets:[{label:'Horas',data:Object.keys(porAno).sort().map(y=>Math.round(porAno[y])),backgroundColor:'#7030A0'}]},
-options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{anchor:'end',align:'top',font:{size:9},color:'#333',formatter:v=>v+'h'}},scales:{y:{ticks:{font:{size:10}}},x:{ticks:{font:{size:10}}}}}
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{anchor:'end',align:'top',clamp:true,font:{size:9},color:'#333',formatter:v=>v+'h'}},scales:{y:{ticks:{font:{size:10}}},x:{ticks:{font:{size:10}}}}}
 });
 const selGrafAno=document.getElementById('f-graf-ano');
 if(selGrafAno.options.length===1){
@@ -653,7 +653,7 @@ const fatAnoLabels=Object.keys(fatAno).sort();
 if(charts.fatAno) charts.fatAno.destroy();
 charts.fatAno=new Chart(document.getElementById('ch-fat-ano'),{
 type:'bar',data:{labels:fatAnoLabels,datasets:[{label:'Faturamento',data:fatAnoLabels.map(y=>fatAno[y]),backgroundColor:'#006100'}]},
-options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{anchor:'end',align:'top',font:{size:9},color:'#333',formatter:v=>'R$ '+Math.round(v/1000)+'k'}},scales:{y:{ticks:{font:{size:9},callback:v=>'R$ '+Math.round(v/1000)+'k'}},x:{ticks:{font:{size:10}}}}}
+options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{anchor:'end',align:'top',clamp:true,font:{size:9},color:'#333',formatter:v=>'R$ '+Math.round(v/1000)+'k'}},scales:{y:{ticks:{font:{size:9},callback:v=>'R$ '+Math.round(v/1000)+'k'}},x:{ticks:{font:{size:10}}}}}
 });
 document.getElementById('fat-total-box').innerHTML='Total consolidado (todos os anos): <b>'+fmtBRL(tot)+'</b>';
 
