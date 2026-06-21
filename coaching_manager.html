@@ -170,7 +170,7 @@ select[multiple]{min-height:74px}
       </select>
       <select id="f-emp" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:150px"></select>
 <select id="f-ano" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários (ano de conclusão)" style="min-width:110px"></select>
-      <button class="btn btn-o" style="font-size:11px;padding:5px 10px" onclick="document.getElementById('f-st').selectedIndex=-1;document.getElementById('f-emp').selectedIndex=-1;document.getElementById('f-ano').selectedIndex=-1;renderTable()">Limpar filtros</button>
+      <button class="btn btn-o" style="font-size:11px;padding:5px 10px" onclick="document.getElementById('f-st').selectedIndex=-1;document.getElementById('f-emp').selectedIndex=-1;document.getElementById('f-ano').selectedIndex=-1;renderTable()">Limpar filtros</button> <button class="btn btn-g" style="font-size:11px;padding:5px 10px" onclick="exportCoacheesCSV()">📊 Exportar tabela</button>
       <span id="cnt-lbl" style="font-size:11px;color:var(--mut)"></span>
     </div>
     <div class="tbl-wrap">
@@ -1040,6 +1040,18 @@ function clearPend(){
   renderPending();
 }
 
+function exportCoacheesCSV(){
+const headers=[...document.querySelectorAll('.tbl-wrap thead th')].map(th=>th.textContent.replace(/[▲▼]/g,'').trim());
+const rows=[...document.querySelectorAll('#tbl-body > tr.dr')].map(tr=>[...tr.children].map(td=>'"'+td.textContent.replace(/⚠️/g,'').trim().replace(/"/g,'""')+'"'));
+if(!rows.length){alert('Nenhum coachee para exportar (verifique os filtros).');return;}
+const csv=[headers.join(';'),...rows.map(r=>r.join(';'))].join('\n');
+const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});
+const a=document.createElement('a');
+a.href=URL.createObjectURL(blob);
+a.download='coachees_'+new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')+'.csv';
+document.body.appendChild(a);a.click();a.remove();
+showAlert('✅ Tabela exportada ('+rows.length+' coachees).');
+}
 function exportHTML(){
   try{
     const src=document.documentElement.outerHTML;
