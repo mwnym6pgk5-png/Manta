@@ -261,7 +261,7 @@ select[multiple]{min-height:74px}
 
       <div class="form-panel" style="height:fit-content">
         <h3>📋 Coachees Ativos — Próxima Sessão</h3>
-        <div id="open-list" style="max-height:700px;overflow-y:auto"></div>
+        <div id="open-list"></div>
       </div>
     </div>
   </div>
@@ -829,7 +829,7 @@ function renderRegister(){
     s.innerHTML=`<option value="">— selecionar —</option>${opts}`;
     if(prev) s.value=prev;
   });
-  const active=data.filter(c=>c.status==='Em andamento'||c.status==='A iniciar');
+  const active=data.filter(c=>c.status==='Em andamento'||c.status==='A iniciar').sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
   document.getElementById('open-list').innerHTML=active.map(c=>{
     const r=realized(c),p=c.previstas||0;
     const pct=p?Math.min(Math.round(r/p*100),100):0;
