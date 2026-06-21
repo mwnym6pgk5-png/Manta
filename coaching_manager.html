@@ -823,7 +823,7 @@ function toggleDetail(idx){
 
 // ── Register ──
 function renderRegister(){
-  const opts=data.map((c,i)=>`<option value="${i}">${c.nome} (${c.empresa})</option>`).join('');
+  const opts=data.map((c,i)=>({c,i})).sort((a,b)=>a.c.nome.localeCompare(b.c.nome,'pt-BR')).map(o=>`<option value="${o.i}">${o.c.nome} (${o.c.empresa})</option>`).join('');
   ['rn','stn','ed-nome'].forEach(id=>{
     const s=document.getElementById(id),prev=s.value;
     s.innerHTML=`<option value="">— selecionar —</option>${opts}`;
