@@ -194,12 +194,15 @@ select[multiple]{min-height:74px}
             <select id="rn" onchange="onCoacheeChange()"><option value="">— selecionar —</option></select>
           </div></div>
           <div class="fr">
-            <div><label>Sessão</label><select id="rs"><option>— selecionar coachee primeiro —</option></select></div>
+            <div><label>Sessão</label><select id="rs" onchange="updateDuracaoSugerida()"><option>— selecionar coachee primeiro —</option></select></div>
             <div><label>Data (DD/MM/AAAA)</label><input type="text" id="rd" placeholder="17/06/2026"></div>
           </div>
           <div class="fr">
             <div><label>Valor (R$)</label><input type="number" id="rv" placeholder="ex: 650"></div>
             <div><label>Observação (opcional)</label><input type="text" id="ro" placeholder="no-show, agendada..."></div>
+          </div>
+          <div class="fr">
+            <div><label>Duração da sessão</label><select id="rdur"><option value="60">60 min</option><option value="90">90 min</option></select></div>
           </div>
           <button class="btn btn-p" onclick="addSessao()">Adicionar Sessão</button> <button class="btn" style="background:#ffeaea;color:#8b0000;border:1px solid #8b0000;margin-left:8px" onclick="deleteSessao()">🗑️ Excluir sessão</button>
         </div>
@@ -415,18 +418,35 @@ function setSyncStatus(msg, ok){
 const fmtBRL = v => v==null?'—':'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2});
 const BCLS = {'Em andamento':'b-em','Concluído':'b-co','Standby':'b-st','A iniciar':'b-ai'};
 function badge(st){ return `<span class="badge ${BCLS[st]||'b-st'}">${st}</span>`; }
+function duracaoPorRegra(empresa,label){
+  const isBriefing = label==='Briefing/Devolutiva';
+  const isEncerramento = label==='Encerramento';
+  switch(empresa){
+    case 'PRIO': return isBriefing?90:60;
+    case 'Grupo Alves da Cunha': return 60;
+    case 'Chiesi': return 60;
+    case 'Heating Cooling':
+    case 'Suzano':
+    case 'Todos Empreendimentos':
+    case 'Amor Saúde':
+    case 'Oncoclínicas':
+      return (isBriefing||isEncerramento)?60:90;
+    default: return 60;
+  }
+}
+function horasSlot(co,s){ return s.duracaoMin||duracaoPorRegra(co.empresa,s.label)||co.duracaoPadraoMin||60; }
+function horasRealizadasCoachee(c){ return c.slots.reduce((a,s)=>a+((s.valor!=null||s.data!=null)?horasSlot(c,s):0),0)/60; }
 function realized(c){ return c.slots.filter(s=>s.valor!=null||s.data!=null).length; }
 function totalVal(c){ return c.slots.reduce((a,s)=>a+(s.valor||0),0); }
 function horasPorAno(){
 const out={};
 data.forEach(co=>{
-const dur=co.duracaoPadraoMin||60;
 co.slots.forEach(s=>{
 if(s.valor==null&&s.data==null) return;
 const d=parseBRDate(s.data);
 if(!d) return;
 const y=d.getFullYear();
-out[y]=(out[y]||0)+dur/60;
+out[y]=(out[y]||0)+horasSlot(co,s)/60;
 });
 });
 return out;
@@ -600,7 +620,7 @@ function renderDashboard(){
   const tot=data.reduce((a,c)=>a+totalVal(c),0);
 const totPrev=data.reduce((a,c)=>a+(c.valorPrevisto||0),0);
 const realCount=data.reduce((a,c)=>a+realized(c),0);
-const horasReal=data.reduce((a,c)=>a+realized(c)*(c.duracaoPadraoMin||60),0)/60;
+const horasReal=data.reduce((a,c)=>a+horasRealizadasCoachee(c),0);
 const valorMedio=realCount?tot/realCount:0;
   document.getElementById('stat-cards').innerHTML=`
     <div class="card" style="border-color:#1F4E78"><div class="card-val" style="color:#1F4E78">${em}</div><div class="card-lbl">Em Andamento</div></div>
@@ -665,9 +685,12 @@ function renderAttnBox(){
   const overdue=data.filter(c=>c.status==='Em andamento'&&isOverdueNext(c));
   const missing=data.filter(c=>c.status==='Em andamento'&&!c.proximaSessao);
   const risky=data.filter(c=>riskLevel(c)==='alto');
+  const vencidas=[];
+  data.forEach(c=>{c.slots.forEach(s=>{if(s.data&&/agendada/i.test(s.data)){const d=parseBRDate(s.data);if(d&&d<new Date(new Date().toDateString())){vencidas.push(c.nome+' — '+s.label);}}});});
   const parts=[];
   if(overdue.length) parts.push('🔴 '+overdue.length+' coachee(s) com sessão agendada que já passou: '+overdue.map(c=>c.nome).join(', '));
   if(risky.length) parts.push('⚠️ '+risky.length+' coachee(s) sem sessão registrada há mais de 60 dias: '+risky.map(c=>c.nome).join(', '));
+  if(vencidas.length) parts.push('🟠 '+vencidas.length+' sessão(ões) marcada(s) como "agendada" já passaram da data — atualize o registro: '+vencidas.join(', '));
   if(missing.length) parts.push('ℹ️ '+missing.length+' coachee(s) em andamento sem próxima sessão agendada.');
   box.innerHTML = parts.length ? parts.map(p=>'<div class="alert-attn">'+p+'</div>').join('') : '';
 }
@@ -860,7 +883,18 @@ function onCoacheeChange(){
   sel.innerHTML=c.slots.map((s,i)=>`<option value="${i}">${s.label}${(s.valor!=null||s.data!=null)?' ✓':''}</option>`).join('');
   const fe=c.slots.findIndex(s=>s.valor==null&&s.data==null);
   if(fe>=0) sel.value=fe;
+  updateDuracaoSugerida();
 }
+function updateDuracaoSugerida(){
+  const idx=document.getElementById('rn').value;
+  const si=document.getElementById('rs').value;
+  const sel=document.getElementById('rdur');
+  if(!sel||idx===''||si==='') return;
+  const c=data[idx]; const slot=c&&c.slots[si];
+  if(!slot) return;
+  sel.value=String(duracaoPorRegra(c.empresa, slot.label));
+}
+
 
 function onEditChange(){
   const idx=document.getElementById('ed-nome').value;
@@ -883,10 +917,11 @@ function addSessao(){
   const dt=document.getElementById('rd').value.trim();
   const vl=document.getElementById('rv').value;
   const ob=document.getElementById('ro').value.trim();
+  const dur=document.getElementById('rdur').value;
   if(!idx||si===''||!dt){alert('Preencha: coachee, sessão e data.');return;}
   const c=data[idx],slot=c.slots[si];
   const dateStr=dt+(ob?` (${ob})`:'');
-  slot.data=dateStr; slot.valor=vl!==''?Number(vl):null;
+  slot.data=dateStr; slot.valor=vl!==''?Number(vl):null; slot.duracaoMin=dur?Number(dur):duracaoPorRegra(c.empresa, slot.label);
   logHist(c, 'Sessão registrada: '+slot.label+' — '+dateStr+(slot.valor!=null?' ('+fmtBRL(slot.valor)+')':''));
   pending.push({tipo:'sessao',nome:c.nome,sessao:slot.label,data:dateStr,valor:slot.valor});
   updatePendCount();
@@ -984,9 +1019,9 @@ const vp=document.getElementById('nc-vp').value;
 const dur=document.getElementById('nc-dur').value;
   if(!nome||!emp||!cont){alert('Preencha nome, empresa e contrato.');return;}
   const novo={nome,empresa:emp,contrato:cont,status:st,previstas:prev?Number(prev):null,historico:[],proximaSessao:null,dataInicio:null,valorPrevisto:vp?Number(vp):0,duracaoPadraoMin:dur?Number(dur):60,
-    slots:[{label:'Briefing/Devolutiva',valor:null,data:null},
-      ...Array.from({length:12},(_,i)=>({label:`Sessão ${String(i+1).padStart(2,'0')}`,valor:null,data:null})),
-      {label:'Acompanhamento (Middle)',valor:null,data:null},{label:'Encerramento',valor:null,data:null}]};
+    slots:[{label:'Briefing/Devolutiva',valor:null,data:null,duracaoMin:duracaoPorRegra(emp,'Briefing/Devolutiva')},
+      ...Array.from({length:12},(_,i)=>({label:`Sessão ${String(i+1).padStart(2,'0')}`,valor:null,data:null,duracaoMin:duracaoPorRegra(emp,`Sessão ${String(i+1).padStart(2,'0')}`)})),
+      {label:'Acompanhamento (Middle)',valor:null,data:null,duracaoMin:duracaoPorRegra(emp,'Acompanhamento (Middle)')},{label:'Encerramento',valor:null,data:null,duracaoMin:duracaoPorRegra(emp,'Encerramento')}]};
   logHist(novo, 'Coachee criado');
   data.push(novo);
   pending.push({tipo:'novo',nome,empresa:emp,contrato:cont,previstas:prev||'?',status:st,obs});
