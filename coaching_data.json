@@ -2589,8 +2589,13 @@
         {
           "texto": "valor previsto: R$ 3250 → R$ 3575 (correção via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
+        },
+        {
+          "texto": "data de início: — → 29/11/2025 (correção de ano, planilha 21/06/2026)",
+          "ts": "21/06/2026, 22:57:54"
         }
-      ]
+      ],
+      "dataInicio": "29/11/2025"
     },
     {
       "nome": "Victor Barchetta",
@@ -2685,8 +2690,13 @@
         {
           "ts": "21/06/2026, 19:00:43",
           "texto": "nome: \"Victor\" -> \"Victor Barchetta\""
+        },
+        {
+          "texto": "data de início: — → 22/07/2025 (correção de ano, planilha 21/06/2026)",
+          "ts": "21/06/2026, 22:57:54"
         }
-      ]
+      ],
+      "dataInicio": "22/07/2025"
     },
     {
       "nome": "Marcelo Barchetta",
@@ -2906,8 +2916,13 @@
         {
           "ts": "21/06/2026, 19:02:05",
           "texto": "nome: \"Roselaine\" -> \"Roselaine Tavares Montagnini\""
+        },
+        {
+          "texto": "data de início: — → 07/07/2025 (correção de ano, planilha 21/06/2026)",
+          "ts": "21/06/2026, 22:57:54"
         }
-      ]
+      ],
+      "dataInicio": "07/07/2025"
     },
     {
       "nome": "Nilton Bento da Silva Junior",
