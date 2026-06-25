@@ -690,7 +690,7 @@ function renderAttnBox(){
   const box=document.getElementById('attn-box');
   if(!box) return;
   const overdue=data.filter(c=>c.status==='Em andamento'&&isOverdueNext(c));
-  const missing=data.filter(c=>{if(c.status!=='Em andamento')return false;if(c.proximaSessao)return false;var today=new Date(new Date().toDateString());return!c.slots||!c.slots.some(function(s){if(!s.data||!/agendada/i.test(s.data))return false;var p=s.data.split('/');if(p.length<3)return false;var d=new Date(p[2],p[1]-1,p[0]);return d>=today;});});
+  const missing=data.filter(c=>{if(c.status!=='Em andamento')return false;if(c.proximaSessao)return false;var today=new Date(new Date().toDateString());return!c.slots||!c.slots.some(function(s){if(!s.data||!/agendada/i.test(s.data))return false;var clean=s.data.replace(/\s*\(.*?\)\s*/g,'').trim();var p=clean.split('/');if(p.length<3)return false;var d=new Date(+p[2],+p[1]-1,+p[0]);return d>=today;});});
   const risky=data.filter(c=>riskLevel(c)==='alto');
   const vencidas=[];
   data.forEach(c=>{c.slots.forEach(s=>{if(s.data&&/agendada/i.test(s.data)){const d=parseBRDate(s.data);if(d&&d<new Date(new Date().toDateString())){vencidas.push({label:c.nome+' — '+s.label,idx:data.indexOf(c)});}}});});
