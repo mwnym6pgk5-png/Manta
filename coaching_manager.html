@@ -199,7 +199,7 @@ select[multiple]{min-height:74px}
           </div>
           <div class="fr">
             <div><label>Valor (R$)</label><input type="number" id="rv" placeholder="ex: 650"></div>
-            <div><label>Observação (opcional)</label><input type="text" id="ro" placeholder="no-show, agendada..."></div>
+            <div><label>Status</label><select id="ro" style="border:1px solid var(--brd);border-radius:6px;padding:6px 8px;background:var(--card);color:var(--txt)"><option value="">Realizada</option><option value="agendada">Agendada</option><option value="no show">No Show</option></select>/div>
           </div>
           <div class="fr">
             <div><label>Duração da sessão</label><select id="rdur"><option value="60">60 min</option><option value="90">90 min</option></select></div>
@@ -811,18 +811,25 @@ const anoArr=[...selAno.selectedOptions].map(o=>o.value);
 function buildDetail(c, idx){
   const sesHtml=c.slots.map(s=>{
     if(!s.valor&&!s.data) return '';
+    const rawD=(s.data||'').trim();
+    const isAg=/agendada/i.test(rawD);
+    const isNS=/no.?show/i.test(rawD);
+    const dOnly=rawD.replace(/\s*\(.*?\)\s*/g,'').trim();
+    const bdg=isAg?'<span style="font-size:0.72em;background:#3b82f6;color:#fff;border-radius:3px;padding:1px 5px;margin-left:4px">agendada</span>'
+      :isNS?'<span style="font-size:0.72em;background:#f97316;color:#fff;border-radius:3px;padding:1px 5px;margin-left:4px">no show</span>':'';
     return `<div class="sc filled"><div class="sc-lbl">${s.label}</div>
       ${s.valor!=null?`<div class="sc-val">${fmtBRL(s.valor)}</div>`:''}
-      ${s.data?`<div class="sc-date">${s.data}</div>`:''}
+      ${dOnly?`<div class="sc-date">${dOnly}${bdg}</div>`:''}
     </div>`;
   }).join('');
-  const health=cycleHealth(c);
+  const novaFrm=`<div style="margin-top:14px;border-top:1px solid var(--brd);padding-top:12px"><div style="font-size:0.85em;font-weight:600;margin-bottom:8px">+ Nova sessão</div><div style="display:flex;flex-wrap:wrap;gap:6px;align-items:flex-end"><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Nome</div><input id="dsl${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:110px;background:var(--card);color:var(--txt)" placeholder="Sessão 0X"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Data (DD/MM/AAAA)</div><input id="dsd${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:120px;background:var(--card);color:var(--txt)"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Valor R$</div><input id="dsv${idx}" type="number" step="0.01" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:90px;background:var(--card);color:var(--txt)"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Status</div><select id="dss${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:5px 6px;background:var(--card);color:var(--txt)"><option value="">Realizada</option><option value="agendada">Agendada</option><option value="no show">No Show</option></select></div><button onclick="addDetSession(${idx})" style="background:var(--acc);color:#fff;border:none;border-radius:4px;padding:5px 14px;cursor:pointer;font-size:0.84em">Salvar</button></div></div>`;
+ const health=cycleHealth(c);
   const histHtml=(c.historico&&c.historico.length)?c.historico.slice(0,10).map(h=>'<div class="hist-item">'+h.ts+' — '+h.texto+'</div>').join(''):'<div class="hist-item">Nenhum histórico registrado.</div>';
   return `<div style="font-size:10px;color:var(--mut);margin-bottom:8px">${c.contrato}${c.duracaoPadraoMin?' · Duração: '+c.duracaoPadraoMin+'min/sessão':''}${c.valorPrevisto?' · Previsto: '+fmtBRL(c.valorPrevisto):''}
       ${c.proximaSessao?' · Próxima sessão: <b>'+c.proximaSessao+'</b>'+(isOverdueNext(c)?' <span class="risk-hi">(atrasada)</span>':''):''}
       ${health?'<span class="health-badge '+health.cls+'">'+health.lbl+'</span>':''}
     </div>
-    <div class="sessions-grid">${sesHtml||'<span style="color:var(--mut);font-size:11px">Nenhuma sessão registrada.</span>'}</div>
+    <div class="sessions-grid">${sesHtml||'<span style="color:var(--mut);font-size:11px">Nenhuma sessão registrada.</span>'}</div>${novaFrm}
     <div style="margin-top:10px"><div style="font-weight:600;font-size:11px;color:var(--p);margin-bottom:4px">Histórico de alterações</div>${histHtml}</div>
     <button class="btn btn-o" style="margin-top:8px;font-size:10px;padding:5px 10px" onclick="event.stopPropagation();exportCoacheePDF(${idx})">📄 Exportar PDF</button>`;
 }
@@ -950,6 +957,24 @@ function addSessao(){
   saveData();
 }
 
+function addDetSession(idx){
+  var c=data[idx];
+  if(!c)return;
+  var lbl=(document.getElementById('dsl'+idx)||{value:''}).value.trim();
+  var dt=(document.getElementById('dsd'+idx)||{value:''}).value.trim();
+  var valorStr=(document.getElementById('dsv'+idx)||{value:'0'}).value||'0';
+  var st=(document.getElementById('dss'+idx)||{value:''}).value||'';
+  if(!lbl||!dt){alert('Nome e data são obrigatórios.');return;}
+  var valor=parseFloat(valorStr)||0;
+  var dataStr=dt+(st?' ('+st+')':'');
+  if(!c.slots)c.slots=[];
+  c.slots.push({label:lbl,data:dataStr,valor:valor});
+  pending.push({tipo:'sessao',nome:c.nome,sessao:lbl,data:dataStr,valor:valor});
+  saveData();
+  var det=document.getElementById('det-'+idx);
+  if(det)det.innerHTML=buildDetail(c,idx);
+  renderTable();
+}
 function deleteSessao(){
 const idx=document.getElementById('rn').value;
 const si=document.getElementById('rs').value;
