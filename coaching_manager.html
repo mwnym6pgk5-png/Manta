@@ -194,7 +194,7 @@ select[multiple]{min-height:74px}
             <select id="rn" onchange="onCoacheeChange()"><option value="">— selecionar —</option></select>
           </div></div>
           <div class="fr">
-            <div><label>Sessão</label><select id="rs" onchange="updateDuracaoSugerida()"><option>— selecionar coachee primeiro —</option></select></div>
+            <div><label>Sessão</label><select id="rs" onchange="updateDuracaoSugerida();onSessionChange()"><option>— selecionar coachee primeiro —</option></select></div>
             <div><label>Data (DD/MM/AAAA)</label><input type="text" id="rd" placeholder="17/06/2026"></div>
           </div>
           <div class="fr">
@@ -910,6 +910,7 @@ function onCoacheeChange(){
   const fe=c.slots.findIndex(s=>s.valor==null&&s.data==null);
   if(fe>=0) sel.value=fe;
   updateDuracaoSugerida();
+  onSessionChange();
 }
 function updateDuracaoSugerida(){
   const idx=document.getElementById('rn').value;
@@ -922,6 +923,18 @@ function updateDuracaoSugerida(){
 }
 
 
+function onSessionChange(){
+  var idx=document.getElementById('rn').value;
+  var si=document.getElementById('rs').value;
+  if(!idx||si===''){document.getElementById('rd').value='';document.getElementById('rv').value='';document.getElementById('ro').value='';return;}
+  var slot=data[idx].slots[si];
+  if(!slot) return;
+  var dateVal='',obsVal='';
+  if(slot.data){var m=slot.data.match(/^(.+?)(?:\s*\((.+?)\))?$/);dateVal=m?m[1].trim():slot.data;obsVal=m&&m[2]?m[2]:'';}
+  document.getElementById('rd').value=dateVal;
+  document.getElementById('rv').value=slot.valor!=null?slot.valor:'';
+  document.getElementById('ro').value=obsVal;
+}
 function onEditChange(){
   const idx=document.getElementById('ed-nome').value;
   if(!idx) return;
