@@ -28,7 +28,7 @@ body{font-family:Arial,sans-serif;font-size:13px;background:var(--bg);color:var(
 .tab.active{color:var(--p);border-bottom-color:var(--p)}
 .tab:hover:not(.active){color:var(--txt);background:var(--bg)}
 .content{padding:18px 20px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;margin-bottom:18px}
 .card{background:var(--card);border-radius:var(--r);padding:14px 16px;box-shadow:var(--sh);border-left:4px solid var(--p)}
 .card-val{font-size:24px;font-weight:bold;color:var(--p)}
 .card-lbl{font-size:11px;color:var(--mut);margin-top:3px}
@@ -126,7 +126,7 @@ select[multiple]{min-height:74px}
 <div class="hdr">
   <div>
     <div class="hdr-logo">ADIGO Coaching</div>
-    <div class="hdr-sub">Gestão de Coachees — 2025/2026</div>
+    <div class="hdr-sub">Gestão de Coachees — 2026</div>
   </div>
   <div class="hdr-right">
     <span id="sync-status" class="sync-badge sync-ok">☁️ Sincronizado</span>
@@ -174,11 +174,11 @@ select[multiple]{min-height:74px}
   <div id="pane-coachees" style="display:none">
     <div class="filters">
       <input id="srch" type="text" placeholder="Buscar por nome..." style="width:200px" oninput="renderTable()">
-      <select id="f-st" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:130px">
+      <label for="f-st" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Status</label><select id="f-st" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:130px">
         <option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option>
       </select>
-      <select id="f-emp" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:150px"></select>
-<select id="f-ano" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários (ano de conclusão)" style="min-width:110px"></select>
+      <label for="f-emp" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Empresa</label><select id="f-emp" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:150px"></select>
+<label for="f-ano" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Ano</label><select id="f-ano" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários (ano de conclusão)" style="min-width:110px"></select>
       <button class="btn btn-o" style="font-size:11px;padding:5px 10px" onclick="document.getElementById('f-st').selectedIndex=-1;document.getElementById('f-emp').selectedIndex=-1;document.getElementById('f-ano').selectedIndex=-1;renderTable()">Limpar filtros</button> <button class="btn btn-g" style="font-size:11px;padding:5px 10px" onclick="exportCoacheesCSV()">📊 Exportar tabela</button>
       <span id="cnt-lbl" style="font-size:11px;color:var(--mut)"></span>
     </div>
@@ -208,12 +208,12 @@ select[multiple]{min-height:74px}
           </div>
           <div class="fr">
             <div><label>Valor (R$)</label><input type="number" id="rv" placeholder="ex: 650"></div>
-            <div><label>Status</label><select id="ro" style="border:1px solid var(--brd);border-radius:6px;padding:6px 8px;background:var(--card);color:var(--txt)"><option value="">Realizada</option><option value="agendada">Agendada</option><option value="no show">No Show</option></select>/div>
+            <div><label>Status</label><select id="ro" style="border:1px solid var(--brd);border-radius:6px;padding:6px 8px;background:var(--card);color:var(--txt)"><option value="">Realizada</option><option value="agendada">Agendada</option><option value="no show">No Show</option></select></div>
           </div>
           <div class="fr">
             <div><label>Duração da sessão</label><select id="rdur"><option value="60">60 min</option><option value="90">90 min</option></select></div>
           </div>
-          <button class="btn btn-p" onclick="addSessao()">Adicionar Sessão</button> <button class="btn" style="background:#ffeaea;color:#8b0000;border:1px solid #8b0000;margin-left:8px" onclick="deleteSessao()">🗑️ Excluir sessão</button>
+          <button class="btn btn-p" onclick="addSessao()">Adicionar Sessão</button> <button class="btn" style="background:none;color:var(--mut);border:1px solid var(--brd);margin-left:12px;font-size:12px;padding:4px 10px;opacity:0.75" onclick="deleteSessao()">🗑️ Excluir sessão</button>
         </div>
 
         <div class="form-panel">
@@ -246,7 +246,7 @@ select[multiple]{min-height:74px}
 <div><label>Valor previsto (R$)</label><input type="number" id="ed-valorprev" placeholder="ex: 6500"></div>
 <div><label>Duração padrão da sessão (min)</label><input type="number" id="ed-duracao" placeholder="ex: 60"></div>
 </div>
-          <button class="btn btn-p" onclick="editCoachee()">Salvar Correção</button> <button class="btn" style="background:#ffeaea;color:#8b0000;border:1px solid #8b0000;margin-left:8px" onclick="deleteCoachee()">🗑️ Excluir Coachee</button>
+          <button class="btn btn-p" onclick="editCoachee()">Salvar Correção</button> <button class="btn" style="background:none;color:var(--mut);border:1px solid var(--brd);margin-left:12px;font-size:12px;padding:4px 10px;opacity:0.75" onclick="deleteCoachee()">🗑️ Excluir Coachee</button>
         </div>
 
         <div class="form-panel">
@@ -639,7 +639,7 @@ const valorMedio=realCount?tot/realCount:0;
     <div class="card" style="border-color:#595959"><div class="card-val" style="color:#595959">${st}</div><div class="card-lbl">Standby / A iniciar</div></div>
     <div class="card"><div class="card-val">R$ ${Math.round(tot/1000)}k</div><div class="card-lbl">Total realizado (${data.length} coachees)</div></div>
 <div class="card"><div class="card-val">R$ ${Math.round(totPrev/1000)}k</div><div class="card-lbl">Valor Previsto Total</div></div>
-<div class="card"><div class="card-val">R$ ${Math.round(valorMedio)}</div><div class="card-lbl">Valor Médio por Sessão</div></div>
+<div class="card"><div class="card-val">${(Math.round(valorMedio)).toLocaleString('pt-BR')} <small style="font-size:60%;opacity:0.7">R$/sess</small></div><div class="card-lbl">Valor Médio por Sessão</div></div>
 <div class="card"><div class="card-val">${Math.round(horasReal)}h</div><div class="card-lbl">Horas de Coaching Realizadas</div></div>`;
 const porAno=horasPorAno();
 const anoTxt=Object.keys(porAno).sort().map(y=>y+': '+Math.round(porAno[y])+'h').join(' · ');
@@ -833,7 +833,7 @@ function buildDetail(c, idx){
       ${dOnly?`<div class="sc-date">${dOnly}${bdg}</div>`:''}
     </div>`;
   }).join('');
-  const novaFrm=`<div style="margin-top:14px;border-top:1px solid var(--brd);padding-top:12px"><div style="font-size:0.85em;font-weight:600;margin-bottom:8px">+ Nova sessão</div><div style="display:flex;flex-wrap:wrap;gap:6px;align-items:flex-end"><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Nome</div><input id="dsl${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:110px;background:var(--card);color:var(--txt)" placeholder="Sessão 0X"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Data (DD/MM/AAAA)</div><input id="dsd${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:120px;background:var(--card);color:var(--txt)"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Valor R$</div><input id="dsv${idx}" type="number" step="0.01" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:90px;background:var(--card);color:var(--txt)"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Status</div><select id="dss${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:5px 6px;background:var(--card);color:var(--txt)"><option value="">Realizada</option><option value="agendada">Agendada</option><option value="no show">No Show</option></select></div><button onclick="addDetSession(${idx})" style="background:var(--p);color:#fff;border:none;border-radius:4px;padding:5px 14px;cursor:pointer;font-size:0.84em">Salvar</button></div></div>`;
+  const novaFrm=`<div style="margin-top:14px;border-top:1px solid var(--brd);padding-top:12px"><div style="font-size:0.85em;font-weight:600;margin-bottom:8px">+ Nova sessão</div><div style="display:flex;flex-wrap:wrap;gap:6px;align-items:flex-end"><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Nome</div><input id="dsl${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:110px;background:var(--card);color:var(--txt)" placeholder="ex: Sessão 05"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Data (DD/MM/AAAA)</div><input id="dsd${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:120px;background:var(--card);color:var(--txt)"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Valor R$</div><input id="dsv${idx}" type="number" step="0.01" style="border:1px solid var(--brd);border-radius:4px;padding:4px 6px;width:90px;background:var(--card);color:var(--txt)"></div><div><div style="font-size:0.74em;opacity:0.7;margin-bottom:2px">Status</div><select id="dss${idx}" style="border:1px solid var(--brd);border-radius:4px;padding:5px 6px;background:var(--card);color:var(--txt)"><option value="">Realizada</option><option value="agendada">Agendada</option><option value="no show">No Show</option></select></div><button onclick="addDetSession(${idx})" style="background:var(--p);color:#fff;border:none;border-radius:4px;padding:5px 14px;cursor:pointer;font-size:0.84em">Salvar</button></div></div>`;
  const health=cycleHealth(c);
   const histHtml=(c.historico&&c.historico.length)?c.historico.slice(0,10).map(h=>'<div class="hist-item">'+h.ts+' — '+h.texto+'</div>').join(''):'<div class="hist-item">Nenhum histórico registrado.</div>';
   return `<div style="font-size:10px;color:var(--mut);margin-bottom:8px">${c.contrato}${c.duracaoPadraoMin?' · Duração: '+c.duracaoPadraoMin+'min/sessão':''}${c.valorPrevisto?' · Previsto: '+fmtBRL(c.valorPrevisto):''}
