@@ -3,7 +3,7 @@
     {
       "nome": "Yuri Camargo (Ciclo 2 - novo ciclo)",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 5,
       "slots": [
@@ -13,62 +13,62 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "06/03/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "26/03/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "22/04/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "11/05/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -88,7 +88,7 @@
       "dataInicio": "06/03/2024",
       "historico": [
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 06/03/2024 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 06/03/2024 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ]
@@ -96,8 +96,8 @@
     {
       "nome": "Rafael Andrade Alves",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
-      "status": "ConcluÃÂ­do",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 5,
       "slots": [
         {
@@ -106,62 +106,62 @@
           "data": "06/11/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "24/11/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "16/01/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "05/03/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "22/04/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -181,29 +181,29 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:21:25",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 06/11/2025 (R$ 975,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 06/11/2025 (R$ 975,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 06/11/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 06/11/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
           "data": "10/07/2026, 18:59:52",
-          "descricao": "próxima sessão: → 30/07/2026 (agendada)"
+          "descricao": "prÃ³xima sessÃ£o: â 30/07/2026 (agendada)"
         }
       ],
       "dataInicio": "06/11/2025",
       "proximaSessao": "30/07/2026"
     },
     {
-      "nome": "JosÃÂ© Newton Melo Junior",
+      "nome": "JosÃÂÃÂ© Newton Melo Junior",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
-      "status": "ConcluÃÂ­do",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 5,
       "slots": [
         {
@@ -212,62 +212,62 @@
           "data": "12/12/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "16/01/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "20/03/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "02/04/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "22/04/2026 (no-show, cobrado)"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -287,14 +287,14 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:17:23",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 12/12/2025 (R$ 975,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 12/12/2025 (R$ 975,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 12/12/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 12/12/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -303,7 +303,7 @@
     {
       "nome": "Rodrigo Vianna (Ciclo 2 - novo ciclo)",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 5,
       "slots": [
@@ -313,62 +313,62 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "11/04/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "25/05/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -388,12 +388,12 @@
       "dataInicio": "11/04/2026",
       "historico": [
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 11/04/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 11/04/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
           "data": "10/07/2026, 18:59:52",
-          "descricao": "próxima sessão: → 30/07/2026 (agendada)"
+          "descricao": "prÃ³xima sessÃ£o: â 30/07/2026 (agendada)"
         }
       ],
       "proximaSessao": "30/07/2026"
@@ -401,8 +401,8 @@
     {
       "nome": "Nacib Hadad Bisneto",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
-      "status": "ConcluÃÂ­do",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 5,
       "slots": [
         {
@@ -411,62 +411,62 @@
           "data": "28/10/2026"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "11/11/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "19/11/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "23/02/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "09/03/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -486,18 +486,18 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:20:07",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 05 Ã¢ÂÂ era 27/04/2026 (extra) (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ era 27/04/2026 (extra) (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 22:18:39",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 28/10/2026 (R$ 975,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 28/10/2026 (R$ 975,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 28/10/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 28/10/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -506,7 +506,7 @@
     {
       "nome": "Renan Campos De Carvalho",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 5,
       "slots": [
@@ -516,62 +516,62 @@
           "data": "03/03/2026"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "17/06/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -591,18 +591,18 @@
       "historico": [
         {
           "ts": "19/06/2026, 22:52:43",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 02 Ã¢ÂÂ era 17/06/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ era 17/06/2026 (R$ 650,00)"
         },
         {
           "ts": "19/06/2026, 22:52:38",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 17/06/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 17/06/2026 (R$ 650,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 03/03/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 03/03/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -611,8 +611,8 @@
     {
       "nome": "Camila Silveira Martins Nogueira",
       "empresa": "Suzano",
-      "contrato": "SUZANO - Coaching Executivo (Camila Silveira Martins Nogueira) - 1h30min, R$975/sessÃÂÃÂÃÂÃÂ£o",
-      "status": "ConcluÃÂ­do",
+      "contrato": "SUZANO - Coaching Executivo (Camila Silveira Martins Nogueira) - 1h30min, R$975/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 13,
       "slots": [
         {
@@ -621,62 +621,62 @@
           "data": "04/04/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 975,
           "data": "10/04/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 975,
           "data": "13/05/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 975,
           "data": "10/06/2025"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 975,
           "data": "04/07/2025"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 975,
           "data": "17/10/2025"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 975,
           "data": "07/11/2025"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 975,
           "data": "16/01/2026"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": 975,
           "data": "20/02/2026"
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": 975,
           "data": "06/03/2026"
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": 975,
           "data": "08/05/2026"
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -698,14 +698,14 @@
       "historico": [
         {
           "ts": "08/07/2026, 08:03:52",
-          "texto": "Status alterado: Em andamento Ã¢ÂÂ ConcluÃÂ­do"
+          "texto": "Status alterado: Em andamento ÃÂ¢ÃÂÃÂ ConcluÃÂÃÂ­do"
         },
         {
           "ts": "08/07/2026, 08:03:43",
-          "texto": "SessÃÂ£o registrada: Encerramento Ã¢ÂÂ 07/07/2026 (R$ 975,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Encerramento ÃÂ¢ÃÂÃÂ 07/07/2026 (R$ 975,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 04/04/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 04/04/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -714,7 +714,7 @@
     {
       "nome": "Marcelo Barchetta (Ciclo 2)",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂ£o, 1h30min",
+      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o, 1h30min",
       "status": "Em andamento",
       "previstas": 9,
       "slots": [
@@ -725,64 +725,64 @@
           "duracaoMin": 60
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1950,
           "data": "23/06/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "data": "22/07/2026 (agendada)",
           "valor": 1950,
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -802,47 +802,47 @@
       "historico": [
         {
           "ts": "09/07/2026, 22:30:28",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 22/07/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 22/07/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "25/06/2026, 19:00:04",
-          "texto": "prÃÂ³xima sessÃÂ£o: Ã¢ÂÂ Ã¢ÂÂ 08/07/2026"
+          "texto": "prÃÂÃÂ³xima sessÃÂÃÂ£o: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 08/07/2026"
         },
         {
           "ts": "23/06/2026, 09:27:20",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 23/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 23/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "22/06/2026, 10:54:13",
-          "texto": "sessÃÂµes previstas: 8 Ã¢ÂÂ 9"
+          "texto": "sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 9"
         },
         {
           "ts": "22/06/2026, 10:53:41",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 23/06/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 23/06/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "22/06/2026, 10:52:21",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 18/05/2026"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 18/05/2026"
         },
         {
           "ts": "21/06/2026, 19:19:30",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 18/05/2026 (R$ 1.875,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 18/05/2026 (R$ 1.875,00)"
         },
         {
           "ts": "21/06/2026, 19:18:34",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 18/05/2026"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 18/05/2026"
         },
         {
           "ts": "21/06/2026, 19:00:04",
           "texto": "nome: \"Marcelo (Heating Cooling 2026)\" -> \"Marcelo Barchetta (Ciclo 2)\""
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 18/05/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 18/05/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
           "data": "10/07/2026, 18:53:14",
-          "descricao": "prÃ³xima sessÃ£o: 08/07/2026 â 22/07/2026"
+          "descricao": "prÃÂ³xima sessÃÂ£o: 08/07/2026 Ã¢ÂÂ 22/07/2026"
         }
       ],
       "dataInicio": "18/05/2026",
@@ -851,7 +851,7 @@
     {
       "nome": "Henrique Silveira Miranda Prado",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂ£o, 1h30min",
+      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o, 1h30min",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -861,68 +861,68 @@
           "data": "30/03/2026"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1950,
           "data": "22/04/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1950,
           "data": "30/04/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1950,
           "data": "25/05/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1950,
           "data": "11/06/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1950,
           "data": "30/06/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1950,
           "data": "23/07/2026 (agendada)",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -942,78 +942,78 @@
       "historico": [
         {
           "ts": "07/07/2026, 10:11:53",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 23/07/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 23/07/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "07/07/2026, 10:11:07",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 30/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 30/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "04/07/2026, 09:38:52",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 30/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 30/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 14:44:05",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 04 Ã¢ÂÂ era 30/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ era 30/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 14:24:47",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 30/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 30/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 14:24:24",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 05 Ã¢ÂÂ era 30/06/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ era 30/06/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 14:24:08",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 03 Ã¢ÂÂ 11/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 03 ÃÂ¢ÃÂÃÂ 11/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 13:48:21",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 25/05/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 25/05/2026 (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 13:47:27",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 30/04/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 30/04/2026 (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 13:42:55",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 22/04/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 22/04/2026 (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 13:42:05",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 30/04/2026"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 30/04/2026"
         },
         {
           "ts": "21/06/2026, 21:45:55",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 30/06/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 30/06/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:45:39",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 06 Ã¢ÂÂ era 30/06/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ era 30/06/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:45:32",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 05 Ã¢ÂÂ era 30/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ era 30/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:44:58",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 30/06/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 30/06/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:44:31",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 30/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 30/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:43:09",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 30/03/2026 (R$ 1.250,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 30/03/2026 (R$ 1.250,00)"
         },
         {
           "ts": "21/06/2026, 19:28:11",
-          "texto": "sessÃÂµes previstas: 8 Ã¢ÂÂ 10; valor previsto: R$ 15.600,00 Ã¢ÂÂ R$ 18.200,00"
+          "texto": "sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 10; valor previsto: R$ 15.600,00 ÃÂ¢ÃÂÃÂ R$ 18.200,00"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 30/03/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 30/03/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -1022,7 +1022,7 @@
     {
       "nome": "Felipe Campos Rodrigues",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂ£o, 1h30min",
+      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o, 1h30min",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1032,64 +1032,64 @@
           "data": "01/04/2026"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1950,
           "data": "20/04/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1950,
           "data": "30/04/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1950,
           "data": "22/05/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1950,
           "data": "12/06/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1950,
           "data": "22/06/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1950,
           "data": "21/07/2026 (agendada)",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1109,39 +1109,39 @@
       "historico": [
         {
           "ts": "07/07/2026, 14:56:02",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 21/07/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 21/07/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "07/07/2026, 14:55:38",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 22/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 22/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "07/07/2026, 14:49:15",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 21/07/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 21/07/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "22/06/2026, 10:57:43",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 06 Ã¢ÂÂ era 14/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ era 14/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:50:55",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 01/04/2026 (R$ 1.300,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 01/04/2026 (R$ 1.300,00)"
         },
         {
           "ts": "21/06/2026, 21:47:19",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 14/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 14/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:39:48",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 14/06 (agendada) (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 14/06 (agendada) (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:39:31",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 22/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 22/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 21:39:04",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 12/06/2026 (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 12/06/2026 (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 19:24:58",
@@ -1153,19 +1153,19 @@
         },
         {
           "ts": "21/06/2026, 19:24:46",
-          "texto": "nome: \"Felipe (Heating Cooling)\" -> \"Felipe  Casmpos Rodrigues\"; sessÃÂµes previstas: 8 Ã¢ÂÂ 10; valor previsto: R$ 15.600,00 Ã¢ÂÂ R$ 18.200,00"
+          "texto": "nome: \"Felipe (Heating Cooling)\" -> \"Felipe  Casmpos Rodrigues\"; sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 10; valor previsto: R$ 15.600,00 ÃÂ¢ÃÂÃÂ R$ 18.200,00"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 20/04/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 20/04/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
       "dataInicio": "20/04/2026"
     },
     {
-      "nome": "JosÃÂ© Paladino Junior",
+      "nome": "JosÃÂÃÂ© Paladino Junior",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂ£o, 1h30min",
+      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o, 1h30min",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1175,62 +1175,62 @@
           "data": "24/04/2026"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1950,
           "data": "18/05/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1950,
           "data": "15/06 (no-show)"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1250,18 +1250,18 @@
       "historico": [
         {
           "ts": "21/06/2026, 21:58:44",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 24/04/2026 (R$ 1.300,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 24/04/2026 (R$ 1.300,00)"
         },
         {
           "ts": "21/06/2026, 21:57:08",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 15/06 (no-show) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 15/06 (no-show) (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 19:28:43",
-          "texto": "sessÃÂµes previstas: 8 Ã¢ÂÂ 10; valor previsto: R$ 15.600,00 Ã¢ÂÂ R$ 18.200,00"
+          "texto": "sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 10; valor previsto: R$ 15.600,00 ÃÂ¢ÃÂÃÂ R$ 18.200,00"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 24/04/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 24/04/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -1270,7 +1270,7 @@
     {
       "nome": "Daniel Nunan",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂ£o, 1h30min",
+      "contrato": "Heating Cooling - Mentoria de LideranÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a (contrato 2026) - R$1.950/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o, 1h30min",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1280,63 +1280,63 @@
           "data": "06/05/2026 (Briefing Samira)"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1950,
           "data": "11/05/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1950,
           "data": "25/05/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1950,
           "data": "11/06/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1950,
           "data": "08/07/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1356,18 +1356,18 @@
       "historico": [
         {
           "ts": "29/06/2026, 14:43:29",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 04 Ã¢ÂÂ era 30/06/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ era 30/06/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "29/06/2026, 14:40:09",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 30/06/2026 (agendada) (R$ 1.950,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 30/06/2026 (agendada) (R$ 1.950,00)"
         },
         {
           "ts": "21/06/2026, 19:25:19",
-          "texto": "sessÃÂµes previstas: 8 Ã¢ÂÂ 10; valor previsto: R$ 15.600,00 Ã¢ÂÂ R$ 18.200,00"
+          "texto": "sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 10; valor previsto: R$ 15.600,00 ÃÂ¢ÃÂÃÂ R$ 18.200,00"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 06/05/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 06/05/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -1375,8 +1375,8 @@
     },
     {
       "nome": "Beatriz Brisotti",
-      "empresa": "Amor SaÃÂºde",
-      "contrato": "ADIGO Coaching (Beatriz Brisotti) - 10 sessÃÂÃÂÃÂÃÂµes, R$18.000 total = R$1.800/sessÃÂÃÂÃÂÃÂ£o",
+      "empresa": "Amor SaÃÂÃÂºde",
+      "contrato": "ADIGO Coaching (Beatriz Brisotti) - 10 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes, R$18.000 total = R$1.800/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1386,62 +1386,62 @@
           "data": "04/07/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1800,
           "data": "22/08/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1800,
           "data": "30/01/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1800,
           "data": "19/02/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1800,
           "data": "26/05/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1800,
           "data": "27/05/2026"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1461,10 +1461,10 @@
       "historico": [
         {
           "ts": "21/06/2026, 19:22:33",
-          "texto": "empresa: \"Particular (PF)\" Ã¢ÂÂ \"Amor SaÃÂºde\"; duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "empresa: \"Particular (PF)\" ÃÂ¢ÃÂÃÂ \"Amor SaÃÂÃÂºde\"; duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 22/08/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 22/08/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -1472,8 +1472,8 @@
     },
     {
       "nome": "Felipe Oliveira",
-      "empresa": "Amor SaÃÂºde",
-      "contrato": "ADIGO Coaching (Felipe Oliveira) - 10 sessÃÂÃÂÃÂÃÂµes, R$20.400 total = R$2.040/sessÃÂÃÂÃÂÃÂ£o",
+      "empresa": "Amor SaÃÂÃÂºde",
+      "contrato": "ADIGO Coaching (Felipe Oliveira) - 10 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes, R$20.400 total = R$2.040/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1484,65 +1484,65 @@
           "duracaoMin": 60
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1700,
           "data": "12/06/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1700,
           "data": "24/06/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1700,
           "data": "07/07/2026",
           "duracaoMin": 90
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "data": "21/07/2026 (agendada)",
           "valor": 1700
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1562,38 +1562,38 @@
       "historico": [
         {
           "ts": "07/07/2026, 18:02:50",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 03 Ã¢ÂÂ 07/07/2026 (R$ 1.700,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 03 ÃÂ¢ÃÂÃÂ 07/07/2026 (R$ 1.700,00)"
         },
         {
           "ts": "24/06/2026, 16:37:15",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 03 Ã¢ÂÂ 07/07/2026 (agendada) (R$ 1.700,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 03 ÃÂ¢ÃÂÃÂ 07/07/2026 (agendada) (R$ 1.700,00)"
         },
         {
           "ts": "24/06/2026, 14:21:11",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 10/06/2026 (R$ 1.700,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 10/06/2026 (R$ 1.700,00)"
         },
         {
           "ts": "24/06/2026, 14:20:33",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 12/06/2024 (R$ 1.700,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 12/06/2024 (R$ 1.700,00)"
         },
         {
           "ts": "24/06/2026, 14:19:04",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 24/06/2026 (R$ 1.700,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 24/06/2026 (R$ 1.700,00)"
         },
         {
           "ts": "24/06/2026, 14:17:35",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 24/06/2026 (R$ 2.040,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 24/06/2026 (R$ 2.040,00)"
         },
         {
           "ts": "21/06/2026, 19:22:15",
-          "texto": "duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         },
         {
           "ts": "21/06/2026, 19:22:09",
-          "texto": "empresa: \"Particular (PF)\" Ã¢ÂÂ \"Amor SaÃÂºde\""
+          "texto": "empresa: \"Particular (PF)\" ÃÂ¢ÃÂÃÂ \"Amor SaÃÂÃÂºde\""
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 11/06/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 11/06/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -1602,7 +1602,7 @@
     {
       "nome": "Rennan Vilar",
       "empresa": "Todos Empreendimentos",
-      "contrato": "Mentoria Executiva Individual (Rennan Vilar) - Todos Empreendimentos - pacote 10 sessÃÂÃÂÃÂÃÂµes = R$13.800,00 (R$1.380/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "Mentoria Executiva Individual (Rennan Vilar) - Todos Empreendimentos - pacote 10 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes = R$13.800,00 (R$1.380/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1612,62 +1612,62 @@
           "data": "03/04/2025 (cortesia)"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1380,
           "data": "02/05/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1380,
           "data": "13/05/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1380,
           "data": "27/11/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1380,
           "data": "12/02/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1380,
           "data": "28/05/2026"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1687,22 +1687,22 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:44:15",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 28/05/2026 (R$ 1.380,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 28/05/2026 (R$ 1.380,00)"
         },
         {
           "ts": "21/06/2026, 22:44:00",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 12/02/2026 (R$ 1.380,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 12/02/2026 (R$ 1.380,00)"
         },
         {
           "ts": "21/06/2026, 22:43:41",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 03 Ã¢ÂÂ 27/11/2026 (R$ 1.380,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 03 ÃÂ¢ÃÂÃÂ 27/11/2026 (R$ 1.380,00)"
         },
         {
           "ts": "21/06/2026, 22:43:27",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 13/05/2025 (R$ 1.380,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 13/05/2025 (R$ 1.380,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 03/04/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 03/04/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -1711,7 +1711,7 @@
     {
       "nome": "Bruno Cunha",
       "empresa": "Grupo Alves da Cunha",
-      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1721,62 +1721,62 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1000,
           "data": "05/03/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1000,
           "data": "25/03/206"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1000,
           "data": "23/04/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1000,
           "data": "28/05/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1000,
           "data": "25/06/2026"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1796,7 +1796,7 @@
       "historico": [
         {
           "ts": "21/06/2026, 21:18:51",
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 05/03/2026"
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 05/03/2026"
         },
         {
           "ts": "21/06/2026, 21:18:36",
@@ -1804,31 +1804,31 @@
         },
         {
           "ts": "21/06/2026, 21:18:23",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 25/06/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 25/06/2026 (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:17:59",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 28/05/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 28/05/2026 (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:17:46",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 03 Ã¢ÂÂ 23/04/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 03 ÃÂ¢ÃÂÃÂ 23/04/2026 (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:17:34",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 25/03/206 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 25/03/206 (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:17:18",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 05/03/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 05/03/2026 (R$ 1.000,00)"
         }
       ],
       "dataInicio": "05/03/2026"
     },
     {
-      "nome": "GenÃÂ©sio EspÃÂ­rito Santo",
+      "nome": "GenÃÂÃÂ©sio EspÃÂÃÂ­rito Santo",
       "empresa": "Grupo Alves da Cunha",
-      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1838,63 +1838,63 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1000,
           "data": "27/02/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1000,
           "data": "27/03/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1000,
           "data": "30/04/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1000,
           "data": "09/06/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1000,
           "data": "09/07/2026 (agendada)",
           "duracaoMin": 60
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -1915,18 +1915,23 @@
       "historico": [
         {
           "ts": "29/06/2026, 10:00:12",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 09/07/2026 (agendada) (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 09/07/2026 (agendada) (R$ 1.000,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 27/02/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 27/02/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
+        },
+        {
+          "data": "10/07/2026, 19:00:43",
+          "descricao": "próxima sessão: 09/07/2026 → 20/07/2026 (agendada) — reagendada"
         }
-      ]
+      ],
+      "proximaSessao": "20/07/2026"
     },
     {
       "nome": "Cassiano Motter",
       "empresa": "Grupo Alves da Cunha",
-      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -1936,63 +1941,63 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1000,
           "data": "27/02/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1000,
           "data": "26/03/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1000,
           "data": "08/05/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1000,
           "data": "07/07/2026",
           "duracaoMin": 60
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2013,10 +2018,10 @@
       "historico": [
         {
           "ts": "07/07/2026, 15:06:16",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 07/07/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 07/07/2026 (R$ 1.000,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 27/02/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 27/02/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ]
@@ -2024,7 +2029,7 @@
     {
       "nome": "Ione Santos",
       "empresa": "Grupo Alves da Cunha",
-      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "Grupo Alves da Cunha - Mentoria Individualizada (10 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes/pessoa, R$1.000/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 10,
       "slots": [
@@ -2034,62 +2039,62 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1000,
           "data": "08/01/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1000,
           "data": "05/02/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1000,
           "data": "05/03/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1000,
           "data": "18/03/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1000,
           "data": "02/04/2026"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1000,
           "data": "30/04/2026"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 1000,
           "data": "11/06/2026"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "data": "11/08/2026 (agendada)",
           "valor": 1000
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2109,31 +2114,31 @@
       "historico": [
         {
           "ts": "21/06/2026, 21:33:32",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 07 Ã¢ÂÂ 11/06/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 07 ÃÂ¢ÃÂÃÂ 11/06/2026 (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:33:20",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 30/04/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 30/04/2026 (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:32:22",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 05 Ã¢ÂÂ 02/04/2025 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 05 ÃÂ¢ÃÂÃÂ 02/04/2025 (R$ 1.000,00)"
         },
         {
           "ts": "21/06/2026, 21:31:52",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 18/03/2026 (R$ 1.000,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 18/03/2026 (R$ 1.000,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 08/01/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 08/01/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
       "dataInicio": "08/01/2026"
     },
     {
-      "nome": "AndrÃÂ© Arruda",
+      "nome": "AndrÃÂÃÂ© Arruda",
       "empresa": "Chiesi",
-      "contrato": "CHIESI - Coaching Executivo Individual (AndrÃÂÃÂÃÂÃÂ© Arruda) - jornada de 13 sessÃÂÃÂÃÂÃÂµes (1h cada): contrataÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o + 5 individuais + acompanhamento + 5 individuais + encerramento = R$8.450,00 (R$650/sessÃÂÃÂÃÂÃÂ£o)",
+      "contrato": "CHIESI - Coaching Executivo Individual (AndrÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ© Arruda) - jornada de 13 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes (1h cada): contrataÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o + 5 individuais + acompanhamento + 5 individuais + encerramento = R$8.450,00 (R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
       "status": "Em andamento",
       "previstas": 13,
       "slots": [
@@ -2144,62 +2149,62 @@
           "duracaoMin": 60
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "13/07/2026 (agendada)"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2219,39 +2224,39 @@
       "historico": [
         {
           "ts": "23/06/2026, 08:27:24",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 22/06/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 22/06/2026 (R$ 650,00)"
         },
         {
           "ts": "22/06/2026, 10:58:44",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 01 Ã¢ÂÂ era 22/06/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ era 22/06/2026 (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 23:18:38",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 22/06/2026 (agendada) (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 22/06/2026 (agendada) (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 21:08:13",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 22/06/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 22/06/2026 (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 19:21:32",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 01 Ã¢ÂÂ era 22/06/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ era 22/06/2026 (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 18:52:35",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 22/06/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 22/06/2026 (R$ 650,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 22/06/2026 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 22/06/2026 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
       "dataInicio": "22/06/2026"
     },
     {
-      "nome": "Marcus BrandÃÂ£o",
-      "empresa": "OncoclÃÂ­nicas",
-      "contrato": "OncoclÃÂÃÂÃÂÃÂ­nicas - Coaching Executivo Individual (Marcus BrandÃÂÃÂÃÂÃÂ£o) - pacote 6 sessÃÂÃÂÃÂÃÂµes + Coleta de Insights 360 + devolutiva, nÃÂÃÂÃÂÃÂ­vel Gerente Executivo/Gerente - R$12.100,00 total",
+      "nome": "Marcus BrandÃÂÃÂ£o",
+      "empresa": "OncoclÃÂÃÂ­nicas",
+      "contrato": "OncoclÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­nicas - Coaching Executivo Individual (Marcus BrandÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o) - pacote 6 sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes + Coleta de Insights 360 + devolutiva, nÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ­vel Gerente Executivo/Gerente - R$12.100,00 total",
       "status": "Standby",
       "previstas": 7,
       "slots": [
@@ -2261,62 +2266,62 @@
           "data": "27/10/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1815,
           "data": "27/02/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2334,23 +2339,23 @@
       "historico": [
         {
           "ts": "19/06/2026, 21:24:15",
-          "texto": "SessÃÂ£o excluÃÂ­da: SessÃÂ£o 02 Ã¢ÂÂ era 06/03/2026 (no-show) (R$ 0,00)"
+          "texto": "SessÃÂÃÂ£o excluÃÂÃÂ­da: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ era 06/03/2026 (no-show) (R$ 0,00)"
         },
         {
           "ts": "19/06/2026, 21:17:54",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 27/02/2026 (R$ 1.815,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 27/02/2026 (R$ 1.815,00)"
         },
         {
           "ts": "19/06/2026, 21:14:39",
-          "texto": "nome: \"Marcus BrandÃÂ£o (OncoclÃÂ­nicas)\" -> \"Marcus BrandÃÂ£o\"; data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 27/02/2025"
+          "texto": "nome: \"Marcus BrandÃÂÃÂ£o (OncoclÃÂÃÂ­nicas)\" -> \"Marcus BrandÃÂÃÂ£o\"; data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 27/02/2025"
         },
         {
           "ts": "19/06/2026, 21:13:19",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 27/10/2025 (R$ 1.210,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 27/10/2025 (R$ 1.210,00)"
         },
         {
           "ts": "19/06/2026, 15:35:16",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 27/10/2025"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 27/10/2025"
         }
       ],
       "dataInicio": "27/02/2025",
@@ -2358,10 +2363,10 @@
       "duracaoPadraoMin": 60
     },
     {
-      "nome": "AndrÃÂ© Tonetto Picarelli",
+      "nome": "AndrÃÂÃÂ© Tonetto Picarelli",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
-      "status": "ConcluÃÂ­do",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 5,
       "slots": [
         {
@@ -2370,62 +2375,62 @@
           "data": "realizado em 2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "realizado em 2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "16/01/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "27/02/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "27/03/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2445,11 +2450,11 @@
       "dataInicio": "29/10/2025",
       "historico": [
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 29/10/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 29/10/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ]
@@ -2457,8 +2462,8 @@
     {
       "nome": "Yuri Camargo (Ciclo 1)",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
-      "status": "ConcluÃÂ­do",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 5,
       "slots": [
         {
@@ -2467,62 +2472,62 @@
           "data": "06/11/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "12/12/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "16/01/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "30/01/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "27/02/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2542,18 +2547,18 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:36:53",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 12/12/2025 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 12/12/2025 (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 22:36:27",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 06/11/2025 (R$ 975,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 06/11/2025 (R$ 975,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 06/11/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 06/11/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -2562,8 +2567,8 @@
     {
       "nome": "Rodrigo Ferreira Braga",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
-      "status": "ConcluÃÂ­do",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 5,
       "slots": [
         {
@@ -2572,62 +2577,62 @@
           "data": "17/11/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "21/11/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "12/12/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "12/01/2026"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "13/02/2026 (no-show)"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2647,26 +2652,26 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:27:25",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 13/02/2026 (no-show) (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 13/02/2026 (no-show) (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 22:26:38",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 02 Ã¢ÂÂ 12/12/2025 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 02 ÃÂ¢ÃÂÃÂ 12/12/2025 (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 22:25:18",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 01 Ã¢ÂÂ 21/11/2025 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 01 ÃÂ¢ÃÂÃÂ 21/11/2025 (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 22:24:47",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 17/11/2025 (R$ 975,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 17/11/2025 (R$ 975,00)"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 17/11/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 17/11/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -2675,8 +2680,8 @@
     {
       "nome": "Rodrigo Vianna (Ciclo 1)",
       "empresa": "PRIO",
-      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂ£o)",
-      "status": "ConcluÃÂ­do",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o)",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 5,
       "slots": [
         {
@@ -2685,62 +2690,62 @@
           "data": "29/01/2026"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 650,
           "data": "09/03/2026"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 650,
           "data": "23/03/2026"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 650,
           "data": "30/03/206"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 650,
           "data": "20/04/2026"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2760,18 +2765,18 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:33:18",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 04 Ã¢ÂÂ 20/04/2026 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 04 ÃÂ¢ÃÂÃÂ 20/04/2026 (R$ 650,00)"
         },
         {
           "ts": "21/06/2026, 22:32:50",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 03 Ã¢ÂÂ 30/03/206 (R$ 650,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 03 ÃÂ¢ÃÂÃÂ 30/03/206 (R$ 650,00)"
         },
         {
-          "texto": "valor previsto: R$ 3250 Ã¢ÂÂ R$ 3575 (correÃÂ§ÃÂ£o via planilha 21/06/2026)",
+          "texto": "valor previsto: R$ 3250 ÃÂ¢ÃÂÃÂ R$ 3575 (correÃÂÃÂ§ÃÂÃÂ£o via planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 29/11/2025 (correÃÂ§ÃÂ£o de ano, planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 29/11/2025 (correÃÂÃÂ§ÃÂÃÂ£o de ano, planilha 21/06/2026)",
           "ts": "21/06/2026, 22:57:54"
         }
       ],
@@ -2780,8 +2785,8 @@
     {
       "nome": "Victor Barchetta",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂ£o",
-      "status": "ConcluÃÂ­do",
+      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 8,
       "slots": [
         {
@@ -2790,62 +2795,62 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1875,
           "data": "22/07/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1875,
           "data": "31/07/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1875,
           "data": "27/08/2025"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1875,
           "data": "18/09/2025"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1875,
           "data": "30/09/2025"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1875,
           "data": "21/10/2025"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 1875,
           "data": "17/11/2025"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": 1875,
           "data": "26/11/2025"
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2865,14 +2870,14 @@
       "historico": [
         {
           "ts": "21/06/2026, 19:16:03",
-          "texto": "duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         },
         {
           "ts": "21/06/2026, 19:00:43",
           "texto": "nome: \"Victor\" -> \"Victor Barchetta\""
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 22/07/2025 (correÃÂ§ÃÂ£o de ano, planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 22/07/2025 (correÃÂÃÂ§ÃÂÃÂ£o de ano, planilha 21/06/2026)",
           "ts": "21/06/2026, 22:57:54"
         }
       ],
@@ -2881,8 +2886,8 @@
     {
       "nome": "Marcelo Barchetta",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂ£o",
-      "status": "ConcluÃÂ­do",
+      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 8,
       "slots": [
         {
@@ -2891,62 +2896,62 @@
           "data": null
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1875,
           "data": "14/07/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1875,
           "data": "31/07/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1875,
           "data": "15/08/2025"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1875,
           "data": "26/08/2025"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1875,
           "data": "19/09/2025"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1875,
           "data": "10/10/2025"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 1875,
           "data": "03/11/2025"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": 1875,
           "data": "24/11/2025"
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -2966,14 +2971,14 @@
       "historico": [
         {
           "ts": "21/06/2026, 19:15:56",
-          "texto": "duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         },
         {
           "ts": "21/06/2026, 18:59:11",
           "texto": "nome: \"Marcelo (Heating Cooling 2025)\" -> \"Marcelo Barchetta\""
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 14/07/2025 (planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 14/07/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
       ],
@@ -2982,8 +2987,8 @@
     {
       "nome": "Roselaine Tavares Montagnini",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂ£o",
-      "status": "ConcluÃÂ­do",
+      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 12,
       "slots": [
         {
@@ -2992,62 +2997,62 @@
           "data": "24/10/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1875,
           "data": "07/07/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1875,
           "data": "23/07/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1875,
           "data": "04/08/2025"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1875,
           "data": "28/08/2025"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1875,
           "data": "17/09/2025"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1875,
           "data": "20/10/2025"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 1875,
           "data": "03/11/2025"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": 1875,
           "data": "24/11/2025"
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": 1875,
           "data": "12/12/2025"
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": 1875,
           "data": "28/01/2026"
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -3067,38 +3072,38 @@
       "historico": [
         {
           "ts": "21/06/2026, 19:15:42",
-          "texto": "duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         },
         {
           "ts": "21/06/2026, 19:14:25",
-          "texto": "valor previsto: R$ 15.000,00 Ã¢ÂÂ R$ 21.250,00"
+          "texto": "valor previsto: R$ 15.000,00 ÃÂ¢ÃÂÃÂ R$ 21.250,00"
         },
         {
           "ts": "21/06/2026, 19:06:33",
-          "texto": "SessÃÂ£o registrada: Encerramento Ã¢ÂÂ 24/03/2026 (R$ 1.250,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Encerramento ÃÂ¢ÃÂÃÂ 24/03/2026 (R$ 1.250,00)"
         },
         {
           "ts": "21/06/2026, 19:05:30",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 24/10/2025 (R$ 1.250,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 24/10/2025 (R$ 1.250,00)"
         },
         {
           "ts": "21/06/2026, 19:04:19",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 20/10/2025 (R$ 1.875,00)"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 20/10/2025 (R$ 1.875,00)"
         },
         {
           "ts": "21/06/2026, 19:02:55",
-          "texto": "SessÃÂ£o registrada: SessÃÂ£o 06 Ã¢ÂÂ 20/20/2025"
+          "texto": "SessÃÂÃÂ£o registrada: SessÃÂÃÂ£o 06 ÃÂ¢ÃÂÃÂ 20/20/2025"
         },
         {
           "ts": "21/06/2026, 19:02:26",
-          "texto": "sessÃÂµes previstas: 8 Ã¢ÂÂ 12"
+          "texto": "sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 12"
         },
         {
           "ts": "21/06/2026, 19:02:05",
           "texto": "nome: \"Roselaine\" -> \"Roselaine Tavares Montagnini\""
         },
         {
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 07/07/2025 (correÃÂ§ÃÂ£o de ano, planilha 21/06/2026)",
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 07/07/2025 (correÃÂÃÂ§ÃÂÃÂ£o de ano, planilha 21/06/2026)",
           "ts": "21/06/2026, 22:57:54"
         }
       ],
@@ -3107,8 +3112,8 @@
     {
       "nome": "Nilton Bento da Silva Junior",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂ£o",
-      "status": "ConcluÃÂ­do",
+      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 12,
       "slots": [
         {
@@ -3117,62 +3122,62 @@
           "data": "15/10/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1875,
           "data": "11/07/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1875,
           "data": "01/08/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1875,
           "data": "21/08/2025"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1875,
           "data": "18/09/2025"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1875,
           "data": "30/09/2025"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1875,
           "data": "15-20/10/2025"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 1875,
           "data": "07/11/2025"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": 1875,
           "data": "25/11/2025"
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": 1875,
           "data": "12/01/2026"
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": 1875,
           "data": "12/02/2026"
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -3192,27 +3197,27 @@
       "historico": [
         {
           "ts": "21/06/2026, 19:15:28",
-          "texto": "duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         },
         {
           "ts": "21/06/2026, 19:15:17",
-          "texto": "valor previsto: R$ 15.000,00 Ã¢ÂÂ R$ 21.250,00"
+          "texto": "valor previsto: R$ 15.000,00 ÃÂ¢ÃÂÃÂ R$ 21.250,00"
         },
         {
           "ts": "21/06/2026, 19:10:39",
-          "texto": "SessÃÂ£o registrada: Encerramento Ã¢ÂÂ 24/03/2025 (R$ 1.250,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Encerramento ÃÂ¢ÃÂÃÂ 24/03/2025 (R$ 1.250,00)"
         },
         {
           "ts": "21/06/2026, 19:10:13",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 15/10/2025 (R$ 1.250,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 15/10/2025 (R$ 1.250,00)"
         },
         {
           "ts": "21/06/2026, 19:09:41",
-          "texto": "data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 11/07/2025"
+          "texto": "data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 11/07/2025"
         },
         {
           "ts": "21/06/2026, 19:09:20",
-          "texto": "sessÃÂµes previstas: 8 Ã¢ÂÂ 12"
+          "texto": "sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 12"
         },
         {
           "ts": "21/06/2026, 19:08:28",
@@ -3222,10 +3227,10 @@
       "dataInicio": "11/07/2025"
     },
     {
-      "nome": "MÃÂ¡rio Sergio Cardoso Santos",
+      "nome": "MÃÂÃÂ¡rio Sergio Cardoso Santos",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂ£o",
-      "status": "ConcluÃÂ­do",
+      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 12,
       "slots": [
         {
@@ -3234,62 +3239,62 @@
           "data": "15/10/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1875,
           "data": "14/07/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1875,
           "data": "31/07/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1875,
           "data": "15/08/2025"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1875,
           "data": "26/08/2025"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1875,
           "data": "19/09/2025"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1875,
           "data": "17-25/10/2025"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 1875,
           "data": "07/11/2025"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": 1875,
           "data": "01/12/2025"
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": 1875,
           "data": "08/01/2026"
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": 1875,
           "data": "03/02/2026"
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": null,
           "data": null
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": null,
           "data": null
         },
@@ -3310,23 +3315,23 @@
       "historico": [
         {
           "ts": "21/06/2026, 22:07:29",
-          "texto": "SessÃÂ£o registrada: Briefing/Devolutiva Ã¢ÂÂ 15/10/2025 (R$ 1.250,00)"
+          "texto": "SessÃÂÃÂ£o registrada: Briefing/Devolutiva ÃÂ¢ÃÂÃÂ 15/10/2025 (R$ 1.250,00)"
         },
         {
           "ts": "21/06/2026, 22:04:56",
-          "texto": "sessÃÂµes previstas: 10 Ã¢ÂÂ 12; valor previsto: R$ 15.000,00 Ã¢ÂÂ R$ 21.250,00; duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "sessÃÂÃÂµes previstas: 10 ÃÂ¢ÃÂÃÂ 12; valor previsto: R$ 15.000,00 ÃÂ¢ÃÂÃÂ R$ 21.250,00; duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         },
         {
           "ts": "21/06/2026, 22:02:56",
-          "texto": "nome: \"Marinho\" -> \"MÃÂ¡rio Sergio Cardoso Santos\"; sessÃÂµes previstas: 8 Ã¢ÂÂ 10; data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 15/10/2025"
+          "texto": "nome: \"Marinho\" -> \"MÃÂÃÂ¡rio Sergio Cardoso Santos\"; sessÃÂÃÂµes previstas: 8 ÃÂ¢ÃÂÃÂ 10; data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 15/10/2025"
         }
       ]
     },
     {
       "nome": "Jorge Augusto Salvador dos Santos",
       "empresa": "Heating Cooling",
-      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂ£o",
-      "status": "ConcluÃÂ­do",
+      "contrato": "Heating Cooling - Coaching Executivo (contrato 2025) - R$1.875/sessÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ£o",
+      "status": "ConcluÃÂÃÂ­do",
       "previstas": 14,
       "slots": [
         {
@@ -3335,62 +3340,62 @@
           "data": "17/10/2025"
         },
         {
-          "label": "SessÃÂ£o 01",
+          "label": "SessÃÂÃÂ£o 01",
           "valor": 1875,
           "data": "14/07/2025"
         },
         {
-          "label": "SessÃÂ£o 02",
+          "label": "SessÃÂÃÂ£o 02",
           "valor": 1875,
           "data": "31/07/2025"
         },
         {
-          "label": "SessÃÂ£o 03",
+          "label": "SessÃÂÃÂ£o 03",
           "valor": 1875,
           "data": "20/08/2025"
         },
         {
-          "label": "SessÃÂ£o 04",
+          "label": "SessÃÂÃÂ£o 04",
           "valor": 1875,
           "data": "20/10/2025"
         },
         {
-          "label": "SessÃÂ£o 05",
+          "label": "SessÃÂÃÂ£o 05",
           "valor": 1875,
           "data": "05/11/2025"
         },
         {
-          "label": "SessÃÂ£o 06",
+          "label": "SessÃÂÃÂ£o 06",
           "valor": 1875,
           "data": "25/11/2025"
         },
         {
-          "label": "SessÃÂ£o 07",
+          "label": "SessÃÂÃÂ£o 07",
           "valor": 1875,
           "data": "22/12/2025"
         },
         {
-          "label": "SessÃÂ£o 08",
+          "label": "SessÃÂÃÂ£o 08",
           "valor": 1875,
           "data": "03/02/2026"
         },
         {
-          "label": "SessÃÂ£o 09",
+          "label": "SessÃÂÃÂ£o 09",
           "valor": 1875,
           "data": "23/02/2026"
         },
         {
-          "label": "SessÃÂ£o 10",
+          "label": "SessÃÂÃÂ£o 10",
           "valor": 1875,
           "data": "16/03/2026"
         },
         {
-          "label": "SessÃÂ£o 11",
+          "label": "SessÃÂÃÂ£o 11",
           "valor": 1875,
           "data": "01/04/2026"
         },
         {
-          "label": "SessÃÂ£o 12",
+          "label": "SessÃÂÃÂ£o 12",
           "valor": 1875,
           "data": "24/04/2025"
         },
@@ -3411,7 +3416,7 @@
       "historico": [
         {
           "ts": "21/06/2026, 19:13:23",
-          "texto": "nome: \"Jorge (Heating Cooling 2025)\" -> \"Jorge Augusto Salvador dos Santos\"; sessÃÂµes previstas: 13 Ã¢ÂÂ 14; data de inÃÂ­cio: Ã¢ÂÂ Ã¢ÂÂ 14/07/2025; valor previsto: R$ 24.375,00 Ã¢ÂÂ R$ 24.000,00; duraÃÂ§ÃÂ£o padrÃÂ£o: 60min Ã¢ÂÂ 90min"
+          "texto": "nome: \"Jorge (Heating Cooling 2025)\" -> \"Jorge Augusto Salvador dos Santos\"; sessÃÂÃÂµes previstas: 13 ÃÂ¢ÃÂÃÂ 14; data de inÃÂÃÂ­cio: ÃÂ¢ÃÂÃÂ ÃÂ¢ÃÂÃÂ 14/07/2025; valor previsto: R$ 24.375,00 ÃÂ¢ÃÂÃÂ R$ 24.000,00; duraÃÂÃÂ§ÃÂÃÂ£o padrÃÂÃÂ£o: 60min ÃÂ¢ÃÂÃÂ 90min"
         }
       ]
     }
