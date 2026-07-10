@@ -16,9 +16,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
-:root{color-scheme:light;--p:#2F5496;--pl:#D9E1F2;--gb:#C6EFCE;--gf:#006100;--bb:#BDD7EE;--bf:#1F4E78;--db:#D9D9D9;--df:#595959;--yb:#FFE699;--yf:#9C5700;--bg:#F4F6FB;--card:#fff;--brd:#DDE3EE;--txt:#1A1A2E;--mut:#666;--r:8px;--sh:0 2px 8px rgba(0,0,0,.08)}
+:root{color-scheme:light;--p:#1e3a5f;--pl:#D9E1F2;--gb:#C6EFCE;--gf:#006100;--bb:#BDD7EE;--bf:#1F4E78;--db:#D9D9D9;--df:#595959;--yb:#FFE699;--yf:#9C5700;--bg:#F4F6FB;--card:#fff;--brd:#dde3eb;--txt:#1A1A2E;--mut:#5a6a7e;--r:8px;--sh:0 2px 8px rgba(0,0,0,.08)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;font-size:13px;background:var(--bg);color:var(--txt);min-height:100vh}
+body{font-family:'IBM Plex Sans',Arial,sans-serif;font-size:13px;background:var(--bg);color:var(--txt);min-height:100vh}
 .hdr{background:var(--p);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px}
 .hdr-logo{font-size:17px;font-weight:bold;letter-spacing:.5px}
 .hdr-sub{font-size:11px;opacity:.75;margin-top:2px}
@@ -102,6 +102,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--p);box-shadow:0 0 0 2
 select[multiple]{min-height:74px}
 .alert-attn{background:#FFE699;color:#9C5700;border-radius:6px;padding:8px 12px;margin-bottom:10px;font-size:11px;font-weight:600}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -505,7 +506,7 @@ const fp=faturamentoPorEmpresa(y||null);
 const labels=Object.keys(fp).sort((a,b)=>fp[b]-fp[a]);
 if(charts.fatEmp) charts.fatEmp.destroy();
 charts.fatEmp=new Chart(document.getElementById('ch-fat-empresa'),{
-type:'bar',data:{labels:labels,datasets:[{label:'Faturamento',data:labels.map(l=>fp[l]),backgroundColor:'#2F5496'}]},
+type:'bar',data:{labels:labels,datasets:[{label:'Faturamento',data:labels.map(l=>fp[l]),backgroundColor:'#1e3a5f'}]},
 options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},datalabels:{anchor:'end',align:'start',font:{size:9},color:'#fff',formatter:v=>'R$ '+Math.round(v/1000)+'k'}},scales:{y:{ticks:{font:{size:9},callback:v=>'R$ '+Math.round(v/1000)+'k'}},x:{ticks:{font:{size:9}}}}}
 });
 }
@@ -654,7 +655,7 @@ document.getElementById('stat-cards').innerHTML += Object.keys(porAno).sort().ma
   if(charts.emp) charts.emp.destroy();
   charts.emp=new Chart(document.getElementById('ch-empresa'),{
     type:'bar',data:{labels:empresas,datasets:[
-      {label:'Realizadas',data:empresas.map(e=>emp[e].r),backgroundColor:'#2F5496'},
+      {label:'Realizadas',data:empresas.map(e=>emp[e].r),backgroundColor:'#1e3a5f'},
       {label:'Previstas',data:empresas.map(e=>emp[e].p),backgroundColor:'#BDD7EE'}
     ]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:10}}},datalabels:{display:false}},scales:{x:{ticks:{font:{size:9}}},y:{ticks:{font:{size:10}}}}}
