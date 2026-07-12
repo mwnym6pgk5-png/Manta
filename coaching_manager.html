@@ -705,7 +705,7 @@ function renderAttnBox(){
   const missing=data.filter(c=>{if(c.status!=='Em andamento')return false;if(c.proximaSessao)return false;var today=new Date(new Date().toDateString());return!c.slots||!c.slots.some(function(s){if(!s.data||!/agendada/i.test(s.data))return false;var clean=s.data.replace(/\s*\(.*?\)\s*/g,'').trim();var p=clean.split('/');if(p.length<3)return false;var d=new Date(+p[2],+p[1]-1,+p[0]);return d>=today;});});
   const risky=data.filter(c=>riskLevel(c)==='alto');
   const vencidas=[];
-  data.forEach(c=>{c.slots.forEach(s=>{if(s.data&&/agendada/i.test(s.data)){const d=parseBRDate(s.data);if(d&&d<new Date(new Date().toDateString())){vencidas.push({label:c.nome+' — '+s.label,idx:data.indexOf(c)});}}});});
+  data.forEach(c=>{c.slots.forEach(s=>{if(s.data&&/agendada/i.test(s.data)){const d=parseBRDate(s.data);if(d&&d<new Date(new Date().toDateString())){const ps=c.proximaSessao?parseBRDate(c.proximaSessao):null;if(!ps||ps<new Date(new Date().toDateString()))vencidas.push({label:c.nome+' — '+s.label,idx:data.indexOf(c)});}}});});
   function mkAlert(icon,summary,items){
     if(!items.length) return '';
     const id='aa'+Math.random().toString(36).slice(2);
@@ -978,7 +978,7 @@ function addSessao(){
   // Bloqueia duplo-clique
   const _btn=document.querySelector('[onclick="addSessao()"]');if(_btn)_btn.disabled=true;
   const dateStr=dt+(ob?` (${ob})`:'');
-  slot.data=dateStr; if(ob&&ob.toLowerCase().includes('agendad'))c.proximaSessao=dt; slot.valor=vl!==''?Number(vl):null; slot.duracaoMin=dur?Number(dur):duracaoPorRegra(c.empresa, slot.label);
+  slot.data=dateStr; if(ob&&ob.toLowerCase().includes('agendad')){c.proximaSessao=dt;c.slots.forEach((s,i)=>{if(Number(i)!==Number(si)&&s.data&&/agendada/i.test(s.data))s.data=s.data.replace(/\s*\(agendada\)/gi,'').trim()||null;});} slot.valor=vl!==''?Number(vl):null; slot.duracaoMin=dur?Number(dur):duracaoPorRegra(c.empresa, slot.label);
   logHist(c, 'Sessão registrada: '+slot.label+' — '+dateStr+(slot.valor!=null?' ('+fmtBRL(slot.valor)+')':''));
   pending.push({tipo:'sessao',nome:c.nome,sessao:slot.label,data:dateStr,valor:slot.valor});
   updatePendCount();
