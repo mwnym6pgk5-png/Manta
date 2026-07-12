@@ -721,7 +721,7 @@
       "slots": [
         {
           "label": "Briefing/Devolutiva",
-          "valor": null,
+          "valor": 1950,
           "data": "18/05/2026",
           "duracaoMin": 60
         },
