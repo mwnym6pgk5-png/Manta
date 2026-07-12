@@ -1928,9 +1928,13 @@
         {
           "data": "12/07/2026, 16:08:47",
           "descricao": "próxima sessão: 20/07/2026 → 13/07/2026 (agendada) — correção"
+        },
+        {
+          "data": "12/07/2026, 16:09:27",
+          "descricao": "próxima sessão: 13/07/2026 → 20/07/2026 (agendada) — correção"
         }
       ],
-      "proximaSessao": "13/07/2026"
+      "proximaSessao": "20/07/2026"
     },
     {
       "nome": "Cassiano Motter",
