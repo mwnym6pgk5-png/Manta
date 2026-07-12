@@ -1720,7 +1720,7 @@
         {
           "label": "Briefing/Devolutiva",
           "valor": null,
-          "data": null
+          "data": "22/07/2026 (agendada)"
         },
         {
           "label": "Sessão 01",
@@ -1825,7 +1825,8 @@
           "texto": "Sessão registrada: Sessão 01 — 05/03/2026 (R$ 1.000,00)"
         }
       ],
-      "dataInicio": "05/03/2026"
+      "dataInicio": "05/03/2026",
+      "proximaSessao": "22/07/2026"
     },
     {
       "nome": "Genésio Espírito Santo",
