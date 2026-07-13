@@ -734,14 +734,14 @@
         },
         {
           "label": "Sessão 02",
-          "data": "22/07/2026 (agendada)",
+          "data": "13/07/2026",
           "valor": 1950,
           "duracaoMin": 90
         },
         {
           "label": "Sessão 03",
-          "valor": null,
-          "data": null
+          "valor": 1950,
+          "data": "18/08/2026 (agendada)"
         },
         {
           "label": "Sessão 04",
@@ -848,7 +848,7 @@
         }
       ],
       "dataInicio": "18/05/2026",
-      "proximaSessao": "22/07/2026"
+      "proximaSessao": "18/08/2026"
     },
     {
       "nome": "Henrique Silveira Miranda Prado",
