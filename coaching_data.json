@@ -1976,8 +1976,8 @@
         },
         {
           "label": "Sessão 05",
-          "valor": null,
-          "data": null
+          "valor": 1000,
+          "data": "04/08/2026 (agendada)"
         },
         {
           "label": "Sessão 06",
@@ -2037,7 +2037,8 @@
           "texto": "data de início: — → 27/02/2025 (planilha 21/06/2026)",
           "ts": "21/06/2026, 22:55:04"
         }
-      ]
+      ],
+      "proximaSessao": "04/08/2026"
     },
     {
       "nome": "Ione Santos",
