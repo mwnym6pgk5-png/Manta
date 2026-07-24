@@ -1191,7 +1191,7 @@
         {
           "label": "Sessão 03",
           "valor": 1950,
-          "data": "23/07/2026 (agendada)"
+          "data": "30/07/2026 (agendada)"
         },
         {
           "label": "Sessão 04",
@@ -1270,7 +1270,7 @@
         }
       ],
       "dataInicio": "24/04/2026",
-      "proximaSessao": "23/07/2026"
+      "proximaSessao": "30/07/2026"
     },
     {
       "nome": "Daniel Nunan",
@@ -1755,7 +1755,7 @@
         {
           "label": "Sessão 06",
           "valor": 1000,
-          "data": "22/07/2026 (agendada)"
+          "data": "22/07/2026"
         },
         {
           "label": "Sessão 07",
@@ -1831,7 +1831,7 @@
         }
       ],
       "dataInicio": "05/03/2026",
-      "proximaSessao": "22/07/2026"
+      "proximaSessao": null
     },
     {
       "nome": "Genésio Espírito Santo",
@@ -1868,7 +1868,7 @@
         {
           "label": "Sessão 05",
           "valor": 1000,
-          "data": "20/07/2026 (agendada)",
+          "data": "20/07/2026",
           "duracaoMin": 60
         },
         {
@@ -1942,7 +1942,7 @@
           "descricao": "próxima sessão: 13/07/2026 → 20/07/2026 (agendada) — correção"
         }
       ],
-      "proximaSessao": "20/07/2026"
+      "proximaSessao": null
     },
     {
       "nome": "Cassiano Motter",
