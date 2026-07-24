@@ -3453,8 +3453,8 @@
       "slots": [
         {
           "label": "Briefing/Devolutiva",
-          "data": "",
-          "valor": ""
+          "data": null,
+          "valor": null
         },
         {
           "label": "Sessão 01",
@@ -3463,23 +3463,68 @@
         },
         {
           "label": "Sessão 02",
-          "data": "",
-          "valor": ""
+          "data": null,
+          "valor": null
         },
         {
           "label": "Sessão 03",
-          "data": "",
-          "valor": ""
+          "data": null,
+          "valor": null
         },
         {
           "label": "Sessão 04",
-          "data": "",
-          "valor": ""
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 05",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 06",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 07",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 08",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 09",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 10",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 11",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 12",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "data": null,
+          "valor": null
         },
         {
           "label": "Encerramento",
-          "data": "",
-          "valor": ""
+          "data": null,
+          "valor": null
         }
       ]
     }
