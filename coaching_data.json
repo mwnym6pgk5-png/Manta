@@ -3472,6 +3472,45 @@
           "valor": null
         }
       ]
+    },
+    {
+      "nome": "Rafael Andrade Alves (Ciclo 2)",
+      "empresa": "PRIO",
+      "contrato": "PRIO - Coaching Executivo - Mentoria Gerentes (1h, R$650/sessão)",
+      "status": "Em andamento",
+      "previstas": 5,
+      "valorPrevisto": 3250,
+      "duracaoPadraoMin": 60,
+      "dataInicio": "2026-07-24",
+      "proximaSessao": "30/07/2026",
+      "historico": [],
+      "slots": [
+        {
+          "label": "Sessão 01",
+          "data": "30/07/2026 (agendada)",
+          "valor": 650
+        },
+        {
+          "label": "Sessão 02",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 03",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 04",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 05",
+          "data": null,
+          "valor": null
+        }
+      ]
     }
   ],
   "snapshots": [
