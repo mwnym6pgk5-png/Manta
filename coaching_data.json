@@ -8,29 +8,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": null,
+          "data": null
+        },
+        {
           "label": "Sessão 01",
-          "data": "06/03/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "06/03/2026"
         },
         {
           "label": "Sessão 02",
-          "data": "26/03/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "26/03/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "22/04/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "22/04/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "11/05/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "11/05/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "24/07/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "24/07/2026"
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3250,
@@ -52,29 +102,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 975,
+          "data": "06/11/2025"
+        },
+        {
           "label": "Sessão 01",
-          "data": "06/11/2025",
-          "valor": 975
+          "valor": 650,
+          "data": "24/11/2025"
         },
         {
           "label": "Sessão 02",
-          "data": "24/11/2025",
-          "valor": 650
+          "valor": 650,
+          "data": "16/01/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "16/01/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "05/03/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "05/03/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "22/04/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "22/04/2026",
-          "valor": 650
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3575,
@@ -108,29 +208,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 975,
+          "data": "12/12/2025"
+        },
+        {
           "label": "Sessão 01",
-          "data": "12/12/2025",
-          "valor": 975
+          "valor": 650,
+          "data": "16/01/2025"
         },
         {
           "label": "Sessão 02",
-          "data": "16/01/2025",
-          "valor": 650
+          "valor": 650,
+          "data": "20/03/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "20/03/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "02/04/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "02/04/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "22/04/2026 (no-show, cobrado)"
         },
         {
           "label": "Sessão 05",
-          "data": "22/04/2026 (no-show, cobrado)",
-          "valor": 650
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3575,
@@ -207,29 +357,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 975,
+          "data": "28/10/2026"
+        },
+        {
           "label": "Sessão 01",
-          "data": "28/10/2026",
-          "valor": 975
+          "valor": 650,
+          "data": "11/11/2025"
         },
         {
           "label": "Sessão 02",
-          "data": "11/11/2025",
-          "valor": 650
+          "valor": 650,
+          "data": "19/11/2025"
         },
         {
           "label": "Sessão 03",
-          "data": "19/11/2025",
-          "valor": 650
+          "valor": 650,
+          "data": "23/02/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "23/02/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "09/03/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "09/03/2026",
-          "valor": 650
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3575,
@@ -957,54 +1157,54 @@
       "previstas": 10,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 1800,
+          "data": "04/07/2025"
+        },
+        {
           "label": "Sessão 01",
-          "data": "04/07/2025",
-          "valor": 1800
+          "valor": 1800,
+          "data": "22/08/2025"
         },
         {
           "label": "Sessão 02",
-          "data": "22/08/2025",
-          "valor": 1800
+          "valor": 1800,
+          "data": "30/01/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "30/01/2026",
-          "valor": 1800
+          "valor": 1800,
+          "data": "19/02/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "19/02/2026",
-          "valor": 1800
+          "valor": 1800,
+          "data": "26/05/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "26/05/2026",
-          "valor": 1800
+          "valor": 1800,
+          "data": "27/05/2026"
         },
         {
           "label": "Sessão 06",
-          "data": "27/05/2026",
-          "valor": 1800
+          "valor": 1800,
+          "data": "03/08/2026 (agendada)"
         },
         {
           "label": "Sessão 07",
-          "data": "03/08/2026 (agendada)",
-          "valor": 1800
+          "valor": 1800,
+          "data": "17/08/2026 (agendada)"
         },
         {
-          "label": "Sessão 08",
-          "data": "17/08/2026 (agendada)",
-          "valor": 1800
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 09",
-          "data": null,
-          "valor": null
-        },
-        {
-          "label": "Sessão 10",
-          "data": null,
-          "valor": null
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 18000,
@@ -1030,54 +1230,58 @@
       "previstas": 10,
       "slots": [
         {
-          "label": "Sessão 01",
+          "label": "Briefing/Devolutiva",
+          "valor": 1700,
           "data": "10/06/2026",
-          "valor": 1700
+          "duracaoMin": 60
+        },
+        {
+          "label": "Sessão 01",
+          "valor": 1700,
+          "data": "12/06/2026",
+          "duracaoMin": 90
         },
         {
           "label": "Sessão 02",
-          "data": "12/06/2026",
-          "valor": 1700
+          "valor": 1700,
+          "data": "24/06/2026",
+          "duracaoMin": 90
         },
         {
           "label": "Sessão 03",
-          "data": "24/06/2026",
-          "valor": 1700
+          "valor": 1700,
+          "data": "07/07/2026",
+          "duracaoMin": 90
         },
         {
           "label": "Sessão 04",
-          "data": "07/07/2026",
-          "valor": 1700
-        },
-        {
-          "label": "Sessão 05",
           "data": "23/07/2026",
           "valor": 1700
         },
         {
+          "label": "Sessão 05",
+          "valor": 1700,
+          "data": "04/08/2026 (agendada)"
+        },
+        {
           "label": "Sessão 06",
-          "data": "04/08/2026 (agendada)",
-          "valor": 1700
+          "valor": null,
+          "data": null
         },
         {
           "label": "Sessão 07",
-          "data": null,
-          "valor": null
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 08",
-          "data": null,
-          "valor": null
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 09",
-          "data": null,
-          "valor": null
-        },
-        {
-          "label": "Sessão 10",
-          "data": null,
-          "valor": null
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 20400,
@@ -1240,54 +1444,54 @@
       "previstas": 10,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": null,
+          "data": null
+        },
+        {
           "label": "Sessão 01",
-          "data": "05/03/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "05/03/2026"
         },
         {
           "label": "Sessão 02",
-          "data": "25/03/206",
-          "valor": 1000
+          "valor": 1000,
+          "data": "25/03/206"
         },
         {
           "label": "Sessão 03",
-          "data": "23/04/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "23/04/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "28/05/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "28/05/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "25/06/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "25/06/2026"
         },
         {
           "label": "Sessão 06",
-          "data": "22/07/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "22/07/2026"
         },
         {
           "label": "Sessão 07",
-          "data": "19/08/2026 (agendada)",
-          "valor": 1000
+          "valor": 1000,
+          "data": "19/08/2026 (agendada)"
         },
         {
-          "label": "Sessão 08",
-          "data": null,
-          "valor": null
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 09",
-          "data": null,
-          "valor": null
-        },
-        {
-          "label": "Sessão 10",
-          "data": null,
-          "valor": null
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 10000,
@@ -1333,54 +1537,55 @@
       "previstas": 10,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": null,
+          "data": null
+        },
+        {
           "label": "Sessão 01",
-          "data": "27/02/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "27/02/2026"
         },
         {
           "label": "Sessão 02",
-          "data": "27/03/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "27/03/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "30/04/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "30/04/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "09/06/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "09/06/2026"
         },
         {
           "label": "Sessão 05",
+          "valor": 1000,
           "data": "20/07/2026",
-          "valor": 1000
+          "duracaoMin": 60
         },
         {
           "label": "Sessão 06",
-          "data": "26/08/2026 (agendada)",
-          "valor": 1000
+          "valor": 1000,
+          "data": "26/08/2026 (agendada)"
         },
         {
           "label": "Sessão 07",
-          "data": null,
-          "valor": null
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 08",
-          "data": null,
-          "valor": null
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 09",
-          "data": null,
-          "valor": null
-        },
-        {
-          "label": "Sessão 10",
-          "data": null,
-          "valor": null
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 10000,
@@ -1418,54 +1623,55 @@
       "previstas": 10,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": null,
+          "data": null
+        },
+        {
           "label": "Sessão 01",
-          "data": "27/02/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "27/02/2026"
         },
         {
           "label": "Sessão 02",
-          "data": "26/03/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "26/03/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "08/05/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "08/05/2026"
         },
         {
           "label": "Sessão 04",
+          "valor": 1000,
           "data": "07/07/2026",
-          "valor": 1000
+          "duracaoMin": 60
         },
         {
           "label": "Sessão 05",
-          "data": "04/08/2026 (agendada)",
-          "valor": 1000
+          "valor": 1000,
+          "data": "04/08/2026 (agendada)"
         },
         {
           "label": "Sessão 06",
-          "data": null,
-          "valor": null
+          "valor": null,
+          "data": null
         },
         {
           "label": "Sessão 07",
-          "data": null,
-          "valor": null
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 08",
-          "data": null,
-          "valor": null
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 09",
-          "data": null,
-          "valor": null
-        },
-        {
-          "label": "Sessão 10",
-          "data": null,
-          "valor": null
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 10000,
@@ -1491,54 +1697,54 @@
       "previstas": 10,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": null,
+          "data": null
+        },
+        {
           "label": "Sessão 01",
-          "data": "08/01/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "08/01/2026"
         },
         {
           "label": "Sessão 02",
-          "data": "05/02/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "05/02/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "05/03/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "05/03/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "18/03/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "18/03/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "02/04/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "02/04/2026"
         },
         {
           "label": "Sessão 06",
-          "data": "30/04/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "30/04/2026"
         },
         {
           "label": "Sessão 07",
-          "data": "11/06/2026",
-          "valor": 1000
+          "valor": 1000,
+          "data": "11/06/2026"
         },
         {
-          "label": "Sessão 08",
-          "data": null,
-          "valor": null
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
         },
         {
-          "label": "Sessão 09",
-          "data": null,
-          "valor": null
-        },
-        {
-          "label": "Sessão 10",
-          "data": null,
-          "valor": null
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 10000,
@@ -1793,29 +1999,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 975,
+          "data": "realizado em 2025"
+        },
+        {
           "label": "Sessão 01",
-          "data": "realizado em 2025",
-          "valor": 975
+          "valor": 650,
+          "data": "realizado em 2025"
         },
         {
           "label": "Sessão 02",
-          "data": "realizado em 2025",
-          "valor": 650
+          "valor": 650,
+          "data": "16/01/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "16/01/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "27/02/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "27/02/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "27/03/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "27/03/2026",
-          "valor": 650
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3575,
@@ -1840,29 +2096,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 975,
+          "data": "06/11/2025"
+        },
+        {
           "label": "Sessão 01",
-          "data": "06/11/2025",
-          "valor": 975
+          "valor": 650,
+          "data": "12/12/2025"
         },
         {
           "label": "Sessão 02",
-          "data": "12/12/2025",
-          "valor": 650
+          "valor": 650,
+          "data": "16/01/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "16/01/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "30/01/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "30/01/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "27/02/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "27/02/2026",
-          "valor": 650
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3575,
@@ -1895,29 +2201,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 975,
+          "data": "17/11/2025"
+        },
+        {
           "label": "Sessão 01",
-          "data": "17/11/2025",
-          "valor": 975
+          "valor": 650,
+          "data": "21/11/2025"
         },
         {
           "label": "Sessão 02",
-          "data": "21/11/2025",
-          "valor": 650
+          "valor": 650,
+          "data": "12/12/2025"
         },
         {
           "label": "Sessão 03",
-          "data": "12/12/2025",
-          "valor": 650
+          "valor": 650,
+          "data": "12/01/2026"
         },
         {
           "label": "Sessão 04",
-          "data": "12/01/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "13/02/2026 (no-show)"
         },
         {
           "label": "Sessão 05",
-          "data": "13/02/2026 (no-show)",
-          "valor": 650
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3575,
@@ -1958,29 +2314,79 @@
       "previstas": 5,
       "slots": [
         {
+          "label": "Briefing/Devolutiva",
+          "valor": 975,
+          "data": "29/01/2026"
+        },
+        {
           "label": "Sessão 01",
-          "data": "29/01/2026",
-          "valor": 975
+          "valor": 650,
+          "data": "09/03/2026"
         },
         {
           "label": "Sessão 02",
-          "data": "09/03/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "23/03/2026"
         },
         {
           "label": "Sessão 03",
-          "data": "23/03/2026",
-          "valor": 650
+          "valor": 650,
+          "data": "30/03/206"
         },
         {
           "label": "Sessão 04",
-          "data": "30/03/206",
-          "valor": 650
+          "valor": 650,
+          "data": "20/04/2026"
         },
         {
           "label": "Sessão 05",
-          "data": "20/04/2026",
-          "valor": 650
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 06",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 07",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 08",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 09",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 10",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 11",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Sessão 12",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Acompanhamento (Middle)",
+          "valor": null,
+          "data": null
+        },
+        {
+          "label": "Encerramento",
+          "valor": null,
+          "data": null
         }
       ],
       "valorPrevisto": 3575,
