@@ -2168,18 +2168,18 @@
         },
         {
           "label": "Sessão 01",
-          "valor": "",
-          "data": ""
-        },
-        {
-          "label": "Sessão 02",
-          "valor": 650,
+          "valor": "650",
           "data": "13/07/2026"
         },
         {
-          "label": "Sessão 03",
+          "label": "Sessão 02",
           "valor": "650",
           "data": "07/08/2026 (agendada)"
+        },
+        {
+          "label": "Sessão 03",
+          "valor": "",
+          "data": ""
         },
         {
           "label": "Sessão 04",
