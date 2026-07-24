@@ -1515,7 +1515,7 @@
         {
           "label": "Sessão 05",
           "valor": 1700,
-          "data": "11/08/2026 (agendada)"
+          "data": "04/08/2026 (agendada)"
         },
         {
           "label": "Sessão 06",
@@ -1604,7 +1604,7 @@
         }
       ],
       "dataInicio": "11/06/2026",
-      "proximaSessao": "11/08/2026"
+      "proximaSessao": "04/08/2026"
     },
     {
       "nome": "Rennan Vilar",
