@@ -3438,6 +3438,50 @@
           "texto": "nome: \"Jorge (Heating Cooling 2025)\" -> \"Jorge Augusto Salvador dos Santos\"; sessões previstas: 13 → 14; data de início: — → 14/07/2025; valor previsto: R$ 24.375,00 → R$ 24.000,00; duração padrão: 60min → 90min"
         }
       ]
+    },
+    {
+      "nome": "Flávia Fernandes",
+      "empresa": "De Castro Sociedade de Advogados",
+      "contrato": "Coaching",
+      "status": "Em andamento",
+      "previstas": 4,
+      "valorPrevisto": 3600,
+      "duracaoPadraoMin": 90,
+      "dataInicio": "2026-07-24",
+      "proximaSessao": "07/08/2026",
+      "historico": [],
+      "slots": [
+        {
+          "label": "Briefing/Devolutiva",
+          "data": "",
+          "valor": ""
+        },
+        {
+          "label": "Sessão 01",
+          "data": "07/08/2026 (agendada)",
+          "valor": 900
+        },
+        {
+          "label": "Sessão 02",
+          "data": "",
+          "valor": ""
+        },
+        {
+          "label": "Sessão 03",
+          "data": "",
+          "valor": ""
+        },
+        {
+          "label": "Sessão 04",
+          "data": "",
+          "valor": ""
+        },
+        {
+          "label": "Encerramento",
+          "data": "",
+          "valor": ""
+        }
+      ]
     }
   ],
   "snapshots": [
