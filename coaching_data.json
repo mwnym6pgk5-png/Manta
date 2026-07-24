@@ -309,29 +309,29 @@
       "previstas": 5,
       "slots": [
         {
-          "label": "Briefing/Devolutiva",
-          "valor": null,
-          "data": null
-        },
-        {
           "label": "Sessão 01",
-          "valor": 650,
-          "data": "11/04/2026"
+          "data": "11/04/2026",
+          "valor": 650
         },
         {
           "label": "Sessão 02",
-          "valor": 650,
-          "data": "25/05/2026"
+          "data": "25/05/2026",
+          "valor": 650
         },
         {
-          "label": "Acompanhamento (Middle)",
-          "valor": null,
-          "data": null
+          "label": "Sessão 03",
+          "data": "18/08/2026 (agendada)",
+          "valor": 650
         },
         {
-          "label": "Encerramento",
-          "valor": null,
-          "data": null
+          "label": "Sessão 04",
+          "data": null,
+          "valor": null
+        },
+        {
+          "label": "Sessão 05",
+          "data": null,
+          "valor": null
         }
       ],
       "valorPrevisto": 3250,
@@ -347,7 +347,7 @@
           "descricao": "próxima sessão: → 30/07/2026 (agendada)"
         }
       ],
-      "proximaSessao": "30/07/2026"
+      "proximaSessao": "18/08/2026"
     },
     {
       "nome": "Nacib Hadad Bisneto",
@@ -462,29 +462,29 @@
       "previstas": 5,
       "slots": [
         {
-          "label": "Briefing/Devolutiva",
-          "valor": 975,
-          "data": "03/03/2026"
-        },
-        {
           "label": "Sessão 01",
-          "valor": 650,
-          "data": "17/06/2026"
+          "data": "03/03/2026",
+          "valor": 975
         },
         {
           "label": "Sessão 02",
-          "valor": 650,
-          "data": "24/07/2026"
+          "data": "17/06/2026",
+          "valor": 650
         },
         {
-          "label": "Acompanhamento (Middle)",
-          "valor": null,
-          "data": null
+          "label": "Sessão 03",
+          "data": "24/07/2026",
+          "valor": 650
         },
         {
-          "label": "Encerramento",
-          "valor": null,
-          "data": null
+          "label": "Sessão 04",
+          "data": "18/08/2026 (agendada)",
+          "valor": 650
+        },
+        {
+          "label": "Sessão 05",
+          "data": null,
+          "valor": null
         }
       ],
       "valorPrevisto": 3575,
