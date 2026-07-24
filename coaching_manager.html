@@ -450,7 +450,7 @@ function duracaoPorRegra(empresa,label){
 function horasSlot(co,s){ return s.duracaoMin||duracaoPorRegra(co.empresa,s.label)||co.duracaoPadraoMin||60; }
 function horasRealizadasCoachee(c){ return c.slots.reduce((a,s)=>a+((s.valor!=null||s.data!=null)?horasSlot(c,s):0),0)/60; }
 function realized(c){ return c.slots.slice(0,15).filter(s=>s.valor!=null||s.data!=null).length; }
-function totalVal(c){ return c.slots.reduce((a,s)=>a+(s.valor||0),0); }
+function totalVal(c){ return c.slots.reduce((a,s)=>a+parseFloat(s.valor||0),0); }
 function horasPorAno(){
 const out={};
 data.forEach(co=>{
