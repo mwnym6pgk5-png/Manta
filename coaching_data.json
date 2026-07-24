@@ -1874,8 +1874,8 @@
         },
         {
           "label": "Sessão 06",
-          "valor": null,
-          "data": null
+          "valor": 1000,
+          "data": "26/08/2026 (agendada)"
         },
         {
           "label": "Sessão 07",
@@ -1943,7 +1943,7 @@
           "descricao": "próxima sessão: 13/07/2026 → 20/07/2026 (agendada) — correção"
         }
       ],
-      "proximaSessao": null
+      "proximaSessao": "26/08/2026"
     },
     {
       "nome": "Cassiano Motter",
