@@ -895,13 +895,13 @@
         {
           "label": "Sessão 06",
           "valor": 1950,
-          "data": "23/07/2026 (agendada)",
+          "data": "23/07/2026",
           "duracaoMin": 90
         },
         {
           "label": "Sessão 07",
-          "valor": null,
-          "data": null
+          "valor": 1950,
+          "data": "18/08/2026 (agendada)"
         },
         {
           "label": "Sessão 08",
@@ -1019,7 +1019,8 @@
           "ts": "21/06/2026, 22:55:04"
         }
       ],
-      "dataInicio": "30/03/2026"
+      "dataInicio": "30/03/2026",
+      "proximaSessao": "18/08/2026"
     },
     {
       "nome": "Felipe Campos Rodrigues",
@@ -1062,13 +1063,13 @@
         {
           "label": "Sessão 06",
           "valor": 1950,
-          "data": "21/07/2026",
+          "data": "03/08/2026 (agendada)",
           "duracaoMin": 90
         },
         {
           "label": "Sessão 07",
-          "valor": 1950,
-          "data": "11/08/2026 (agendada)"
+          "valor": null,
+          "data": null
         },
         {
           "label": "Sessão 08",
@@ -1163,7 +1164,7 @@
         }
       ],
       "dataInicio": "20/04/2026",
-      "proximaSessao": "11/08/2026"
+      "proximaSessao": "03/08/2026"
     },
     {
       "nome": "José Paladino Junior",
@@ -1508,13 +1509,13 @@
         },
         {
           "label": "Sessão 04",
-          "data": "23/07/2026 (agendada)",
+          "data": "23/07/2026",
           "valor": 1700
         },
         {
           "label": "Sessão 05",
-          "valor": null,
-          "data": null
+          "valor": 1700,
+          "data": "11/08/2026 (agendada)"
         },
         {
           "label": "Sessão 06",
@@ -1603,7 +1604,7 @@
         }
       ],
       "dataInicio": "11/06/2026",
-      "proximaSessao": "23/07/2026"
+      "proximaSessao": "11/08/2026"
     },
     {
       "nome": "Rennan Vilar",
