@@ -2168,8 +2168,8 @@
         },
         {
           "label": "Sessão 01",
-          "valor": null,
-          "data": null
+          "valor": 650,
+          "data": "07/08/2026 (agendada)"
         },
         {
           "label": "Sessão 02",
@@ -2270,7 +2270,7 @@
         }
       ],
       "dataInicio": "22/06/2026",
-      "proximaSessao": null
+      "proximaSessao": "07/08/2026"
     },
     {
       "nome": "Marcus Brandão",
