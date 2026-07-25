@@ -208,7 +208,7 @@
       "slots": [
         {
           "label": "Briefing/Devolutiva",
-          "data": "28/10/2026",
+          "data": "28/10/2025",
           "valor": 975
         },
         {
@@ -1220,7 +1220,7 @@
         {
           "label": "Sessão 02",
           "valor": 1000,
-          "data": "25/03/206"
+          "data": "25/03/2026"
         },
         {
           "label": "Sessão 03",
@@ -1562,8 +1562,8 @@
         },
         {
           "label": "Sessão 03",
-          "valor": "",
-          "data": ""
+          "valor": null,
+          "data": null
         },
         {
           "label": "Sessão 04",
@@ -1904,7 +1904,7 @@
         },
         {
           "label": "Sessão 03",
-          "data": "30/03/206",
+          "data": "30/03/2026",
           "valor": 650
         },
         {
