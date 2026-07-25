@@ -262,27 +262,27 @@
       "previstas": 5,
       "slots": [
         {
-          "label": "Sessão 01",
+          "label": "Briefing/Devolutiva",
           "data": "03/03/2026",
           "valor": 975
         },
         {
-          "label": "Sessão 02",
+          "label": "Sessão 01",
           "data": "17/06/2026",
           "valor": 650
         },
         {
-          "label": "Sessão 03",
+          "label": "Sessão 02",
           "data": "24/07/2026",
           "valor": 650
         },
         {
-          "label": "Sessão 04",
+          "label": "Sessão 03",
           "data": "17/08/2026 (agendada)",
           "valor": 650
         },
         {
-          "label": "Sessão 05",
+          "label": "Sessão 04",
           "data": null,
           "valor": null
         }
