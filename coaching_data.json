@@ -75,6 +75,11 @@
           "label": "Sessão 04",
           "data": "22/04/2026",
           "valor": 650
+        },
+        {
+          "label": "Sessão 05",
+          "data": "30/07/2026 (agendada)",
+          "valor": 650
         }
       ],
       "valorPrevisto": 3575,
@@ -180,8 +185,13 @@
         },
         {
           "label": "Sessão 05",
-          "data": null,
-          "valor": null
+          "data": "10/08/2026 (agendada)",
+          "valor": 650
+        },
+        {
+          "label": "Sessão 06",
+          "data": "18/08/2026 (agendada)",
+          "valor": 650
         }
       ],
       "valorPrevisto": 3250,
@@ -197,7 +207,7 @@
           "descricao": "próxima sessão: → 30/07/2026 (agendada)"
         }
       ],
-      "proximaSessao": "30/07/2026"
+      "proximaSessao": "10/08/2026"
     },
     {
       "nome": "Nacib Hadad Bisneto",
@@ -400,7 +410,7 @@
           "ts": "21/06/2026, 22:55:04"
         }
       ],
-      "proximaSessao": "07/07/2026"
+      "proximaSessao": null
     },
     {
       "nome": "Marcelo Barchetta (Ciclo 2)",
