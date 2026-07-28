@@ -1674,7 +1674,7 @@
       "nome": "Marcus Brandão",
       "empresa": "Oncoclínicas",
       "contrato": "Oncoclínicas - Coaching Executivo Individual (Marcus Brandão) - pacote 6 sessões + Coleta de Insights 360 + devolutiva, nível Gerente Executivo/Gerente - R$12.100,00 total",
-      "status": "Standby",
+      "status": "Ativo",
       "previstas": 7,
       "slots": [
         {
@@ -1689,8 +1689,8 @@
         },
         {
           "label": "Sessão 02",
-          "data": null,
-          "valor": null
+          "data": "07/08/2026 (agendada)",
+          "valor": 1815
         },
         {
           "label": "Sessão 03",
@@ -1733,11 +1733,16 @@
         {
           "ts": "19/06/2026, 15:35:16",
           "texto": "Sessão registrada: Sessão 01 — 27/10/2025"
+        },
+        {
+          "ts": "28/07/2026, 19:20:32",
+          "texto": "Status alterado de Standby para Ativo; S02 agendada para 07/08/2026"
         }
       ],
       "dataInicio": "27/02/2025",
       "valorPrevisto": 12100,
-      "duracaoPadraoMin": 60
+      "duracaoPadraoMin": 60,
+      "proximaSessao": "07/08/2026"
     },
     {
       "nome": "André Tonetto Picarelli",
