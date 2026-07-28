@@ -175,21 +175,11 @@
         },
         {
           "label": "Sessão 03",
-          "data": "30/07/2026 (agendada)",
-          "valor": 650
-        },
-        {
-          "label": "Sessão 04",
-          "data": "31/07/2026 (agendada)",
-          "valor": 650
-        },
-        {
-          "label": "Sessão 05",
           "data": "10/08/2026 (agendada)",
           "valor": 650
         },
         {
-          "label": "Sessão 06",
+          "label": "Sessão 04",
           "data": "18/08/2026 (agendada)",
           "valor": 650
         }
