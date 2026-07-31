@@ -895,8 +895,8 @@
         },
         {
           "label": "Sessão 06",
-          "valor": null,
-          "data": null
+          "valor": 1950,
+          "data": "26/08/2026 (agendada)"
         },
         {
           "label": "Sessão 07",
@@ -935,7 +935,7 @@
         }
       ],
       "dataInicio": "06/05/2026",
-      "proximaSessao": null
+      "proximaSessao": "26/08/2026"
     },
     {
       "nome": "Beatriz Brisotti",
