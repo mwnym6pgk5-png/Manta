@@ -75,11 +75,6 @@
           "label": "Sessão 04",
           "data": "22/04/2026",
           "valor": 650
-        },
-        {
-          "label": "Sessão 05",
-          "data": "30/07/2026 (agendada)",
-          "valor": 650
         }
       ],
       "valorPrevisto": 3575,
@@ -103,7 +98,7 @@
         }
       ],
       "dataInicio": "06/11/2025",
-      "proximaSessao": "30/07/2026"
+      "proximaSessao": null
     },
     {
       "nome": "José Newton Melo Junior",
@@ -804,7 +799,7 @@
         {
           "label": "Sessão 03",
           "valor": 1950,
-          "data": "30/07/2026 (agendada)"
+          "data": "30/07/2026 (no show)"
         },
         {
           "label": "Sessão 04",
@@ -896,7 +891,7 @@
         {
           "label": "Sessão 05",
           "valor": 1950,
-          "data": "31/07/2026 (agendada)"
+          "data": "31/07/2026"
         },
         {
           "label": "Sessão 06",
@@ -940,7 +935,7 @@
         }
       ],
       "dataInicio": "06/05/2026",
-      "proximaSessao": "31/07/2026"
+      "proximaSessao": null
     },
     {
       "nome": "Beatriz Brisotti",
@@ -2525,12 +2520,12 @@
       "valorPrevisto": 3250,
       "duracaoPadraoMin": 60,
       "dataInicio": "2026-07-24",
-      "proximaSessao": "30/07/2026",
+      "proximaSessao": null,
       "historico": [],
       "slots": [
         {
           "label": "Sessão 01",
-          "data": "30/07/2026 (agendada)",
+          "data": "30/07/2026",
           "valor": 650
         },
         {
