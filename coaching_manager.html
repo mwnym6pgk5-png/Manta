@@ -1004,6 +1004,8 @@ function addDetSession(idx){
   var ei=c.slots.findIndex(function(s){return s.label===lbl;});
   if(ei>=0){c.slots[ei]={label:lbl,data:dataStr,valor:valor};}
   else{c.slots.push({label:lbl,data:dataStr,valor:valor});}
+  var agdList=c.slots.filter(function(s){return s.data&&/agendada/i.test(s.data);}).map(function(s){return s.data.replace(/\s*\(.*?\)\s*/g,'').trim();}).filter(function(ds){return parseBRDate(ds);}).sort(function(a,b){return parseBRDate(a)-parseBRDate(b);});
+  c.proximaSessao=agdList.length?agdList[0]:null;
   pending.push({tipo:'sessao',nome:c.nome,sessao:lbl,data:dataStr,valor:valor});
   saveData();
   var det=document.getElementById('det-'+idx);
