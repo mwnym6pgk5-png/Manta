@@ -33,7 +33,7 @@ body{font-family:'IBM Plex Sans',Arial,sans-serif;font-size:13px;background:var(
 .card-val{font-size:24px;font-weight:bold;color:var(--p)}
 .card-lbl{font-size:11px;color:var(--mut);margin-top:3px}
 .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600;white-space:nowrap}
-.b-em{background:var(--bb);color:var(--bf)}.b-co{background:var(--gb);color:var(--gf)}.b-st{background:var(--db);color:var(--df)}.b-ai{background:var(--yb);color:var(--yf)}.b-cn{background:#FFD9D9;color:#8B0000}
+.b-em{background:var(--bb);color:var(--bf)}.b-co{background:var(--gb);color:var(--gf)}.b-st{background:var(--db);color:var(--df)}.b-ai{background:var(--yb);color:var(--yf)}.b-cn{background:#FFD9D9;color:#8B0000}.b-pi{background:#D6EFEF;color:#00524F}.b-ps{background:#EDE3F0;color:#4A1B52}
 .filters{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
 .filters input,.filters select{padding:6px 10px;border:1px solid var(--brd);border-radius:6px;font-size:12px;outline:none}
 .filters input:focus,.filters select:focus{border-color:var(--p)}
@@ -179,7 +179,10 @@ select[multiple]{min-height:74px}
       <label for="f-st" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Status</label><select id="f-st" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:130px">
         <option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado/Demitido</option>
       </select>
-      <label for="f-emp" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Empresa</label><select id="f-emp" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:150px"></select>
+       <label for="f-mod" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Modalidade</label><select id="f-mod" multiple size="2" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:130px">
+ <option>Pago integral</option><option>Por sessão</option>
+ </select>
+ <label for="f-emp" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Empresa</label><select id="f-emp" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:150px"></select>
 <label for="f-ano" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Ano</label><select id="f-ano" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários (ano de conclusão)" style="min-width:110px"></select>
       <button class="btn btn-o" style="font-size:11px;padding:5px 10px" onclick="document.getElementById('f-st').selectedIndex=-1;document.getElementById('f-emp').selectedIndex=-1;document.getElementById('f-ano').selectedIndex=-1;renderTable()">Limpar filtros</button> <button class="btn btn-g" style="font-size:11px;padding:5px 10px" onclick="exportCoacheesCSV()">📊 Exportar tabela</button>
       <span id="cnt-lbl" style="font-size:11px;color:var(--mut)"></span>
@@ -188,6 +191,7 @@ select[multiple]{min-height:74px}
       <table>
         <thead><tr>
           <th class="sortable" onclick="sortBy('nome')">Nome<span class="sort-ind" id="si-nome"></span></th><th class="sortable" onclick="sortBy('empresa')">Empresa<span class="sort-ind" id="si-empresa"></span></th><th class="sortable" onclick="sortBy('status')">Status<span class="sort-ind" id="si-status"></span></th>
+ <th class="sortable" onclick="sortBy('modalidade')">Modalidade<span class="sort-ind" id="si-modalidade"></span></th>
           <th class="nr sortable" onclick="sortBy('previstas')">Prev.<span class="sort-ind" id="si-previstas"></span></th><th class="nr sortable" onclick="sortBy('realizadas')">Real.<span class="sort-ind" id="si-realizadas"></span></th>
           <th style="min-width:120px" class="sortable" onclick="sortBy('progresso')">Progresso<span class="sort-ind" id="si-progresso"></span></th><th class="nr sortable" onclick="sortBy('valorPrevisto')">Previsto R$<span class="sort-ind" id="si-valorPrevisto"></span></th><th class="nr sortable" onclick="sortBy('total')">Total R$<span class="sort-ind" id="si-total"></span></th><th class="nr sortable" onclick="sortBy('anoConclusao')">Ano Concl.<span class="sort-ind" id="si-anoConclusao"></span></th><th class="sortable" onclick="sortBy('dataInicio')">Início<span class="sort-ind" id="si-dataInicio"></span></th>
         </tr></thead>
@@ -243,6 +247,7 @@ select[multiple]{min-height:74px}
           <div class="fr">
             <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
             <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado/Demitido</option></select></div>
+ <div><label>Modalidade de faturamento</label><select id="ed-mod"><option>Por sessão</option><option>Pago integral</option></select></div>
           </div>
 <div class="fr">
 <div><label>Valor previsto (R$)</label><input type="number" id="ed-valorprev" placeholder="ex: 6500"></div>
@@ -263,6 +268,7 @@ select[multiple]{min-height:74px}
           <div class="fr3">
             <div><label>Sessões Previstas</label><input type="number" id="nc-p" placeholder="ex: 10"></div>
             <div><label>Status Inicial</label><select id="nc-s"><option>A iniciar</option><option>Em andamento</option></select></div>
+ <div><label>Modalidade de faturamento</label><select id="nc-mod"><option>Por sessão</option><option>Pago integral</option></select></div>
             <div><label>Observação</label><input type="text" id="nc-o"></div>
           </div>
 <div class="fr">
@@ -431,6 +437,7 @@ function setSyncStatus(msg, ok){
 const fmtBRL = v => v==null?'—':'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2});
 const BCLS = {'Em andamento':'b-em','Concluído':'b-co','Standby':'b-st','A iniciar':'b-ai','Cancelado/Demitido':'b-cn'};
 function badge(st){ return `<span class="badge ${BCLS[st]||'b-st'}">${st}</span>`; }
+function modBadge(m){ const v=m||'Por sessão'; const cls=v==='Pago integral'?'b-pi':'b-ps'; return `<span class="badge ${cls}">${v}</span>`; }
 function duracaoPorRegra(empresa,label){
   const isBriefing = label==='Briefing/Devolutiva';
   const isEncerramento = label==='Encerramento';
@@ -450,7 +457,7 @@ function duracaoPorRegra(empresa,label){
 function horasSlot(co,s){ return s.duracaoMin||duracaoPorRegra(co.empresa,s.label)||co.duracaoPadraoMin||60; }
 function horasRealizadasCoachee(c){ return c.slots.reduce((a,s)=>a+((s.valor!=null||s.data!=null)?horasSlot(c,s):0),0)/60; }
 function realized(c){ return c.slots.slice(0,15).filter(s=>s.valor!=null||s.data!=null).length; }
-function totalVal(c){ return c.slots.reduce((a,s)=>a+parseFloat(s.valor||0),0); }
+function totalVal(c){ if(c.modalidadeFaturamento==='Pago integral') return c.valorPrevisto||0; return c.slots.reduce((a,s)=>a+parseFloat(s.valor||0),0); }
 function horasPorAno(){
 const out={};
 data.forEach(co=>{
@@ -781,6 +788,7 @@ function renderTable(){
     });
   }
   const feArr=[...sel.selectedOptions].map(o=>o.value);
+ const fmArr=[...document.getElementById('f-mod').selectedOptions].map(o=>o.value);
 const selAno=document.getElementById('f-ano');
 if(selAno.options.length===0){
 [...new Set(data.map(c=>anoConclusao(c)).filter(Boolean))].sort((a,b)=>b-a).forEach(y=>{
@@ -788,7 +796,7 @@ const o=document.createElement('option');o.value=o.textContent=y;selAno.appendCh
 });
 }
 const anoArr=[...selAno.selectedOptions].map(o=>o.value);
-  const rows=data.filter(c=>(!q||c.nome.toLowerCase().includes(q)||c.empresa.toLowerCase().includes(q))&&(!fsArr.length||fsArr.includes(c.status))&&(!feArr.length||feArr.includes(c.empresa))&&(!anoArr.length||anoArr.includes(String(anoConclusao(c)))));
+  const rows=data.filter(c=>(!q||c.nome.toLowerCase().includes(q)||c.empresa.toLowerCase().includes(q))&&(!fsArr.length||fsArr.includes(c.status))&&(!feArr.length||feArr.includes(c.empresa))&&(!fmArr.length||fmArr.includes(c.modalidadeFaturamento||'Por sessão'))&&(!anoArr.length||anoArr.includes(String(anoConclusao(c)))));
   if(sortState.col){
     rows.sort(function(a,b){
       var va=getSortVal(a,sortState.col), vb=getSortVal(b,sortState.col);
@@ -796,7 +804,7 @@ const anoArr=[...selAno.selectedOptions].map(o=>o.value);
       return (va-vb)*sortState.dir;
     });
   }
-  ['nome','empresa','status','previstas','realizadas','progresso','total','valorPrevisto','anoConclusao','dataInicio'].forEach(function(col){
+  ['nome','empresa','status','modalidade','previstas','realizadas','progresso','total','valorPrevisto','anoConclusao','dataInicio'].forEach(function(col){
     var el=document.getElementById('si-'+col);
     if(el) el.textContent = sortState.col===col ? (sortState.dir===1?' ▲':' ▼') : '';
   });
@@ -810,7 +818,7 @@ const anoArr=[...selAno.selectedOptions].map(o=>o.value);
     const riskIcon=rl==='alto'?'<span class="risk-hi" title="Sem sessão há mais de 60 dias"> ⚠️</span>':(rl==='medio'?'<span class="risk-md" title="Sem sessão há mais de 30 dias"> ⚠️</span>':'');
     return `<tr class="dr" onclick="toggleDetail(${idx})">
       <td style="font-weight:600">${c.nome}${riskIcon}</td><td style="font-size:11px">${c.empresa||'—'}</td>
-      <td>${badge(c.status)}</td><td class="nr">${p||'—'}</td><td class="nr">${r}</td>
+      <td>${badge(c.status)}</td><td>${modBadge(c.modalidadeFaturamento)}</td><td class="nr">${p||'—'}</td><td class="nr">${r}</td>
       <td><div style="display:flex;align-items:center;gap:6px">
         <div class="pbar" style="flex:1"><div class="pbar-f" style="width:${pct}%"></div></div>
         <span style="font-size:11px;color:var(--mut);min-width:30px">${pct}%</span></div></td>
@@ -819,8 +827,8 @@ const anoArr=[...selAno.selectedOptions].map(o=>o.value);
     
 <td class="nr" style="font-size:11px;color:var(--mut)">${anoConclusao(c)||'—'}</td>
 <td style="font-size:11px;color:var(--mut)">${c.dataInicio||'—'}</td></tr>
-    <tr><td colspan="10" style="padding:0"><div class="detail-inner" id="det-${idx}">${buildDetail(c, idx)}</div></td></tr>`;
-  }).join('')||`<tr><td colspan="10" class="empty">Nenhum coachee encontrado.</td></tr>`;
+    <tr><td colspan="11" style="padding:0"><div class="detail-inner" id="det-${idx}">${buildDetail(c, idx)}</div></td></tr>`;
+  }).join('')||`<tr><td colspan="11" class="empty">Nenhum coachee encontrado.</td></tr>`;
 }
 
 function buildDetail(c, idx){
@@ -963,6 +971,8 @@ document.getElementById('ed-valorprev').value=c.valorPrevisto||'';
 document.getElementById('ed-duracao').value=c.duracaoPadraoMin||'';
   const st=document.getElementById('ed-st');
   [...st.options].forEach(o=>o.selected=o.value===c.status);
+ const mo=document.getElementById('ed-mod');
+ [...mo.options].forEach(o=>o.selected=o.value===(c.modalidadeFaturamento||'Por sessão'));
 }
 
 function addSessao(){
@@ -1059,6 +1069,8 @@ function editCoachee(){
   if(prev!==''&&Number(prev)!==c.previstas){changes.push(`sessões previstas: ${c.previstas||'?'} → ${prev}`);c.previstas=Number(prev);}
   if(emp&&emp!==c.empresa){changes.push(`empresa: "${c.empresa}" → "${emp}"`);c.empresa=emp;}
   if(st!==c.status){changes.push(`status: ${c.status} → ${st}`);c.status=st;}
+ const modv=document.getElementById('ed-mod').value;
+ if(modv!==(c.modalidadeFaturamento||'Por sessão')){changes.push('modalidade de faturamento: '+(c.modalidadeFaturamento||'Por sessão')+' → '+modv);c.modalidadeFaturamento=modv;}
   if(next!==(c.proximaSessao||'')){changes.push('próxima sessão: '+(c.proximaSessao||'—')+' → '+(next||'—'));c.proximaSessao=next||null;}
   if(inicio!==(c.dataInicio||'')){changes.push('data de início: '+(c.dataInicio||'—')+' → '+(inicio||'—'));c.dataInicio=inicio||null;}
 const vpv=document.getElementById('ed-valorprev').value;
@@ -1098,10 +1110,11 @@ function addCoachee(){
   const prev=document.getElementById('nc-p').value;
   const st=document.getElementById('nc-s').value;
   const obs=document.getElementById('nc-o').value.trim();
+const mod=document.getElementById('nc-mod').value;
 const vp=document.getElementById('nc-vp').value;
 const dur=document.getElementById('nc-dur').value;
   if(!nome||!emp||!cont){alert('Preencha nome, empresa e contrato.');return;}
-  const novo={nome,empresa:emp,contrato:cont,status:st,previstas:prev?Number(prev):null,historico:[],proximaSessao:null,dataInicio:null,valorPrevisto:vp?Number(vp):0,duracaoPadraoMin:dur?Number(dur):60,
+  const novo={nome,empresa:emp,contrato:cont,status:st,previstas:prev?Number(prev):null,historico:[],proximaSessao:null,dataInicio:null,valorPrevisto:vp?Number(vp):0,duracaoPadraoMin:dur?Number(dur):60,modalidadeFaturamento:mod,
     slots:[{label:'Briefing/Devolutiva',valor:null,data:null,duracaoMin:duracaoPorRegra(emp,'Briefing/Devolutiva')},
       ...Array.from({length:12},(_,i)=>({label:`Sessão ${String(i+1).padStart(2,'0')}`,valor:null,data:null,duracaoMin:duracaoPorRegra(emp,`Sessão ${String(i+1).padStart(2,'0')}`)})),
       {label:'Acompanhamento (Middle)',valor:null,data:null,duracaoMin:duracaoPorRegra(emp,'Acompanhamento (Middle)')},{label:'Encerramento',valor:null,data:null,duracaoMin:duracaoPorRegra(emp,'Encerramento')}]};
