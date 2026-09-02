@@ -177,7 +177,7 @@ select[multiple]{min-height:74px}
     <div class="filters">
       <input id="srch" type="text" placeholder="Buscar por nome..." style="width:200px" oninput="renderTable()">
       <label for="f-st" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Status</label><select id="f-st" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:130px">
-        <option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado</option>
+        <option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado/Demitido</option>
       </select>
       <label for="f-emp" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Empresa</label><select id="f-emp" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários" style="min-width:150px"></select>
 <label for="f-ano" style="font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--mut);text-transform:uppercase;display:block;margin-bottom:2px">Ano</label><select id="f-ano" multiple size="4" onchange="renderTable()" title="Ctrl/Cmd+clique para selecionar vários (ano de conclusão)" style="min-width:110px"></select>
@@ -223,7 +223,7 @@ select[multiple]{min-height:74px}
           <div class="fr">
             <div><label>Coachee</label><select id="stn"><option value="">— selecionar —</option></select></div>
             <div><label>Novo Status</label>
-              <select id="sts"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado</option></select>
+              <select id="sts"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado/Demitido</option></select>
             </div>
           </div>
           <button class="btn btn-p" onclick="addStatusChange()">Registrar Alteração</button>
@@ -242,7 +242,7 @@ select[multiple]{min-height:74px}
           </div>
           <div class="fr">
             <div><label>Empresa</label><input type="text" id="ed-emp" placeholder=""></div>
-            <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado</option></select></div>
+            <div><label>Status</label><select id="ed-st"><option>Em andamento</option><option>Standby</option><option>A iniciar</option><option>Concluído</option><option>Cancelado/Demitido</option></select></div>
           </div>
 <div class="fr">
 <div><label>Valor previsto (R$)</label><input type="number" id="ed-valorprev" placeholder="ex: 6500"></div>
@@ -429,7 +429,7 @@ function setSyncStatus(msg, ok){
 
 // ── Helpers ──
 const fmtBRL = v => v==null?'—':'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2});
-const BCLS = {'Em andamento':'b-em','Concluído':'b-co','Standby':'b-st','A iniciar':'b-ai','Cancelado':'b-cn'};
+const BCLS = {'Em andamento':'b-em','Concluído':'b-co','Standby':'b-st','A iniciar':'b-ai','Cancelado/Demitido':'b-cn'};
 function badge(st){ return `<span class="badge ${BCLS[st]||'b-st'}">${st}</span>`; }
 function duracaoPorRegra(empresa,label){
   const isBriefing = label==='Briefing/Devolutiva';
@@ -529,7 +529,7 @@ function lastSessionDate(c){
   return new Date(Math.max(...ds.map(d=>d.getTime())));
 }
 function anoConclusao(c){
-if(c.status!=='Concluído'&&c.status!=='Cancelado') return null;
+if(c.status!=='Concluído'&&c.status!=='Cancelado/Demitido') return null;
 const ld=lastSessionDate(c);
 return ld?ld.getFullYear():null;
 }
@@ -630,7 +630,7 @@ function renderDashboard(){
   const em=data.filter(c=>c.status==='Em andamento').length;
   const co=data.filter(c=>c.status==='Concluído').length;
   const st=data.filter(c=>c.status==='Standby'||c.status==='A iniciar').length;
-  const cn=data.filter(c=>c.status==='Cancelado').length;
+  const cn=data.filter(c=>c.status==='Cancelado/Demitido').length;
   const tot=data.reduce((a,c)=>a+totalVal(c),0);
 const totPrev=data.reduce((a,c)=>a+(c.valorPrevisto||0),0);
 const realCount=data.reduce((a,c)=>a+realized(c),0);
@@ -640,7 +640,7 @@ const valorMedio=realCount?tot/realCount:0;
     <div class="card" style="border-color:#1F4E78"><div class="card-val" style="color:#1F4E78">${em}</div><div class="card-lbl">Em Andamento</div></div>
     <div class="card" style="border-color:#006100"><div class="card-val" style="color:#006100">${co}</div><div class="card-lbl">Concluídos</div></div>
     <div class="card" style="border-color:#595959"><div class="card-val" style="color:#595959">${st}</div><div class="card-lbl">Standby / A iniciar</div></div>
-    <div class="card" style="border-color:#C00000"><div class="card-val" style="color:#C00000">${cn}</div><div class="card-lbl">Cancelado</div></div>
+    <div class="card" style="border-color:#C00000"><div class="card-val" style="color:#C00000">${cn}</div><div class="card-lbl">Cancelado/Demitido</div></div>
     <div class="card"><div class="card-val">R$ ${Math.round(tot/1000)}k</div><div class="card-lbl">Total realizado (${data.length} coachees)</div></div>
 <div class="card"><div class="card-val">R$ ${Math.round(totPrev/1000)}k</div><div class="card-lbl">Valor Previsto Total</div></div>
 <div class="card"><div class="card-val">${(Math.round(valorMedio)).toLocaleString('pt-BR')} <small style="font-size:60%;opacity:0.7">R$/sess</small></div><div class="card-lbl">Valor Médio por Sessão</div></div>
@@ -663,7 +663,7 @@ document.getElementById('stat-cards').innerHTML += Object.keys(porAno).sort().ma
     ]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:10}}},datalabels:{display:false}},scales:{x:{ticks:{font:{size:9}}},y:{ticks:{font:{size:10}}}}}
   });
-  const sts={'Em andamento':0,'Concluído':0,'Standby':0,'A iniciar':0,'Cancelado':0};
+  const sts={'Em andamento':0,'Concluído':0,'Standby':0,'A iniciar':0,'Cancelado/Demitido':0};
   data.forEach(c=>{ if(c.status in sts) sts[c.status]++; });
   if(charts.st) charts.st.destroy();
   charts.st=new Chart(document.getElementById('ch-status'),{
