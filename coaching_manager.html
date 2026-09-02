@@ -769,6 +769,7 @@ function getSortVal(c,col){
   if(col==='nome') return (c.nome||'').toLowerCase();
   if(col==='empresa') return (c.empresa||'').toLowerCase();
   if(col==='status') return (c.status||'').toLowerCase();
+if(col==='modalidade') return (c.modalidadeFaturamento||'Por sessão').toLowerCase();
   if(col==='previstas') return c.previstas||0;
   if(col==='realizadas') return realized(c);
   if(col==='progresso') return c.previstas ? realized(c)/c.previstas : 0;
