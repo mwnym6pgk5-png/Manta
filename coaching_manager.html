@@ -729,8 +729,8 @@ function renderAttnBox(){
     return '<div class="alert-attn" style="cursor:pointer" onclick="'+oc+'">'+icon+' '+summary+' <span class="attn-tog" style="font-size:0.8em;opacity:0.6">▾ ver lista</span><div id="'+id+'" style="display:none;margin-top:8px;padding:4px 10px;background:rgba(0,0,0,0.06);border-radius:4px">'+list+'</div></div>';
   }
   let html='';
-  html+=mkAlert('🔴',overdue.length+' coachee(s) com sessão agendada que já passou',overdue.map(c=>({label:c.nome,idx:data.indexOf(c)})));
-  html+=mkAlert('⚠️',risky.length+' coachee(s) sem sessão registrada há mais de 60 dias',risky.map(c=>({label:c.nome,idx:data.indexOf(c)})));
+    html+=mkAlert('⚠️',risky.length+' coachee(s) sem sessão registrada há mais de 60 dias',risky.map(c=>({label:c.nome,idx:data.indexOf(c)})));
+  overdue.forEach(c=>{if(!vencidas.some(v=>v.idx===data.indexOf(c)))vencidas.push({label:c.nome+' — próxima sessão vencida',idx:data.indexOf(c)});});
   html+=mkAlert('🟠',vencidas.length+' sessão(ões) marcada(s) como “agendada” já passaram da data — atualize o registro',vencidas);
   html+=mkAlert('ℹ️',missing.length+' coachee(s) em andamento sem próxima sessão agendada',missing.map(c=>({label:c.nome,idx:data.indexOf(c)})));
   box.innerHTML=html;
